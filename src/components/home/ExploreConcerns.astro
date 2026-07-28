@@ -1,32 +1,41 @@
 ---
 import { getCollection } from "astro:content";
 import SectionHeading from "../ui/SectionHeading.astro";
-import ConcernCard from "../ui/ConcernCard.astro";
 import EmptyState from "../ui/EmptyState.astro";
 
-const concerns = await getCollection(
-  "concerns",
-  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
-);
+const concerns = (
+  await getCollection(
+    "concerns",
+    (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+  )
+).slice(0, 9);
 ---
 
 <section class="bg-stone-50 border-y border-stone-200">
   <div class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
     <SectionHeading
       eyebrow="Browse by concern"
-      title="Explore by skin concern"
+      title="Organised around your skin, not our service menu."
       description="Find clear information organised around what's actually on your skin, not a list of services."
     />
 
     <div class="mt-10">
       {concerns.length > 0 ? (
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {concerns.slice(0, 9).map((c) => (
-            <ConcernCard
+        <div class="border-t border-stone-200">
+          {concerns.map((c, i) => (
+            <a
               href={`/skin-concerns/${c.slug}/`}
-              title={c.data.title}
-              summary={c.data.shortSummary}
-            />
+              class="group grid grid-cols-[2.5rem,1fr] sm:grid-cols-[3rem,1fr,8rem] items-center gap-4 sm:gap-6 py-6 border-b border-stone-200 no-underline transition-[padding] duration-300 ease-editorial hover:pl-2"
+            >
+              <span class="font-mono text-xs text-stone-400">{String(i + 1).padStart(2, "0")}</span>
+              <div>
+                <h3 class="text-xl text-ink group-hover:text-eucalyptus-700 transition-colors">{c.data.title}</h3>
+                <p class="text-sm text-stone-600 mt-1">{c.data.shortSummary}</p>
+              </div>
+              <span class="hidden sm:block justify-self-end font-mono text-xs text-eucalyptus-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                View &rarr;
+              </span>
+            </a>
           ))}
         </div>
       ) : (
@@ -38,7 +47,7 @@ const concerns = await getCollection(
     </div>
 
     <div class="mt-8">
-      <a href="/skin-concerns/" class="text-sm text-eucalyptus-600 no-underline">View all skin concerns &rarr;</a>
+      <a href="/skin-concerns/" class="font-mono text-xs text-eucalyptus-700 no-underline">View all skin concerns &rarr;</a>
     </div>
   </div>
 </section>

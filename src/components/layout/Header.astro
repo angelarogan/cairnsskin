@@ -8,18 +8,19 @@ const navLinks = [
 ---
 
 <header class="sticky top-0 z-50 glass-nav">
-  <div class="mx-auto max-w-editorial px-5 md:px-8 h-16 flex items-center justify-between">
-    <a href="/" class="text-lg font-medium tracking-tight text-ink no-underline">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 h-[78px] flex items-center justify-between">
+    <a href="/" class="font-display italic font-medium text-[22px] -tracking-[0.01em] text-ink no-underline">
       Cairns Skin
     </a>
 
-    <nav aria-label="Primary" class="hidden md:flex items-center gap-8">
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-9">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-sm text-stone-700 no-underline hover:text-eucalyptus-700 transition-colors duration-200"
+          class="relative pb-[3px] font-mono text-[13px] tracking-[0.04em] text-stone-700 no-underline hover:text-ink transition-colors duration-200 group"
         >
           {link.label}
+          <span class="absolute left-0 right-0 bottom-0 h-px bg-eucalyptus-700 scale-x-0 origin-right transition-transform duration-300 ease-editorial group-hover:scale-x-100 group-hover:origin-left" aria-hidden="true"></span>
         </a>
       ))}
     </nav>
@@ -46,7 +47,7 @@ const navLinks = [
 
   <div
     id="mobile-menu"
-    class="hidden md:hidden fixed inset-0 top-16 z-40 bg-paper-warm/95 backdrop-blur-md"
+    class="hidden md:hidden fixed top-[78px] inset-x-0 h-screen overflow-y-auto z-40 bg-paper-warm/95 backdrop-blur-md"
   >
     <nav aria-label="Mobile" class="flex flex-col gap-1 px-5 pt-6">
       {navLinks.map((link) => (

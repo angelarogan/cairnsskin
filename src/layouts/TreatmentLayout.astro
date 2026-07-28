@@ -47,9 +47,7 @@ const schemas = [
     <h1 class="mb-4">{data.title}</h1>
 
     {treatmentMeta && !treatmentMeta.verified && (
-      <p class="text-xs text-stone-500 border border-stone-300 rounded-full inline-block px-3 py-1 mb-6">
-        Terminology pending Laser Clinics Cairns verification
-      </p>
+      <p class="pill-status mb-6">Terminology pending Laser Clinics Cairns verification</p>
     )}
 
     <p class="text-lg text-stone-600 leading-relaxed mb-8">{data.shortSummary}</p>

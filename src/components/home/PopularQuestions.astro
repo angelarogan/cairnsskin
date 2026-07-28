@@ -11,9 +11,10 @@ const allQuestions = await getCollection(
 
 const featured = allQuestions
   .filter((q) => q.data.featured)
-  .slice(0, 6);
+  .slice(0, 5);
 
-const questions = featured.length > 0 ? featured : allQuestions.slice(0, 6);
+const questions = featured.length > 0 ? featured : allQuestions.slice(0, 5);
+const [first, ...rest] = questions;
 ---
 
 <section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
@@ -25,8 +26,17 @@ const questions = featured.length > 0 ? featured : allQuestions.slice(0, 6);
 
   <div class="mt-10">
     {questions.length > 0 ? (
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {questions.map((q) => (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] gap-5">
+        <div class="lg:row-span-2">
+          <QuestionCard
+            href={`/questions/${first.slug}/`}
+            question={first.data.primaryQuestion}
+            shortAnswer={first.data.shortAnswer}
+            category={first.data.category}
+            feature
+          />
+        </div>
+        {rest.map((q) => (
           <QuestionCard
             href={`/questions/${q.slug}/`}
             question={q.data.primaryQuestion}

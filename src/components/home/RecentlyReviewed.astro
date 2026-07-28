@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import SectionHeading from "../ui/SectionHeading.astro";
-import QuestionCard from "../ui/QuestionCard.astro";
 import EmptyState from "../ui/EmptyState.astro";
+import { resolveRefs } from "../../utils/relatedContent";
 
 const questions = (
   await getCollection(
@@ -13,25 +13,41 @@ const questions = (
   .filter((q) => q.data.reviewDate)
   .sort((a, b) => (b.data.reviewDate!.getTime() - a.data.reviewDate!.getTime()))
   .slice(0, 3);
+
+const cards = await Promise.all(
+  questions.map(async (q) => {
+    const [reviewer] = await resolveRefs(q.data.reviewedBy ? [q.data.reviewedBy] : []);
+    return { entry: q, reviewer };
+  }),
+);
 ---
 
 <section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
   <SectionHeading
     eyebrow="Kept current"
-    title="Recently reviewed articles"
-    description="Every article carries a visible review date and reviewer."
+    title="Recently reviewed."
+    description="Every article carries a visible reviewer and last-reviewed date."
   />
 
   <div class="mt-10">
-    {questions.length > 0 ? (
-      <div class="grid sm:grid-cols-3 gap-5">
-        {questions.map((q) => (
-          <QuestionCard
+    {cards.length > 0 ? (
+      <div class="flex gap-5 overflow-x-auto pb-2" style="scrollbar-width: none;">
+        {cards.map(({ entry: q, reviewer }) => (
+          <a
             href={`/questions/${q.slug}/`}
-            question={q.data.primaryQuestion}
-            shortAnswer={q.data.shortAnswer}
-            category={q.data.category}
-          />
+            class="glass-card block p-6 min-w-[280px] no-underline group"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <span class="h-1.5 w-1.5 rounded-full bg-eucalyptus-700" aria-hidden="true"></span>
+              <span class="font-mono text-[11px] tracking-[0.04em] text-stone-600 uppercase">
+                Reviewed {q.data.reviewDate!.toLocaleDateString("en-AU", { day: "2-digit", month: "short", year: "numeric" })}
+              </span>
+            </div>
+            <h3 class="text-[17px] mb-2 text-ink group-hover:text-eucalyptus-700 transition-colors">
+              {q.data.primaryQuestion}
+            </h3>
+            {reviewer && <p class="text-sm text-stone-600">{reviewer.data.name}, {reviewer.data.role}</p>}
+          </a>
         ))}
       </div>
     ) : (

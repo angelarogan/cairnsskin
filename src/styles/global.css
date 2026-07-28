@@ -16,26 +16,30 @@
   }
 
   body {
-    @apply bg-paper-warm text-ink font-sans antialiased;
+    @apply relative bg-paper-warm text-ink font-sans antialiased;
     font-feature-settings: "cv11", "ss01";
     text-rendering: optimizeLegibility;
   }
 
+  header, main, footer {
+    @apply relative z-[1];
+  }
+
   h1, h2, h3, h4 {
-    @apply text-ink font-medium tracking-tight;
+    @apply text-ink font-display font-normal tracking-tight;
     text-wrap: balance;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl leading-[1.05];
+    @apply text-4xl md:text-6xl leading-[1.05] -tracking-[0.015em];
   }
 
   h2 {
-    @apply text-3xl md:text-4xl leading-[1.1];
+    @apply text-3xl md:text-4xl leading-[1.1] -tracking-[0.01em];
   }
 
   h3 {
-    @apply text-xl md:text-2xl leading-snug;
+    @apply text-xl md:text-2xl font-medium leading-snug -tracking-[0.005em];
   }
 
   p {
@@ -69,17 +73,37 @@
 }
 
 @layer components {
-  /* Restrained glassmorphism: fine border, soft blur, no heavy transparency */
+  /* Restrained glassmorphism: fine eucalyptus-tinted border, soft blur,
+     a diagonal sheen, never heavy transparency or neon gradients. */
   .glass {
-    @apply bg-paper/70 backdrop-blur-md border border-stone-200/70 shadow-glass;
+    @apply relative bg-paper/40 backdrop-blur-lg border border-eucalyptus-400/25 shadow-glass;
   }
 
   .glass-nav {
-    @apply bg-paper-warm/80 backdrop-blur-md border-b border-stone-200/60;
+    @apply bg-paper-warm/60 backdrop-blur-xl border-b border-eucalyptus-400/25 shadow-nav;
   }
 
   .glass-card {
-    @apply bg-paper/80 backdrop-blur-sm border border-stone-200/70 rounded-xl2 shadow-card transition-shadow duration-300 ease-editorial hover:shadow-glass;
+    @apply relative overflow-hidden bg-paper/40 backdrop-blur-lg border border-eucalyptus-400/25 rounded-xl2 shadow-glass
+      transition-all duration-300 ease-editorial
+      hover:-translate-y-1 hover:shadow-glass-hover hover:border-eucalyptus-600/45;
+  }
+
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.08) 26%, rgba(255, 255, 255, 0) 48%);
+  }
+
+  .glass-card--dark {
+    @apply bg-ink/85 text-paper-warm border-eucalyptus-400/30 shadow-glass-dark hover:border-eucalyptus-400/50;
+  }
+
+  .glass-card--dark::before {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 26%, rgba(255, 255, 255, 0) 48%);
   }
 
   .card-flat {
@@ -97,11 +121,86 @@
   }
 
   .eyebrow {
-    @apply text-xs font-medium uppercase tracking-[0.14em] text-eucalyptus-600;
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-eucalyptus-700;
+  }
+
+  .accent-italic {
+    @apply font-display italic font-medium text-eucalyptus-700;
+  }
+
+  .pill-status {
+    @apply inline-flex items-center gap-1.5 font-mono text-[10.5px] tracking-[0.06em] text-stone-500
+      border border-stone-300 rounded-full px-3 py-1;
   }
 
   .skip-link {
     @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
       focus:bg-ink focus:text-paper-warm focus:px-4 focus:py-2 focus:rounded-full;
+  }
+
+  /* Grain texture overlay: tactile, premium feel. Fixed + z-[2] so it sits
+     above content but below nothing interactive (pointer-events: none). */
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    opacity: 0.035;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Ambient light blobs: gives glass surfaces something colourful to
+     refract. A flat background under backdrop-blur reads as nothing.
+     Absolute (not fixed) so blobs sit near their own section as the
+     page scrolls, rather than being clipped to one viewport height. */
+  .ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .ambient span {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.5;
+  }
+
+  .amb-1 {
+    width: 640px;
+    height: 640px;
+    top: -180px;
+    right: -120px;
+    background: radial-gradient(circle, theme("colors.eucalyptus.400") 0%, transparent 70%);
+  }
+
+  .amb-2 {
+    width: 520px;
+    height: 520px;
+    top: 900px;
+    left: -160px;
+    opacity: 0.35;
+    background: radial-gradient(circle, #cfd9a8 0%, transparent 70%);
+  }
+
+  .amb-3 {
+    width: 580px;
+    height: 580px;
+    top: 2100px;
+    right: -200px;
+    opacity: 0.3;
+    background: radial-gradient(circle, theme("colors.eucalyptus.700") 0%, transparent 72%);
+  }
+
+  .amb-4 {
+    width: 520px;
+    height: 520px;
+    top: 3400px;
+    left: 8%;
+    opacity: 0.35;
+    background: radial-gradient(circle, theme("colors.eucalyptus.400") 0%, transparent 70%);
   }
 }

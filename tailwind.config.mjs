@@ -5,34 +5,34 @@ export default {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0E0F0D",   // black
-          soft: "#1C1D1B",      // soft black
+          DEFAULT: "#0D0E0C",   // black
+          soft: "#1A1B18",      // soft black
         },
         paper: {
           DEFAULT: "#FFFFFF",   // white
-          warm: "#FAF8F4",      // warm white
+          warm: "#FBF9F5",      // warm white
         },
         stone: {
-          50: "#F7F6F3",
-          100: "#EFEDE7",
-          200: "#E3E0D8",
-          300: "#CFCBC0",       // light grey / stone grey
-          400: "#A9A59B",
-          500: "#7D7A70",
-          600: "#5B594F",
-          700: "#3F3E37",
-          800: "#2A2A25",
-          900: "#1C1D1B",       // charcoal
+          50: "#F7F5EF",
+          100: "#F1EFE6",
+          200: "#E5E1D4",
+          300: "#D2CDBC",       // light grey / stone grey
+          400: "#A9A48F",
+          500: "#8C876F",
+          600: "#716C5B",
+          700: "#544F41",
+          800: "#3A362C",
+          900: "#2B2A24",       // charcoal
         },
         eucalyptus: {
-          50: "#F2F5F3",
-          100: "#E2E8E3",
-          200: "#C9D3CB",
-          300: "#AFBEB4",
-          400: "#9EADA3",       // accent
-          500: "#87998D",
-          600: "#6D8072",
-          700: "#57665B",
+          50: "#E7ECE6",        // eucalyptus-pale
+          100: "#D8E1D5",
+          200: "#C1CFBD",
+          300: "#AABDA4",
+          400: "#93A79A",       // accent (eucalyptus)
+          500: "#7C9186",
+          600: "#697F6E",
+          700: "#57695D",       // eucalyptus-deep
         },
       },
       fontFamily: {
@@ -44,11 +44,17 @@ export default {
           "Segoe UI",
           "sans-serif",
         ],
-        serif: [
-          "\"Source Serif 4\"",
+        display: [
+          "Fraunces",
           "\"Iowan Old Style\"",
           "Georgia",
           "serif",
+        ],
+        mono: [
+          "\"JetBrains Mono\"",
+          "ui-monospace",
+          "SFMono-Regular",
+          "monospace",
         ],
       },
       maxWidth: {
@@ -59,7 +65,10 @@ export default {
         xs: "4px",
       },
       boxShadow: {
-        glass: "0 1px 1px rgba(14,15,13,0.03), 0 8px 24px rgba(14,15,13,0.05)",
+        glass: "inset 0 1px 0 rgba(255,255,255,0.6), 0 8px 24px -18px rgba(87,105,93,0.35)",
+        "glass-hover": "inset 0 1px 0 rgba(255,255,255,0.6), 0 28px 54px -20px rgba(87,105,93,0.32)",
+        "glass-dark": "inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 40px -20px rgba(0,0,0,0.5)",
+        nav: "inset 0 1px 0 rgba(255,255,255,0.6), 0 8px 32px -16px rgba(87,105,93,0.18)",
         card: "0 1px 2px rgba(14,15,13,0.04), 0 2px 8px rgba(14,15,13,0.04)",
       },
       borderRadius: {

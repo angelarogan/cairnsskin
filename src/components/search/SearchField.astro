@@ -6,19 +6,19 @@ interface Props {
 const { placeholder = "Search skin questions, e.g. \u201cwhat is Rejuran?\u201d" } = Astro.props;
 ---
 
-<div id="search-root" class="w-full max-w-xl mx-auto">
-  <form action="/questions/" method="get" class="relative">
+<div id="search-root" class="w-full max-w-md">
+  <form action="/questions/" method="get" class="relative glass rounded-full pl-6 pr-1.5 py-1.5 flex items-center gap-2">
     <label for="site-search" class="sr-only">Search the knowledge library</label>
     <input
       id="site-search"
       name="q"
       type="search"
       placeholder={placeholder}
-      class="w-full h-14 rounded-full border border-stone-300 bg-paper/90 backdrop-blur-sm px-6 pr-14 text-base text-ink placeholder:text-stone-400 focus-visible:border-eucalyptus-400"
+      class="w-full h-11 bg-transparent border-none px-0 text-[14.5px] text-ink placeholder:text-stone-400"
     />
     <button
       type="submit"
-      class="absolute right-2 top-2 h-10 w-10 rounded-full bg-ink text-paper-warm flex items-center justify-center hover:bg-eucalyptus-700 transition-colors"
+      class="shrink-0 h-11 w-11 rounded-full bg-ink text-paper-warm flex items-center justify-center hover:bg-eucalyptus-700 transition-colors"
       aria-label="Search"
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -31,7 +31,7 @@ const { placeholder = "Search skin questions, e.g. \u201cwhat is Rejuran?\u201d"
 
 <script>
   // Progressive enhancement: mount Pagefind UI if the generated index is
-  // present (only true in production builds — Pagefind runs after
+  // present (only true in production builds; Pagefind runs after
   // `astro build`). A plain DOM script tag is used instead of a dynamic
   // import so the bundler never tries to resolve this path at build time.
   const pagefindScript = document.createElement("script");
