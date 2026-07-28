@@ -35,6 +35,8 @@ const schemaList = structuredData
     ? structuredData
     : [structuredData]
   : [];
+
+const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -70,6 +72,18 @@ const schemaList = structuredData
     {schemaList.map((data) => (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(data)} />
     ))}
+
+    {gaId && (
+      <>
+        <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
+        <script is:inline define:vars={{ gaId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag("js", new Date());
+          gtag("config", gaId);
+        </script>
+      </>
+    )}
   </head>
   <body class="min-h-screen flex flex-col bg-paper-warm">
     <div class="grain" aria-hidden="true"></div>
