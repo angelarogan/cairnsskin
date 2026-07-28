@@ -184,7 +184,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Cosmetic Grade Facials", // PLACEHOLDER: confirm exact current naming/range
     slug: "cosmetic-grade-facials",
     shortDescription:
-      "Professional facial treatments aimed at renewing and resurfacing skin. Description pending clinic verification.",
+      "In-clinic facial treatments using professional-strength products to refresh and smooth skin's surface. Description pending clinic verification.",
     category: "facial",
     verified: false,
     verifiedDate: null,
@@ -196,7 +196,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Pigmentation Removal", // PLACEHOLDER: confirm exact current naming (may overlap with BBL)
     slug: "pigmentation-removal",
     shortDescription:
-      "Treatment targeting sun spots, patches and uneven skin tone. Description pending clinic verification.",
+      "Treatment aimed at fading sun-related dark spots and evening out overall skin tone. Description pending clinic verification.",
     category: "skin-rejuvenation",
     verified: false,
     verifiedDate: null,
