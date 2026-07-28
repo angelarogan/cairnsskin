@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
 
+# AI assistant and answer-engine crawlers, explicitly welcomed:
+# this site exists to answer the questions people ask Google and AI
+# assistants about skin, so it should be readable by both.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
 Sitemap: https://cairnsskin.com.au/sitemap-index.xml
