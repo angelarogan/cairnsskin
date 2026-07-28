@@ -1,0 +1,53 @@
+# Cairns Skin
+
+> Cairns Skin answers the specific skin, skincare and non-prescription treatment questions people ask search engines and AI assistants. It is an educational resource, not a booking or e-commerce site, connected to Laser Clinics Cairns.
+
+Every health and treatment article is reviewed before publication and carries a visible review status, evidence level and last-reviewed date. Content is written for Far North Queensland's tropical climate (high UV, heat and humidity) specifically, while staying useful for readers elsewhere in Australia. Treatment names and availability are pending confirmation against Laser Clinics Cairns' current service menu.
+
+## Skin concerns
+
+- [Pigmentation & Uneven Skin Tone](https://cairnsskin.com.au/skin-concerns/pigmentation/)
+- [Enlarged Pores](https://cairnsskin.com.au/skin-concerns/enlarged-pores/)
+- [Breakouts & Blackheads](https://cairnsskin.com.au/skin-concerns/breakouts-blackheads/)
+- [Acne Scarring](https://cairnsskin.com.au/skin-concerns/acne-scarring/)
+- [Acne Reduction](https://cairnsskin.com.au/skin-concerns/acne-reduction/)
+- [Redness & Rosacea](https://cairnsskin.com.au/skin-concerns/redness-rosacea/)
+- [Dilated Capillaries](https://cairnsskin.com.au/skin-concerns/dilated-capillaries/)
+- [Fine Lines & Wrinkles](https://cairnsskin.com.au/skin-concerns/fine-lines-wrinkles/)
+- [Rough & Dry Skin](https://cairnsskin.com.au/skin-concerns/rough-dry-skin/)
+- [Sagging & Loss of Skin Elasticity](https://cairnsskin.com.au/skin-concerns/sagging-skin-elasticity/)
+
+## Treatments
+
+- [BBL](https://cairnsskin.com.au/treatments/bbl/)
+- [Rejuran](https://cairnsskin.com.au/treatments/rejuran/)
+- [Skin Needling](https://cairnsskin.com.au/treatments/skin-needling/)
+- [Laser Hair Removal](https://cairnsskin.com.au/treatments/laser-hair-removal/)
+- [Microdermabrasion](https://cairnsskin.com.au/treatments/microdermabrasion/)
+- [AquaFacial](https://cairnsskin.com.au/treatments/aquafacial/)
+- [LED Light Therapy](https://cairnsskin.com.au/treatments/led-light-therapy/)
+- [Capillary Reduction](https://cairnsskin.com.au/treatments/capillary-reduction/)
+- [Fractional RF](https://cairnsskin.com.au/treatments/fractional-rf/)
+- [Cosmetic Grade Facials](https://cairnsskin.com.au/treatments/cosmetic-grade-facials/)
+- [Pigmentation Removal](https://cairnsskin.com.au/treatments/pigmentation-removal/)
+
+## Questions
+
+- [Why does pigmentation get worse in Cairns' heat and humidity?](https://cairnsskin.com.au/questions/why-does-pigmentation-get-worse-in-cairns-humidity/)
+- [What's the difference between pigmentation and melasma?](https://cairnsskin.com.au/questions/pigmentation-vs-melasma/)
+- [Why do I keep breaking out living in a tropical climate like Cairns?](https://cairnsskin.com.au/questions/why-do-i-keep-breaking-out-in-a-tropical-climate/)
+- [Why is my rosacea worse in Cairns' heat and humidity?](https://cairnsskin.com.au/questions/why-is-my-rosacea-worse-in-cairns/)
+- [What SPF should I wear every day living in Cairns?](https://cairnsskin.com.au/questions/what-spf-should-i-wear-every-day-in-cairns/)
+- [Can BBL treat sun damage and pigmentation?](https://cairnsskin.com.au/questions/can-bbl-treat-sun-damage-and-pigmentation/)
+- [Does skin needling actually help acne scarring?](https://cairnsskin.com.au/questions/does-skin-needling-help-acne-scarring/)
+- [What is Rejuran, and is it right for skin texture?](https://cairnsskin.com.au/questions/what-is-rejuran/)
+- [What should I avoid on my skin after a treatment in Cairns' heat and humidity?](https://cairnsskin.com.au/questions/what-to-avoid-on-skin-after-treatment-in-humidity/)
+- [Is laser hair removal safe on very sun-exposed or tanned skin?](https://cairnsskin.com.au/questions/is-laser-hair-removal-safe-on-tanned-skin/)
+
+## Other
+
+- [About](https://cairnsskin.com.au/about/): who this site is for and its review process
+- [Knowledge Library index](https://cairnsskin.com.au/questions/)
+- [Book a Consultation](https://cairnsskin.com.au/book/)
+- [Medical Disclaimer](https://cairnsskin.com.au/medical-disclaimer/)
+- [Full sitemap](https://cairnsskin.com.au/sitemap-index.xml)

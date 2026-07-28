@@ -8,7 +8,8 @@ import ReferenceList from "../components/ui/ReferenceList.astro";
 import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
-import { breadcrumbSchema } from "../utils/schema";
+import { breadcrumbSchema, articleSchema } from "../utils/schema";
+import { SITE_NAME } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -20,12 +21,22 @@ const { data } = entry;
 
 const relatedConcerns = await resolveRefs(data.relatedConcerns);
 const relatedQuestions = await resolveRefs(data.relatedQuestions);
+const [reviewerEntry] = await resolveRefs(data.reviewedBy ? [data.reviewedBy] : []);
 
 const schemas = [
   breadcrumbSchema([
     { name: "Treatments", url: "/treatments/" },
     { name: data.title, url: `/treatments/${entry.slug}/` },
   ]),
+  articleSchema({
+    headline: data.title,
+    description: data.shortSummary,
+    authorName: SITE_NAME,
+    reviewerName: reviewerEntry?.data.name,
+    publishDate: data.publishDate,
+    updatedDate: data.updatedDate,
+    url: `/treatments/${entry.slug}/`,
+  }),
 ];
 ---
 
