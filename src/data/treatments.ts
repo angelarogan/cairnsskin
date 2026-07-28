@@ -35,7 +35,9 @@ export interface TreatmentMeta {
     | "injectable-adjacent" // polynucleotide-based, non-prescription
     | "light-therapy"
     | "peel"
-    | "skincare";
+    | "skincare"
+    | "facial"
+    | "vascular";
   verified: boolean;
   verifiedDate: string | null;
   availabilityAtCairns: TreatmentAvailability;
@@ -140,6 +142,67 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+  },
+  microdermabrasion: {
+    key: "microdermabrasion",
+    displayName: "Microdermabrasion", // PLACEHOLDER: confirm exact current name/device used at Cairns
+    slug: "microdermabrasion",
+    shortDescription:
+      "Mechanical exfoliation treatment used to smooth texture and refresh dull skin. Description pending clinic verification.",
+    category: "peel",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+  },
+  aquafacial: {
+    key: "aquafacial",
+    displayName: "AquaFacial", // PLACEHOLDER: confirm exact current branding used at Cairns
+    slug: "aquafacial",
+    shortDescription:
+      "Multi-step hydrodermabrasion facial combining cleansing, exfoliation and hydration. Description pending clinic verification.",
+    category: "facial",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+  },
+  "capillary-reduction": {
+    key: "capillary-reduction",
+    displayName: "Capillary Reduction", // PLACEHOLDER: confirm exact current naming
+    slug: "capillary-reduction",
+    shortDescription:
+      "Laser treatment targeting visible facial blood vessels and redness. Description pending clinic verification.",
+    category: "vascular",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+  },
+  "cosmetic-grade-facials": {
+    key: "cosmetic-grade-facials",
+    displayName: "Cosmetic Grade Facials", // PLACEHOLDER: confirm exact current naming/range
+    slug: "cosmetic-grade-facials",
+    shortDescription:
+      "Professional facial treatments aimed at renewing and resurfacing skin. Description pending clinic verification.",
+    category: "facial",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+  },
+  "pigmentation-removal": {
+    key: "pigmentation-removal",
+    displayName: "Pigmentation Removal", // PLACEHOLDER: confirm exact current naming (may overlap with BBL)
+    slug: "pigmentation-removal",
+    shortDescription:
+      "Treatment targeting sun spots, patches and uneven skin tone. Description pending clinic verification.",
+    category: "skin-rejuvenation",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+    notes: "Confirm how this is distinguished from BBL in current Laser Clinics Cairns service naming, to avoid overlapping/duplicate treatment claims.",
   },
 };
 
