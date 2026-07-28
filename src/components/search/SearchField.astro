@@ -3,16 +3,17 @@ interface Props {
   placeholder?: string;
 }
 
-const { placeholder = "Search skin questions, e.g. \u201cwhat is Rejuran?\u201d" } = Astro.props;
+const { placeholder = "Search skin questions, e.g. “what is Rejuran?”" } = Astro.props;
 ---
 
-<div id="search-root" class="w-full max-w-md">
-  <form action="/questions/" method="get" class="relative glass rounded-full pl-6 pr-1.5 py-1.5 flex items-center gap-2">
+<div id="search-root" class="relative w-full max-w-md">
+  <form id="site-search-form" action="/questions/" method="get" class="relative glass rounded-full pl-6 pr-1.5 py-1.5 flex items-center gap-2">
     <label for="site-search" class="sr-only">Search the knowledge library</label>
     <input
       id="site-search"
       name="q"
       type="search"
+      autocomplete="off"
       placeholder={placeholder}
       class="w-full h-11 bg-transparent border-none px-0 text-[14.5px] text-ink placeholder:text-stone-400"
     />
@@ -27,17 +28,94 @@ const { placeholder = "Search skin questions, e.g. \u201cwhat is Rejuran?\u201d"
       </svg>
     </button>
   </form>
+
+  <div
+    id="search-results"
+    role="listbox"
+    aria-label="Search results"
+    class="hidden absolute left-0 right-0 top-[calc(100%+8px)] z-30 glass-card p-2 max-h-80 overflow-y-auto text-left"
+  ></div>
 </div>
 
-<script>
-  // Progressive enhancement: mount Pagefind UI if the generated index is
-  // present (only true in production builds; Pagefind runs after
-  // `astro build`). A plain DOM script tag is used instead of a dynamic
-  // import so the bundler never tries to resolve this path at build time.
-  const pagefindScript = document.createElement("script");
-  pagefindScript.src = "/pagefind/pagefind-ui.js";
-  pagefindScript.onerror = () => {
-    // No-op: Pagefind index not yet built (e.g. local dev)
-  };
-  document.body.appendChild(pagefindScript);
+<script type="module" is:inline>
+  // Progressive enhancement: Pagefind's static index only exists in
+  // production builds (generated after `astro build`), so this silently
+  // no-ops in local dev and the plain form submit still works.
+  (async () => {
+    const root = document.getElementById("search-root");
+    const form = document.getElementById("site-search-form");
+    const input = document.getElementById("site-search");
+    const resultsBox = document.getElementById("search-results");
+    if (!root || !form || !input || !resultsBox) return;
+
+    let pagefind;
+    try {
+      pagefind = await import("/pagefind/pagefind.js");
+      await pagefind.init();
+    } catch {
+      return;
+    }
+
+    let latestRequest = 0;
+    let currentResults = [];
+
+    function hideResults() {
+      resultsBox.classList.add("hidden");
+    }
+
+    function renderResults(items) {
+      currentResults = items;
+      if (items.length === 0) {
+        resultsBox.innerHTML = "";
+        hideResults();
+        return;
+      }
+      resultsBox.innerHTML = items
+        .map(
+          (r) => `
+            <a href="${r.url}" role="option" class="block rounded-xl px-4 py-3 no-underline hover:bg-eucalyptus-50 transition-colors">
+              <p class="font-display text-[15px] text-ink mb-1">${r.meta?.title ?? r.url}</p>
+              <p class="text-xs text-stone-500 line-clamp-1">${r.excerpt ?? ""}</p>
+            </a>
+          `,
+        )
+        .join("");
+      resultsBox.classList.remove("hidden");
+    }
+
+    async function runSearch(query) {
+      const q = query.trim();
+      if (!q) {
+        renderResults([]);
+        return;
+      }
+      const requestId = ++latestRequest;
+      const search = await pagefind.search(q);
+      if (requestId !== latestRequest) return;
+      const data = await Promise.all(search.results.slice(0, 6).map((r) => r.data()));
+      if (requestId !== latestRequest) return;
+      renderResults(data);
+    }
+
+    let debounceTimer;
+    input.addEventListener("input", () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => runSearch(input.value), 150);
+    });
+
+    input.addEventListener("focus", () => {
+      if (currentResults.length > 0) resultsBox.classList.remove("hidden");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!root.contains(event.target)) hideResults();
+    });
+
+    form.addEventListener("submit", (event) => {
+      if (currentResults.length > 0) {
+        event.preventDefault();
+        window.location.href = currentResults[0].url;
+      }
+    });
+  })();
 </script>
