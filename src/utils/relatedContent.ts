@@ -17,7 +17,7 @@ export async function resolveRefs<C extends Collection>(
       const entry = (await getEntry(ref.collection, ref.slug)) as CollectionEntry<C>;
       if (entry) resolved.push(entry);
     } catch {
-      // stale reference — skip silently rather than throwing at build time
+      // stale reference: skip silently rather than throwing at build time
     }
   }
   return resolved;

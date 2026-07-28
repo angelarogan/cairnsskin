@@ -1,5 +1,5 @@
 /**
- * TREATMENT DATA — SINGLE SOURCE OF TRUTH
+ * TREATMENT DATA: SINGLE SOURCE OF TRUTH
  * ----------------------------------------------------------------
  * Every treatment name, description fragment and status flag used
  * anywhere on the site should be read from this file rather than
@@ -24,7 +24,7 @@ export type TreatmentAvailability = "unconfirmed" | "confirmed" | "not-offered";
 
 export interface TreatmentMeta {
   key: string;
-  /** Exact commercial name — placeholder pending verification */
+  /** Exact commercial name: placeholder pending verification */
   displayName: string;
   slug: string;
   shortDescription: string;
@@ -46,7 +46,7 @@ export interface TreatmentMeta {
 export const treatments: Record<string, TreatmentMeta> = {
   bbl: {
     key: "bbl",
-    displayName: "BBL", // PLACEHOLDER — confirm exact Laser Clinics naming (e.g. "BBL Photorejuvenation")
+    displayName: "BBL", // PLACEHOLDER: confirm exact Laser Clinics naming (e.g. "BBL Photorejuvenation")
     slug: "bbl",
     shortDescription:
       "Broadband light treatment used for concerns such as pigmentation and redness. Description pending clinic verification.",
@@ -55,11 +55,11 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
-    notes: "Do not label as IPL in published copy — confirm BBL is the correct current term for this location.",
+    notes: "Do not label as IPL in published copy: confirm BBL is the correct current term for this location.",
   },
   rejuran: {
     key: "rejuran",
-    displayName: "Rejuran", // PLACEHOLDER — confirm exact product/treatment line offered
+    displayName: "Rejuran", // PLACEHOLDER: confirm exact product/treatment line offered
     slug: "rejuran",
     shortDescription:
       "Polynucleotide skin treatment used for skin quality and texture. Description pending clinic verification.",
@@ -71,7 +71,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "skin-needling": {
     key: "skin-needling",
-    displayName: "Skin Needling", // PLACEHOLDER — confirm exact current name (may be a branded device name)
+    displayName: "Skin Needling", // PLACEHOLDER: confirm exact current name (may be a branded device name)
     slug: "skin-needling",
     shortDescription:
       "Collagen induction treatment used for texture and acne scarring. Description pending clinic verification.",
@@ -83,7 +83,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "laser-hair-removal": {
     key: "laser-hair-removal",
-    displayName: "Laser Hair Removal", // PLACEHOLDER — confirm exact platform/branding used at Cairns
+    displayName: "Laser Hair Removal", // PLACEHOLDER: confirm exact platform/branding used at Cairns
     slug: "laser-hair-removal",
     shortDescription:
       "Laser-based hair reduction treatment. Description pending clinic verification.",
@@ -95,7 +95,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "led-light-therapy": {
     key: "led-light-therapy",
-    displayName: "LED Light Therapy", // PLACEHOLDER — confirm naming
+    displayName: "LED Light Therapy", // PLACEHOLDER: confirm naming
     slug: "led-light-therapy",
     shortDescription:
       "Light-based adjunct treatment used for redness, acne-prone and post-procedure skin. Description pending clinic verification.",
@@ -107,7 +107,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "fractional-rf": {
     key: "fractional-rf",
-    displayName: "Fractional RF", // PLACEHOLDER — confirm whether currently offered at Cairns
+    displayName: "Fractional RF", // PLACEHOLDER: confirm whether currently offered at Cairns
     slug: "fractional-rf",
     shortDescription:
       "Radiofrequency-based skin texture treatment. Description pending clinic verification.",
@@ -119,7 +119,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "medical-grade-peels": {
     key: "medical-grade-peels",
-    displayName: "Medical Grade Peels", // PLACEHOLDER — confirm exact peel range/brand
+    displayName: "Medical Grade Peels", // PLACEHOLDER: confirm exact peel range/brand
     slug: "medical-grade-peels",
     shortDescription:
       "Chemical exfoliation treatments used for tone and texture. Description pending clinic verification.",
@@ -131,7 +131,7 @@ export const treatments: Record<string, TreatmentMeta> = {
   },
   "medical-grade-skincare": {
     key: "medical-grade-skincare",
-    displayName: "Medical Grade Skincare", // PLACEHOLDER — confirm stocked brands at Cairns
+    displayName: "Medical Grade Skincare", // PLACEHOLDER: confirm stocked brands at Cairns
     slug: "medical-grade-skincare",
     shortDescription:
       "Clinically formulated take-home skincare recommended alongside in-clinic treatments.",

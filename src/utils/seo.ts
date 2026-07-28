@@ -1,7 +1,7 @@
 export const SITE_NAME = "Cairns Skin";
 export const SITE_URL = "https://cairnsskin.com.au";
 export const DEFAULT_DESCRIPTION =
-  "Clear, evidence-informed answers about skin concerns, skincare and non-prescription skin treatments — connected to Laser Clinics Cairns.";
+  "Clear, evidence-informed answers about skin concerns, skincare and non-prescription skin treatments, connected to Laser Clinics Cairns.";
 
 export interface SeoProps {
   title: string;

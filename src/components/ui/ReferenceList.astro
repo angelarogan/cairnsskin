@@ -26,7 +26,7 @@ const { sources } = Astro.props;
           ) : (
             source.label
           )}
-          {source.publisher && ` — ${source.publisher}`}
+          {source.publisher && ` · ${source.publisher}`}
           {source.year && ` (${source.year})`}
         </li>
       ))}

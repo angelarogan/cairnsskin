@@ -8,10 +8,10 @@ interface Props {
 const { status } = Astro.props;
 
 const labels: Record<ReviewStatus, string> = {
-  draft: "Draft — not published",
+  draft: "Draft, not published",
   "clinical-review": "Clinical review in progress",
   "compliance-review": "Compliance review in progress",
-  approved: "Approved — pending publish",
+  approved: "Approved, pending publish",
   published: "Clinically reviewed",
 };
 
