@@ -9,7 +9,6 @@ import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
 import { breadcrumbSchema } from "../utils/schema";
-import { getTreatment } from "../data/treatments";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -18,7 +17,6 @@ interface Props {
 
 const { entry } = Astro.props;
 const { data } = entry;
-const treatmentMeta = getTreatment(data.treatmentDataKey);
 
 const relatedConcerns = await resolveRefs(data.relatedConcerns);
 const relatedQuestions = await resolveRefs(data.relatedQuestions);
@@ -45,10 +43,6 @@ const schemas = [
     </div>
 
     <h1 class="mb-4">{data.title}</h1>
-
-    {treatmentMeta && !treatmentMeta.verified && (
-      <p class="pill-status mb-6">Terminology pending Laser Clinics Cairns verification</p>
-    )}
 
     <p class="text-lg text-stone-600 leading-relaxed mb-8">{data.shortSummary}</p>
 
