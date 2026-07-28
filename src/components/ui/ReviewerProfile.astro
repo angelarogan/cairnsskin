@@ -1,0 +1,22 @@
+---
+import AuthorProfile from "./AuthorProfile.astro";
+
+interface Props {
+  name: string;
+  role: string;
+  credentials?: string;
+  reviewDate?: Date;
+}
+
+const { name, role, credentials, reviewDate } = Astro.props;
+---
+
+<div>
+  <p class="eyebrow mb-2">Clinically reviewed by</p>
+  <AuthorProfile name={name} role={role} credentials={credentials} compact />
+  {reviewDate && (
+    <p class="text-xs text-stone-500 mt-2">
+      Last reviewed {reviewDate.toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })}
+    </p>
+  )}
+</div>

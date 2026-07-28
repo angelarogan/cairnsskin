@@ -1,0 +1,162 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
+import ReviewBadge from "../components/ui/ReviewBadge.astro";
+import EvidenceNotice from "../components/ui/EvidenceNotice.astro";
+import KeyPoints from "../components/ui/KeyPoints.astro";
+import RelatedContent from "../components/ui/RelatedContent.astro";
+import FAQ from "../components/ui/FAQ.astro";
+import ReferenceList from "../components/ui/ReferenceList.astro";
+import AuthorProfile from "../components/ui/AuthorProfile.astro";
+import ReviewerProfile from "../components/ui/ReviewerProfile.astro";
+import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
+import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
+import { resolveRefs } from "../utils/relatedContent";
+import { articleSchema, breadcrumbSchema } from "../utils/schema";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"questions">;
+  keyPoints?: string[];
+  relatedFaq?: { question: string; answer: string }[];
+}
+
+const { entry, keyPoints = [], relatedFaq = [] } = Astro.props;
+const { data } = entry;
+
+const [authorEntry] = await resolveRefs(data.author ? [data.author] : []);
+const [reviewerEntry] = await resolveRefs(data.reviewedBy ? [data.reviewedBy] : []);
+
+const relatedConcerns = await resolveRefs(data.relatedConcern);
+const relatedTreatments = await resolveRefs(data.relatedTreatments);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: "Knowledge Library", url: "/questions/" },
+    { name: data.title, url: `/questions/${entry.slug}/` },
+  ]),
+  articleSchema({
+    headline: data.primaryQuestion,
+    description: data.shortAnswer,
+    authorName: authorEntry?.data.name ?? "Cairns Skin",
+    reviewerName: reviewerEntry?.data.name,
+    publishDate: data.publishDate,
+    updatedDate: data.updatedDate,
+    url: `/questions/${entry.slug}/`,
+  }),
+  ...(relatedFaq.length > 0
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: relatedFaq.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        },
+      ]
+    : []),
+];
+---
+
+<BaseLayout
+  title={data.seoTitle ?? data.title}
+  description={data.seoDescription ?? data.shortAnswer}
+  canonicalUrl={data.canonicalUrl}
+  structuredData={schemas}
+>
+  <article class="mx-auto max-w-prose px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Knowledge Library", href: "/questions/" }, { label: data.title }]} />
+
+    <div class="mb-6">
+      <ReviewBadge status={data.reviewStatus} />
+    </div>
+
+    <h1 class="mb-6">{data.primaryQuestion}</h1>
+
+    <p class="text-lg text-stone-700 leading-relaxed font-medium mb-2">
+      {data.shortAnswer}
+    </p>
+
+    <EvidenceNotice level={data.evidenceLevel} />
+
+    {keyPoints.length > 0 && <KeyPoints points={keyPoints} />}
+
+    <div class="prose-content mt-8">
+      <slot />
+    </div>
+
+    <FAQ items={relatedFaq} />
+
+    <RelatedContent
+      title="Related skin concerns"
+      items={relatedConcerns.map((c) => ({
+        href: `/skin-concerns/${c.slug}/`,
+        title: c.data.title,
+        summary: c.data.shortSummary,
+      }))}
+    />
+
+    <RelatedContent
+      title="Related treatments"
+      items={relatedTreatments.map((t) => ({
+        href: `/treatments/${t.slug}/`,
+        title: t.data.title,
+        summary: t.data.shortSummary,
+      }))}
+    />
+
+    <ReferenceList sources={data.sources} />
+
+    <div class="grid sm:grid-cols-2 gap-6 my-10 pt-8 border-t border-stone-200">
+      {authorEntry && (
+        <AuthorProfile
+          name={authorEntry.data.name}
+          role={authorEntry.data.role}
+          credentials={authorEntry.data.credentials}
+        />
+      )}
+      {reviewerEntry && (
+        <ReviewerProfile
+          name={reviewerEntry.data.name}
+          role={reviewerEntry.data.role}
+          credentials={reviewerEntry.data.credentials}
+          reviewDate={data.reviewDate}
+        />
+      )}
+    </div>
+
+    <ConsultationCTA />
+    <MedicalDisclaimer />
+  </article>
+</BaseLayout>
+
+<style>
+  .prose-content :global(h2) {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-content :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-content :global(p) {
+    margin-bottom: 1.25rem;
+  }
+  .prose-content :global(ul),
+  .prose-content :global(ol) {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+  }
+  .prose-content :global(li) {
+    margin-bottom: 0.5rem;
+    color: theme("colors.stone.700");
+  }
+  .prose-content :global(ul) {
+    list-style: disc;
+  }
+  .prose-content :global(ol) {
+    list-style: decimal;
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+interface RelatedItem {
+  href: string;
+  title: string;
+  summary?: string;
+}
+
+interface Props {
+  title: string;
+  items: RelatedItem[];
+}
+
+const { title, items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="my-10">
+    <p class="eyebrow mb-4">{title}</p>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {items.map((item) => (
+        <a href={item.href} class="card-flat block p-5 no-underline hover:border-eucalyptus-300 transition-colors duration-200">
+          <p class="text-sm font-medium text-ink">{item.title}</p>
+          {item.summary && <p class="text-xs text-stone-500 mt-1 line-clamp-2">{item.summary}</p>}
+        </a>
+      ))}
+    </div>
+  </section>
+)}

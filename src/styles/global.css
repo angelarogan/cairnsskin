@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    @apply border-stone-200;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-paper-warm text-ink font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    @apply text-ink font-medium tracking-tight;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-4xl md:text-6xl leading-[1.05];
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-[1.1];
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply text-stone-700 leading-relaxed;
+  }
+
+  a {
+    @apply text-eucalyptus-600 underline-offset-4 decoration-eucalyptus-300 hover:decoration-eucalyptus-600 transition-colors duration-200;
+  }
+
+  /* Visible, accessible focus ring everywhere */
+  :focus-visible {
+    outline: 2px solid theme("colors.eucalyptus.400");
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: theme("colors.eucalyptus.200");
+    color: theme("colors.ink.DEFAULT");
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Restrained glassmorphism: fine border, soft blur, no heavy transparency */
+  .glass {
+    @apply bg-paper/70 backdrop-blur-md border border-stone-200/70 shadow-glass;
+  }
+
+  .glass-nav {
+    @apply bg-paper-warm/80 backdrop-blur-md border-b border-stone-200/60;
+  }
+
+  .glass-card {
+    @apply bg-paper/80 backdrop-blur-sm border border-stone-200/70 rounded-xl2 shadow-card transition-shadow duration-300 ease-editorial hover:shadow-glass;
+  }
+
+  .card-flat {
+    @apply bg-paper border border-stone-200 rounded-xl2;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ink text-paper-warm px-6 py-3 text-sm font-medium
+      hover:bg-eucalyptus-700 transition-colors duration-200 ease-editorial;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-transparent text-ink px-6 py-3 text-sm font-medium
+      hover:border-eucalyptus-400 hover:text-eucalyptus-700 transition-colors duration-200 ease-editorial;
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-[0.14em] text-eucalyptus-600;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]
+      focus:bg-ink focus:text-paper-warm focus:px-4 focus:py-2 focus:rounded-full;
+  }
+}

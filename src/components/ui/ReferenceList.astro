@@ -1,0 +1,35 @@
+---
+interface Source {
+  label: string;
+  url?: string;
+  publisher?: string;
+  year?: number;
+}
+
+interface Props {
+  sources: Source[];
+}
+
+const { sources } = Astro.props;
+---
+
+{sources.length > 0 && (
+  <section class="my-10" aria-label="Sources and references">
+    <p class="eyebrow mb-4">Sources and references</p>
+    <ol class="space-y-2 text-sm text-stone-600 list-decimal list-inside">
+      {sources.map((source) => (
+        <li>
+          {source.url ? (
+            <a href={source.url} class="text-stone-600 hover:text-eucalyptus-700">
+              {source.label}
+            </a>
+          ) : (
+            source.label
+          )}
+          {source.publisher && ` — ${source.publisher}`}
+          {source.year && ` (${source.year})`}
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

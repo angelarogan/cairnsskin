@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import TreatmentLayout from "../../layouts/TreatmentLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection(
+    "treatments",
+    (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+  );
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<TreatmentLayout entry={entry}>
+  <Content />
+</TreatmentLayout>

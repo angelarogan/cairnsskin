@@ -1,0 +1,79 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
+import RelatedContent from "../components/ui/RelatedContent.astro";
+import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
+import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
+import { resolveRefs } from "../utils/relatedContent";
+import { breadcrumbSchema } from "../utils/schema";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"concerns">;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+const relatedTreatments = await resolveRefs(data.relatedTreatments);
+const relatedQuestions = await resolveRefs(data.relatedQuestions);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: "Skin Concerns", url: "/skin-concerns/" },
+    { name: data.title, url: `/skin-concerns/${entry.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={data.seoTitle ?? data.title}
+  description={data.seoDescription ?? data.shortSummary}
+  canonicalUrl={data.canonicalUrl}
+  structuredData={schemas}
+>
+  <article class="mx-auto max-w-prose px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Skin Concerns", href: "/skin-concerns/" }, { label: data.title }]} />
+    <h1 class="mb-6">{data.title}</h1>
+    <p class="text-lg text-stone-600 leading-relaxed mb-8">{data.shortSummary}</p>
+
+    <div class="prose-content">
+      <slot />
+    </div>
+
+    {data.tropicalContext && (
+      <div class="rounded-xl border border-eucalyptus-200 bg-eucalyptus-50/60 p-5 my-8">
+        <p class="eyebrow mb-2">Tropical North Queensland context</p>
+        <p class="text-sm text-stone-700">{data.tropicalContext}</p>
+      </div>
+    )}
+
+    <RelatedContent
+      title="Related questions"
+      items={relatedQuestions.map((q) => ({
+        href: `/questions/${q.slug}/`,
+        title: q.data.primaryQuestion,
+        summary: q.data.shortAnswer,
+      }))}
+    />
+
+    <RelatedContent
+      title="Related treatments"
+      items={relatedTreatments.map((t) => ({
+        href: `/treatments/${t.slug}/`,
+        title: t.data.title,
+        summary: t.data.shortSummary,
+      }))}
+    />
+
+    <ConsultationCTA />
+    <MedicalDisclaimer />
+  </article>
+</BaseLayout>
+
+<style>
+  .prose-content :global(h2) { margin-top: 2.5rem; margin-bottom: 1rem; }
+  .prose-content :global(p) { margin-bottom: 1.25rem; }
+  .prose-content :global(ul) { margin-bottom: 1.25rem; padding-left: 1.25rem; list-style: disc; }
+  .prose-content :global(li) { margin-bottom: 0.5rem; color: theme("colors.stone.700"); }
+</style>

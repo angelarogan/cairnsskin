@@ -1,0 +1,20 @@
+---
+interface Props {
+  points: string[];
+  title?: string;
+}
+
+const { points, title = "Key points" } = Astro.props;
+---
+
+<div class="card-flat p-6 md:p-8 my-8">
+  <p class="eyebrow mb-4">{title}</p>
+  <ul class="space-y-3">
+    {points.map((point) => (
+      <li class="flex gap-3 text-stone-700">
+        <span class="mt-2 h-1.5 w-1.5 rounded-full bg-eucalyptus-400 shrink-0" aria-hidden="true"></span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+</div>

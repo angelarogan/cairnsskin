@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import TreatmentCard from "../../components/ui/TreatmentCard.astro";
+import EmptyState from "../../components/ui/EmptyState.astro";
+import { getTreatment } from "../../data/treatments";
+
+const treatmentEntries = await getCollection(
+  "treatments",
+  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+);
+---
+
+<BaseLayout
+  title="Treatments"
+  description="Non-prescription skin treatments explained, aligned with Laser Clinics Cairns terminology."
+>
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Treatments" }]} />
+    <h1 class="mb-4">Treatments</h1>
+    <p class="text-lg text-stone-600 max-w-prose mb-12">
+      Non-prescription skin treatments explained in plain English, connected to
+      Laser Clinics Cairns' current service offering.
+    </p>
+
+    {treatmentEntries.length > 0 ? (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {treatmentEntries.map((t) => {
+          const meta = getTreatment(t.data.treatmentDataKey);
+          return (
+            <TreatmentCard
+              href={`/treatments/${t.slug}/`}
+              title={t.data.title}
+              summary={t.data.shortSummary}
+              verified={meta?.verified ?? false}
+            />
+          );
+        })}
+      </div>
+    ) : (
+      <EmptyState heading="Treatment pages coming soon" />
+    )}
+  </div>
+</BaseLayout>

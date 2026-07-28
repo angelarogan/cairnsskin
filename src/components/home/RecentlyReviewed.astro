@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import SectionHeading from "../ui/SectionHeading.astro";
+import QuestionCard from "../ui/QuestionCard.astro";
+import EmptyState from "../ui/EmptyState.astro";
+
+const questions = (
+  await getCollection(
+    "questions",
+    (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+  )
+)
+  .filter((q) => q.data.reviewDate)
+  .sort((a, b) => (b.data.reviewDate!.getTime() - a.data.reviewDate!.getTime()))
+  .slice(0, 3);
+---
+
+<section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+  <SectionHeading
+    eyebrow="Kept current"
+    title="Recently reviewed articles"
+    description="Every article carries a visible review date and reviewer."
+  />
+
+  <div class="mt-10">
+    {questions.length > 0 ? (
+      <div class="grid sm:grid-cols-3 gap-5">
+        {questions.map((q) => (
+          <QuestionCard
+            href={`/questions/${q.slug}/`}
+            question={q.data.primaryQuestion}
+            shortAnswer={q.data.shortAnswer}
+            category={q.data.category}
+          />
+        ))}
+      </div>
+    ) : (
+      <EmptyState
+        heading="No reviewed articles yet"
+        body="This section will populate once the first articles complete review."
+      />
+    )}
+  </div>
+</section>

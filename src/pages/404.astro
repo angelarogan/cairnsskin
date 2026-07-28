@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Page not found" description="This page could not be found." noindex={true}>
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-24 md:py-32 text-center">
+    <p class="eyebrow mb-4">404</p>
+    <h1 class="mb-6">We couldn't find that page.</h1>
+    <p class="text-lg text-stone-600 max-w-md mx-auto mb-10">
+      The page may have moved, or the link may be out of date. Try searching
+      the Knowledge Library, or head back home.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="/" class="btn-primary no-underline">Back to home</a>
+      <a href="/questions/" class="btn-secondary no-underline">Browse the Knowledge Library</a>
+    </div>
+  </div>
+</BaseLayout>

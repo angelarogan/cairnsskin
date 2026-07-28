@@ -1,0 +1,23 @@
+---
+import SearchField from "../search/SearchField.astro";
+---
+
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-eucalyptus-50/40 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-editorial px-5 md:px-8 pt-20 pb-16 md:pt-28 md:pb-24 text-center">
+    <p class="eyebrow mb-5">Skin knowledge, Cairns &amp; Tropical North Queensland</p>
+    <h1 class="mb-6 mx-auto max-w-3xl">Clear answers for healthier-looking skin.</h1>
+    <p class="text-lg text-stone-600 max-w-xl mx-auto mb-10">
+      Evidence-informed answers to the skin questions you'd normally ask Google —
+      pigmentation, acne, redness, texture and non-prescription treatments —
+      reviewed before publication and connected to Laser Clinics Cairns.
+    </p>
+
+    <SearchField />
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+      <a href="/book/" class="btn-primary no-underline">Book a Consultation</a>
+      <a href="/questions/" class="btn-secondary no-underline">Explore the Knowledge Library</a>
+    </div>
+  </div>
+</section>

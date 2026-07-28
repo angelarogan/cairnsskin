@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import SectionHeading from "../ui/SectionHeading.astro";
+import ConcernCard from "../ui/ConcernCard.astro";
+import EmptyState from "../ui/EmptyState.astro";
+
+const concerns = await getCollection(
+  "concerns",
+  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+);
+---
+
+<section class="bg-stone-50 border-y border-stone-200">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+    <SectionHeading
+      eyebrow="Browse by concern"
+      title="Explore by skin concern"
+      description="Find clear information organised around what's actually on your skin, not a list of services."
+    />
+
+    <div class="mt-10">
+      {concerns.length > 0 ? (
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {concerns.slice(0, 9).map((c) => (
+            <ConcernCard
+              href={`/skin-concerns/${c.slug}/`}
+              title={c.data.title}
+              summary={c.data.shortSummary}
+            />
+          ))}
+        </div>
+      ) : (
+        <EmptyState
+          heading="Concern pages coming soon"
+          body="Skin concern explainers will appear here once published."
+        />
+      )}
+    </div>
+
+    <div class="mt-8">
+      <a href="/skin-concerns/" class="text-sm text-eucalyptus-600 no-underline">View all skin concerns &rarr;</a>
+    </div>
+  </div>
+</section>

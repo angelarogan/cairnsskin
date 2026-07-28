@@ -1,0 +1,25 @@
+---
+---
+
+<section class="bg-ink text-paper-warm">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <div>
+      <p class="eyebrow mb-4">Local context</p>
+      <h2 class="text-paper-warm mb-4">Skin in a tropical climate behaves differently.</h2>
+      <p class="text-stone-300 leading-relaxed max-w-prose">
+        High UV exposure, heat, humidity and an outdoor lifestyle all shape how
+        skin ages, how pigmentation develops and how conditions like rosacea and
+        acne respond to treatment. Our articles factor in what living in Far
+        North Queensland actually means for skin — alongside information that
+        stays useful if you're reading from anywhere else in Australia.
+      </p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      {["High UV exposure", "Heat & humidity", "Outdoor lifestyles", "Year-round sun protection"].map((item) => (
+        <div class="glass p-5 rounded-xl2 bg-white/5 border-white/10">
+          <p class="text-sm text-paper-warm">{item}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

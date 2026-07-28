@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  credentials?: string;
+  bio?: string;
+  compact?: boolean;
+}
+
+const { name, role, credentials, bio, compact = false } = Astro.props;
+---
+
+<div class={`flex gap-3 items-start ${compact ? "" : "py-4"}`}>
+  <div class="h-10 w-10 rounded-full bg-eucalyptus-100 text-eucalyptus-700 flex items-center justify-center text-sm font-medium shrink-0" aria-hidden="true">
+    {name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+  </div>
+  <div>
+    <p class="text-sm font-medium text-ink">{name}</p>
+    <p class="text-xs text-stone-500">{role}{credentials ? ` · ${credentials}` : ""}</p>
+    {bio && !compact && <p class="text-sm text-stone-600 mt-1 max-w-prose">{bio}</p>}
+  </div>
+</div>

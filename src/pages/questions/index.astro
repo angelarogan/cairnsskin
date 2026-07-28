@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import QuestionCard from "../../components/ui/QuestionCard.astro";
+import EmptyState from "../../components/ui/EmptyState.astro";
+
+const questions = await getCollection(
+  "questions",
+  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+);
+---
+
+<BaseLayout
+  title="Knowledge Library"
+  description="Every skin question answered so far, reviewed before publication."
+>
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Knowledge Library" }]} />
+    <h1 class="mb-4">Knowledge Library</h1>
+    <p class="text-lg text-stone-600 max-w-prose mb-12">
+      Direct answers to the skin questions people actually ask, organised so
+      you can find your specific concern quickly.
+    </p>
+
+    {questions.length > 0 ? (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {questions.map((q) => (
+          <QuestionCard
+            href={`/questions/${q.slug}/`}
+            question={q.data.primaryQuestion}
+            shortAnswer={q.data.shortAnswer}
+            category={q.data.category}
+          />
+        ))}
+      </div>
+    ) : (
+      <EmptyState
+        heading="The library is still being built"
+        body="Articles go live here once they've passed clinical and compliance review."
+      />
+    )}
+  </div>
+</BaseLayout>
