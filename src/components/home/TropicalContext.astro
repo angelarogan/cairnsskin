@@ -1,0 +1,34 @@
+---
+const stats = [
+  { label: "UV Index, Cairns (avg. Nov–Mar)", value: "11–13" },
+  { label: "Average humidity", value: "70–85%" },
+  { label: "Sun protection factor recommended year-round", value: "SPF 50+" },
+  { label: "Outdoor UV exposure season", value: "Year-round" },
+];
+---
+
+<section class="px-5 md:px-8">
+  <div class="mx-auto max-w-editorial rounded-[2rem] bg-ink text-paper-warm p-10 md:p-16">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+      <div>
+        <p class="eyebrow mb-4 !text-eucalyptus-400">Local context</p>
+        <h2 class="text-paper-warm mb-4">Skin in a tropical climate behaves differently.</h2>
+        <p class="text-stone-300 leading-relaxed max-w-prose">
+          High UV exposure, heat, humidity and an outdoor lifestyle all shape how
+          skin ages, how pigmentation develops and how conditions like rosacea and
+          acne respond to treatment. Our articles factor in what living in Far
+          North Queensland actually means for skin, alongside information that
+          stays useful if you're reading from anywhere else in Australia.
+        </p>
+      </div>
+      <div class="flex flex-col">
+        {stats.map((s) => (
+          <div class="flex justify-between gap-4 py-4 border-b border-white/10 font-mono text-[13px]">
+            <span class="text-white/50">{s.label}</span>
+            <span class="text-eucalyptus-400 shrink-0">{s.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

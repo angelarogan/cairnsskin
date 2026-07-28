@@ -1,0 +1,78 @@
+---
+const columns = [
+  {
+    heading: "Skin Concerns",
+    links: [
+      { label: "Pigmentation", href: "/skin-concerns/pigmentation/" },
+      { label: "Melasma", href: "/skin-concerns/melasma/" },
+      { label: "Acne", href: "/skin-concerns/acne/" },
+      { label: "Rosacea", href: "/skin-concerns/rosacea/" },
+      { label: "All concerns", href: "/skin-concerns/" },
+    ],
+  },
+  {
+    heading: "Treatments",
+    links: [
+      { label: "Rejuran", href: "/treatments/rejuran/" },
+      { label: "BBL", href: "/treatments/bbl/" },
+      { label: "Skin Needling", href: "/treatments/skin-needling/" },
+      { label: "Laser Hair Removal", href: "/treatments/laser-hair-removal/" },
+      { label: "All treatments", href: "/treatments/" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about/" },
+      { label: "Knowledge Library", href: "/questions/" },
+      { label: "Contact", href: "/contact/" },
+      { label: "Book a Consultation", href: "/book/" },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-stone-200 bg-paper-warm mt-24">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-14">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="col-span-2 md:col-span-1">
+        <p class="font-display italic font-medium text-lg text-ink mb-3">Cairns Skin</p>
+        <p class="text-sm text-stone-600 leading-relaxed max-w-[30ch]">
+          Information is reviewed before publication and is designed to
+          complement, not replace, a professional skin consultation. Where
+          appropriate, content may reference treatments available at Laser
+          Clinics Cairns.
+        </p>
+      </div>
+
+      {columns.map((col) => (
+        <div>
+          <p class="font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-stone-400 mb-4">
+            {col.heading}
+          </p>
+          <ul class="space-y-2.5">
+            {col.links.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-stone-700 no-underline hover:text-eucalyptus-700">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-stone-200 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-stone-500">
+      <p>
+        &copy; {new Date().getFullYear()} Cairns Skin. Content is educational and does not
+        replace individual medical advice.
+      </p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <a href="/medical-disclaimer/" class="text-stone-500 no-underline hover:text-eucalyptus-700">Medical Disclaimer</a>
+        <a href="/privacy/" class="text-stone-500 no-underline hover:text-eucalyptus-700">Privacy Policy</a>
+        <a href="https://laserclinics.com.au" class="text-stone-500 no-underline hover:text-eucalyptus-700">Laser Clinics Cairns</a>
+      </div>
+    </div>
+  </div>
+</footer>

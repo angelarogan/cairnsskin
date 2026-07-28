@@ -1,0 +1,130 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Breadcrumbs from "../components/ui/Breadcrumbs.astro";
+import ReviewBadge from "../components/ui/ReviewBadge.astro";
+import EvidenceNotice from "../components/ui/EvidenceNotice.astro";
+import RelatedContent from "../components/ui/RelatedContent.astro";
+import ReferenceList from "../components/ui/ReferenceList.astro";
+import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
+import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
+import { resolveRefs } from "../utils/relatedContent";
+import { breadcrumbSchema } from "../utils/schema";
+import { getTreatment } from "../data/treatments";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"treatments">;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const treatmentMeta = getTreatment(data.treatmentDataKey);
+
+const relatedConcerns = await resolveRefs(data.relatedConcerns);
+const relatedQuestions = await resolveRefs(data.relatedQuestions);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: "Treatments", url: "/treatments/" },
+    { name: data.title, url: `/treatments/${entry.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={data.seoTitle ?? data.title}
+  description={data.seoDescription ?? data.shortSummary}
+  canonicalUrl={data.canonicalUrl}
+  structuredData={schemas}
+>
+  <article class="mx-auto max-w-prose px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Treatments", href: "/treatments/" }, { label: data.title }]} />
+
+    <div class="mb-6">
+      <ReviewBadge status={data.reviewStatus} />
+    </div>
+
+    <h1 class="mb-4">{data.title}</h1>
+
+    {treatmentMeta && !treatmentMeta.verified && (
+      <p class="pill-status mb-6">Terminology pending Laser Clinics Cairns verification</p>
+    )}
+
+    <p class="text-lg text-stone-600 leading-relaxed mb-8">{data.shortSummary}</p>
+
+    <EvidenceNotice level={data.evidenceLevel} />
+
+    <div class="prose-content mt-8">
+      <slot />
+    </div>
+
+    {data.benefits.length > 0 && (
+      <div class="my-8">
+        <p class="eyebrow mb-3">Potential benefits</p>
+        <ul class="space-y-2">
+          {data.benefits.map((b) => <li class="text-stone-700 flex gap-2"><span class="text-eucalyptus-500">+</span>{b}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {data.limitations.length > 0 && (
+      <div class="my-8">
+        <p class="eyebrow mb-3">Limitations</p>
+        <ul class="space-y-2">
+          {data.limitations.map((l) => <li class="text-stone-700 flex gap-2"><span class="text-stone-400">&middot;</span>{l}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {data.sideEffects.length > 0 && (
+      <div class="my-8">
+        <p class="eyebrow mb-3">Possible side effects</p>
+        <ul class="space-y-2">
+          {data.sideEffects.map((s) => <li class="text-stone-700 flex gap-2"><span class="text-stone-400">&middot;</span>{s}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {data.downtime && (
+      <div class="my-8">
+        <p class="eyebrow mb-3">What to expect / downtime</p>
+        <p class="text-stone-700">{data.downtime}</p>
+      </div>
+    )}
+
+    {data.suitability && (
+      <div class="my-8">
+        <p class="eyebrow mb-3">Suitability</p>
+        <p class="text-stone-700">{data.suitability}</p>
+      </div>
+    )}
+
+    <RelatedContent
+      title="Related skin concerns"
+      items={relatedConcerns.map((c) => ({
+        href: `/skin-concerns/${c.slug}/`,
+        title: c.data.title,
+        summary: c.data.shortSummary,
+      }))}
+    />
+
+    <RelatedContent
+      title="Related questions"
+      items={relatedQuestions.map((q) => ({
+        href: `/questions/${q.slug}/`,
+        title: q.data.primaryQuestion,
+        summary: q.data.shortAnswer,
+      }))}
+    />
+
+    <ReferenceList sources={data.sources} />
+
+    <ConsultationCTA />
+    <MedicalDisclaimer />
+  </article>
+</BaseLayout>
+
+<style>
+  .prose-content :global(h2) { margin-top: 2.5rem; margin-bottom: 1rem; }
+  .prose-content :global(p) { margin-bottom: 1.25rem; }
+</style>

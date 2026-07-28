@@ -1,0 +1,55 @@
+---
+import { getCollection } from "astro:content";
+import SectionHeading from "../ui/SectionHeading.astro";
+import QuestionCard from "../ui/QuestionCard.astro";
+import EmptyState from "../ui/EmptyState.astro";
+
+const allQuestions = await getCollection(
+  "questions",
+  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+);
+
+const featured = allQuestions
+  .filter((q) => q.data.featured)
+  .slice(0, 5);
+
+const questions = featured.length > 0 ? featured : allQuestions.slice(0, 5);
+const [first, ...rest] = questions;
+---
+
+<section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+  <SectionHeading
+    eyebrow="Start here"
+    title="Popular questions"
+    description="The questions people ask most often about their skin."
+  />
+
+  <div class="mt-10">
+    {questions.length > 0 ? (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] gap-5">
+        <div class="lg:row-span-2">
+          <QuestionCard
+            href={`/questions/${first.slug}/`}
+            question={first.data.primaryQuestion}
+            shortAnswer={first.data.shortAnswer}
+            category={first.data.category}
+            feature
+          />
+        </div>
+        {rest.map((q) => (
+          <QuestionCard
+            href={`/questions/${q.slug}/`}
+            question={q.data.primaryQuestion}
+            shortAnswer={q.data.shortAnswer}
+            category={q.data.category}
+          />
+        ))}
+      </div>
+    ) : (
+      <EmptyState
+        heading="Questions coming soon"
+        body="Published articles will appear here once they've completed clinical and compliance review."
+      />
+    )}
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  href: string;
+  question: string;
+  shortAnswer: string;
+  category?: string;
+  feature?: boolean;
+}
+
+const { href, question, shortAnswer, category, feature = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    "glass-card block p-7 no-underline group",
+    feature && "glass-card--dark flex flex-col justify-between h-full",
+  ]}
+>
+  <div>
+    {category && (
+      <p class:list={["eyebrow mb-2", feature && "!text-eucalyptus-400"]}>{category}</p>
+    )}
+    <h3
+      class:list={[
+        "text-lg mb-2 transition-colors",
+        feature ? "text-paper-warm" : "text-ink group-hover:text-eucalyptus-700",
+      ]}
+    >
+      {question}
+    </h3>
+    <p class:list={["text-sm line-clamp-2", feature ? "text-paper-warm/70" : "text-stone-600"]}>
+      {shortAnswer}
+    </p>
+  </div>
+  <span
+    class:list={[
+      "inline-block mt-4 font-mono text-xs",
+      feature ? "text-eucalyptus-400" : "text-eucalyptus-700",
+    ]}
+  >
+    Read the answer &rarr;
+  </span>
+</a>

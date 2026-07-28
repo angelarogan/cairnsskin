@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
+import ConcernCard from "../../components/ui/ConcernCard.astro";
+import EmptyState from "../../components/ui/EmptyState.astro";
+
+const concerns = await getCollection(
+  "concerns",
+  (entry) => entry.data.draft === false && entry.data.reviewStatus === "published",
+);
+---
+
+<BaseLayout
+  title="Skin Concerns"
+  description="Explore skin concerns from pigmentation to redness, texture to acne scarring."
+>
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs items={[{ label: "Skin Concerns" }]} />
+    <h1 class="mb-4">Skin Concerns</h1>
+    <p class="text-lg text-stone-600 max-w-prose mb-12">
+      Find information organised around what's actually happening on your skin.
+    </p>
+
+    {concerns.length > 0 ? (
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {concerns.map((c) => (
+          <ConcernCard
+            href={`/skin-concerns/${c.slug}/`}
+            title={c.data.title}
+            summary={c.data.shortSummary}
+          />
+        ))}
+      </div>
+    ) : (
+      <EmptyState heading="Concern pages coming soon" />
+    )}
+  </div>
+</BaseLayout>

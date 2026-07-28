@@ -1,0 +1,32 @@
+---
+type EvidenceLevel =
+  | "established"
+  | "emerging"
+  | "manufacturer-claim"
+  | "clinical-experience"
+  | "limited-evidence";
+
+interface Props {
+  level: EvidenceLevel;
+}
+
+const { level } = Astro.props;
+
+const copy: Record<EvidenceLevel, string> = {
+  established:
+    "This is supported by established clinical evidence.",
+  emerging:
+    "Research in this area is emerging, and findings may be refined as more studies are published.",
+  "manufacturer-claim":
+    "This reflects manufacturer information rather than independent published research.",
+  "clinical-experience":
+    "This reflects common clinical experience rather than large-scale published research.",
+  "limited-evidence":
+    "Evidence here is currently limited, and this should be discussed as part of an individual consultation.",
+};
+---
+
+<div class="flex gap-3 items-start rounded-xl border border-eucalyptus-200 bg-eucalyptus-50/60 p-4 my-6">
+  <span class="mt-0.5 text-eucalyptus-600" aria-hidden="true">ⓘ</span>
+  <p class="text-sm text-stone-700">{copy[level]}</p>
+</div>

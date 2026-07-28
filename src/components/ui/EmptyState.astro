@@ -1,0 +1,17 @@
+---
+interface Props {
+  heading?: string;
+  body?: string;
+}
+
+const {
+  heading = "Nothing here yet",
+  body = "This section is being prepared. Check back soon, or explore the Knowledge Library.",
+} = Astro.props;
+---
+
+<div class="text-center py-20">
+  <p class="text-lg font-medium text-ink mb-2">{heading}</p>
+  <p class="text-stone-600 mb-6">{body}</p>
+  <a href="/questions/" class="btn-secondary no-underline">Browse the Knowledge Library</a>
+</div>

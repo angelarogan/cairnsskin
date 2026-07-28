@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import { getTreatment } from "../../data/treatments";
+import SectionHeading from "../ui/SectionHeading.astro";
+import QuestionCard from "../ui/QuestionCard.astro";
+
+const bbl = getTreatment("bbl");
+
+const bblQuestions = (
+  await getCollection(
+    "questions",
+    (entry) =>
+      entry.data.draft === false &&
+      entry.data.reviewStatus === "published" &&
+      entry.data.category === "bbl",
+  )
+).slice(0, 3);
+---
+
+<section class="bg-stone-50 border-y border-stone-200">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+    <div class="grid md:grid-cols-[1.2fr,1fr] gap-10 md:gap-16 items-start">
+      <div class="grid gap-4 order-2 md:order-1">
+        {bblQuestions.length > 0 ? (
+          bblQuestions.map((q) => (
+            <QuestionCard
+              href={`/questions/${q.slug}/`}
+              question={q.data.primaryQuestion}
+              shortAnswer={q.data.shortAnswer}
+            />
+          ))
+        ) : (
+          <p class="text-sm text-stone-500">BBL question articles are in review and will appear here once published.</p>
+        )}
+      </div>
+
+      <div class="order-1 md:order-2">
+        <SectionHeading eyebrow="Treatment education" title={bbl?.displayName ?? "BBL"} />
+        <p class="text-stone-600 mt-4 max-w-prose">
+          {bbl?.shortDescription}
+        </p>
+        {bbl && !bbl.verified && (
+          <p class="pill-status mt-3">Pending clinic verification</p>
+        )}
+        <a href="/treatments/bbl/" class="inline-block mt-6 font-mono text-xs text-eucalyptus-700 no-underline">
+          Read the full BBL hub &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

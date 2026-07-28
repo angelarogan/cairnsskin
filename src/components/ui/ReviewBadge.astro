@@ -1,0 +1,31 @@
+---
+type ReviewStatus = "draft" | "clinical-review" | "compliance-review" | "approved" | "published";
+
+interface Props {
+  status: ReviewStatus;
+}
+
+const { status } = Astro.props;
+
+const labels: Record<ReviewStatus, string> = {
+  draft: "Draft, not published",
+  "clinical-review": "Clinical review in progress",
+  "compliance-review": "Compliance review in progress",
+  approved: "Approved, pending publish",
+  published: "Clinically reviewed",
+};
+
+const isPublished = status === "published";
+---
+
+<span
+  class:list={[
+    "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium",
+    isPublished
+      ? "bg-eucalyptus-100 text-eucalyptus-700"
+      : "bg-stone-200 text-stone-700",
+  ]}
+>
+  <span class="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true"></span>
+  {labels[status]}
+</span>

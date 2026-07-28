@@ -1,0 +1,19 @@
+---
+interface Props {
+  heading?: string;
+  body?: string;
+}
+
+const {
+  heading = "Considering a consultation?",
+  body = "A consultation is the best way to understand what's suitable for your skin. Laser Clinics Cairns can talk through options based on your individual circumstances.",
+} = Astro.props;
+---
+
+<div class="rounded-xl2 border border-stone-200 bg-paper p-6 md:p-8 my-10 flex flex-col md:flex-row md:items-center gap-5 md:justify-between">
+  <div>
+    <p class="text-base font-medium text-ink mb-1">{heading}</p>
+    <p class="text-sm text-stone-600 max-w-md">{body}</p>
+  </div>
+  <a href="/book/" class="btn-primary no-underline shrink-0">Book a Consultation</a>
+</div>

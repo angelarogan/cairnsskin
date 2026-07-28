@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+}
+
+const { href, title, summary } = Astro.props;
+---
+
+<a href={href} class="card-flat block p-6 no-underline group hover:border-eucalyptus-300 transition-colors duration-200">
+  <h3 class="text-lg mb-2 text-ink group-hover:text-eucalyptus-700 transition-colors">
+    {title}
+  </h3>
+  <p class="text-sm text-stone-600">{summary}</p>
+  <span class="inline-block mt-4 font-mono text-xs text-eucalyptus-700 no-underline">Learn more &rarr;</span>
+</a>

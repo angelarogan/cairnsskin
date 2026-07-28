@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import PopularQuestions from "../components/home/PopularQuestions.astro";
+import ExploreConcerns from "../components/home/ExploreConcerns.astro";
+import RejuranFeature from "../components/home/RejuranFeature.astro";
+import BBLFeature from "../components/home/BBLFeature.astro";
+import RecentlyReviewed from "../components/home/RecentlyReviewed.astro";
+import EvidenceStandards from "../components/home/EvidenceStandards.astro";
+import TropicalContext from "../components/home/TropicalContext.astro";
+import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
+---
+
+<BaseLayout
+  title="Cairns Skin: clear answers for healthier-looking skin"
+  description="Evidence-informed answers to skin, skincare and non-prescription treatment questions, connected to Laser Clinics Cairns."
+>
+  <Hero />
+  <PopularQuestions />
+  <ExploreConcerns />
+  <RejuranFeature />
+  <BBLFeature />
+  <RecentlyReviewed />
+  <EvidenceStandards />
+  <TropicalContext />
+  <div class="mx-auto max-w-editorial px-5 md:px-8">
+    <ConsultationCTA />
+  </div>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import { getTreatment } from "../../data/treatments";
+import SectionHeading from "../ui/SectionHeading.astro";
+import QuestionCard from "../ui/QuestionCard.astro";
+
+const rejuran = getTreatment("rejuran");
+
+const rejuranQuestions = (
+  await getCollection(
+    "questions",
+    (entry) =>
+      entry.data.draft === false &&
+      entry.data.reviewStatus === "published" &&
+      entry.data.category === "rejuran",
+  )
+).slice(0, 3);
+---
+
+<section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+  <div class="grid md:grid-cols-[1fr,1.2fr] gap-10 md:gap-16 items-start">
+    <div>
+      <SectionHeading eyebrow="Treatment education" title={rejuran?.displayName ?? "Rejuran"} />
+      <p class="text-stone-600 mt-4 max-w-prose">
+        {rejuran?.shortDescription}
+      </p>
+      {rejuran && !rejuran.verified && (
+        <p class="pill-status mt-3">Pending clinic verification</p>
+      )}
+      <a href="/treatments/rejuran/" class="inline-block mt-6 font-mono text-xs text-eucalyptus-700 no-underline">
+        Read the full Rejuran hub &rarr;
+      </a>
+    </div>
+
+    <div class="grid gap-4">
+      {rejuranQuestions.length > 0 ? (
+        rejuranQuestions.map((q) => (
+          <QuestionCard
+            href={`/questions/${q.slug}/`}
+            question={q.data.primaryQuestion}
+            shortAnswer={q.data.shortAnswer}
+          />
+        ))
+      ) : (
+        <p class="text-sm text-stone-500">Rejuran question articles are in review and will appear here once published.</p>
+      )}
+    </div>
+  </div>
+</section>

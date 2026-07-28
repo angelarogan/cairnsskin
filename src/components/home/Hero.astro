@@ -1,0 +1,105 @@
+---
+import SearchField from "../search/SearchField.astro";
+---
+
+<section class="relative overflow-hidden">
+  <div class="relative mx-auto max-w-editorial px-5 md:px-8 pt-16 pb-16 md:pt-24 md:pb-20">
+    <div class="grid lg:grid-cols-[1.05fr,0.95fr] gap-10 lg:gap-12 items-center">
+      <div>
+        <p class="eyebrow mb-5">Skin knowledge · Cairns &amp; Tropical North Queensland</p>
+        <h1 class="mb-6 max-w-xl">
+          Clear answers<br />for <span class="accent-italic">healthier</span>-looking skin.
+        </h1>
+        <p class="text-lg text-stone-600 max-w-xl mb-9">
+          Evidence-informed answers to common questions about pigmentation,
+          acne, redness, texture and non-prescription skin treatments.
+        </p>
+
+        <SearchField />
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="/book/" class="btn-primary no-underline">Book a Consultation</a>
+          <a href="/questions/" class="btn-secondary no-underline">Explore the Knowledge Library</a>
+        </div>
+      </div>
+
+      <div class="orb-field hidden lg:block" aria-hidden="true">
+        <div class="orb-ring ring-a"></div>
+        <div class="orb-ring ring-b"></div>
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="orb orb-c"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .orb-field {
+    position: relative;
+    height: 460px;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    backdrop-filter: blur(6px) saturate(160%);
+    -webkit-backdrop-filter: blur(6px) saturate(160%);
+  }
+
+  .orb-a {
+    width: 340px;
+    height: 340px;
+    right: 10%;
+    top: 2%;
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.75) 0%, rgba(231, 236, 230, 0.4) 45%, rgba(147, 167, 154, 0.55) 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.65),
+      inset -20px -24px 40px -20px rgba(87, 105, 93, 0.35),
+      0 40px 70px -24px rgba(87, 105, 93, 0.4);
+  }
+
+  .orb-b {
+    width: 210px;
+    height: 210px;
+    right: 52%;
+    top: 34%;
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.7) 0%, rgba(241, 239, 230, 0.35) 50%, rgba(210, 205, 188, 0.45) 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.6),
+      inset -14px -18px 30px -16px rgba(43, 42, 36, 0.15),
+      0 26px 46px -20px rgba(43, 42, 36, 0.22);
+  }
+
+  .orb-c {
+    width: 150px;
+    height: 150px;
+    right: 6%;
+    top: 58%;
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.7) 0%, rgba(147, 167, 154, 0.5) 55%, rgba(87, 105, 93, 0.6) 100%);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.5),
+      inset -10px -12px 22px -10px rgba(87, 105, 93, 0.4),
+      0 20px 36px -16px rgba(87, 105, 93, 0.45);
+  }
+
+  .orb-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(43, 42, 36, 0.16);
+  }
+
+  .ring-a {
+    width: 420px;
+    height: 420px;
+    right: 4%;
+    top: -4%;
+  }
+
+  .ring-b {
+    width: 260px;
+    height: 260px;
+    right: 56%;
+    top: 30%;
+  }
+</style>

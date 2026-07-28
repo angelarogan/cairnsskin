@@ -1,0 +1,42 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const standards = [
+  {
+    title: "Written to answer real questions",
+    body: "Every article opens with a direct answer to a specific question, then expands into detail.",
+  },
+  {
+    title: "Reviewed before publication",
+    body: "Health and treatment content moves through clinical and compliance review before it goes live.",
+  },
+  {
+    title: "Evidence clearly labelled",
+    body: "We distinguish established research, emerging evidence, manufacturer claims and clinical experience.",
+  },
+  {
+    title: "Dated and attributed",
+    body: "Every article shows its author, reviewer and last-reviewed date.",
+  },
+];
+---
+
+<section class="mx-auto max-w-editorial px-5 md:px-8 py-16 md:py-20">
+  <SectionHeading
+    eyebrow="How we work"
+    title="Evidence and review standards"
+    align="center"
+  />
+
+  <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-stone-200">
+    {standards.map((s, i) => (
+      <div class="border-r border-b border-stone-200 p-8">
+        <span class="block font-display italic text-2xl text-eucalyptus-700 mb-4">
+          {String(i + 1).padStart(2, "0")}
+        </span>
+        <p class="text-[14.5px] font-medium text-ink mb-2">{s.title}</p>
+        <p class="text-[13px] text-stone-600 leading-relaxed">{s.body}</p>
+      </div>
+    ))}
+  </div>
+</section>
