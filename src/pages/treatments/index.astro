@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/ui/Breadcrumbs.astro";
 import TreatmentCard from "../../components/ui/TreatmentCard.astro";
 import EmptyState from "../../components/ui/EmptyState.astro";
-import { getTreatment } from "../../data/treatments";
 
 const treatmentEntries = await getCollection(
   "treatments",
@@ -26,17 +25,13 @@ const treatmentEntries = await getCollection(
 
     {treatmentEntries.length > 0 ? (
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {treatmentEntries.map((t) => {
-          const meta = getTreatment(t.data.treatmentDataKey);
-          return (
-            <TreatmentCard
-              href={`/treatments/${t.slug}/`}
-              title={t.data.title}
-              summary={t.data.shortSummary}
-              verified={meta?.verified ?? false}
-            />
-          );
-        })}
+        {treatmentEntries.map((t) => (
+          <TreatmentCard
+            href={`/treatments/${t.slug}/`}
+            title={t.data.title}
+            summary={t.data.shortSummary}
+          />
+        ))}
       </div>
     ) : (
       <EmptyState heading="Treatment pages coming soon" />

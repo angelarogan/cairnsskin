@@ -51,7 +51,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "BBL", // PLACEHOLDER: confirm exact Laser Clinics naming (e.g. "BBL Photorejuvenation")
     slug: "bbl",
     shortDescription:
-      "Broadband light treatment used for concerns such as pigmentation and redness. Description pending clinic verification.",
+      "Broadband light treatment used for concerns such as pigmentation and redness.",
     category: "skin-rejuvenation",
     verified: false,
     verifiedDate: null,
@@ -64,7 +64,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Rejuran", // PLACEHOLDER: confirm exact product/treatment line offered
     slug: "rejuran",
     shortDescription:
-      "Polynucleotide skin treatment used for skin quality and texture. Description pending clinic verification.",
+      "Polynucleotide skin treatment used for skin quality and texture.",
     category: "skin-rejuvenation",
     verified: false,
     verifiedDate: null,
@@ -76,7 +76,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Skin Needling", // PLACEHOLDER: confirm exact current name (may be a branded device name)
     slug: "skin-needling",
     shortDescription:
-      "Collagen induction treatment used for texture and acne scarring. Description pending clinic verification.",
+      "Collagen induction treatment used for texture and acne scarring.",
     category: "skin-needling",
     verified: false,
     verifiedDate: null,
@@ -88,7 +88,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Laser Hair Removal", // PLACEHOLDER: confirm exact platform/branding used at Cairns
     slug: "laser-hair-removal",
     shortDescription:
-      "Laser-based hair reduction treatment. Description pending clinic verification.",
+      "Laser-based hair reduction treatment.",
     category: "laser-hair-removal",
     verified: false,
     verifiedDate: null,
@@ -100,7 +100,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "LED Light Therapy", // PLACEHOLDER: confirm naming
     slug: "led-light-therapy",
     shortDescription:
-      "Light-based adjunct treatment used for redness, acne-prone and post-procedure skin. Description pending clinic verification.",
+      "Light-based adjunct treatment used for redness, acne-prone and post-procedure skin.",
     category: "light-therapy",
     verified: false,
     verifiedDate: null,
@@ -112,7 +112,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Fractional RF", // PLACEHOLDER: confirm whether currently offered at Cairns
     slug: "fractional-rf",
     shortDescription:
-      "Radiofrequency-based skin texture treatment. Description pending clinic verification.",
+      "Radiofrequency-based skin texture treatment.",
     category: "skin-rejuvenation",
     verified: false,
     verifiedDate: null,
@@ -124,7 +124,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Medical Grade Peels", // PLACEHOLDER: confirm exact peel range/brand
     slug: "medical-grade-peels",
     shortDescription:
-      "Chemical exfoliation treatments used for tone and texture. Description pending clinic verification.",
+      "Chemical exfoliation treatments used for tone and texture.",
     category: "peel",
     verified: false,
     verifiedDate: null,
@@ -148,7 +148,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Microdermabrasion", // PLACEHOLDER: confirm exact current name/device used at Cairns
     slug: "microdermabrasion",
     shortDescription:
-      "Mechanical exfoliation treatment used to smooth texture and refresh dull skin. Description pending clinic verification.",
+      "Mechanical exfoliation treatment used to smooth texture and refresh dull skin.",
     category: "peel",
     verified: false,
     verifiedDate: null,
@@ -160,7 +160,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "AquaFacial", // PLACEHOLDER: confirm exact current branding used at Cairns
     slug: "aquafacial",
     shortDescription:
-      "Multi-step hydrodermabrasion facial combining cleansing, exfoliation and hydration. Description pending clinic verification.",
+      "Multi-step hydrodermabrasion facial combining cleansing, exfoliation and hydration.",
     category: "facial",
     verified: false,
     verifiedDate: null,
@@ -172,7 +172,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Capillary Reduction", // PLACEHOLDER: confirm exact current naming
     slug: "capillary-reduction",
     shortDescription:
-      "Laser treatment targeting visible facial blood vessels and redness. Description pending clinic verification.",
+      "Laser treatment targeting visible facial blood vessels and redness.",
     category: "vascular",
     verified: false,
     verifiedDate: null,
@@ -184,7 +184,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Cosmetic Grade Facials", // PLACEHOLDER: confirm exact current naming/range
     slug: "cosmetic-grade-facials",
     shortDescription:
-      "In-clinic facial treatments using professional-strength products to refresh and smooth skin's surface. Description pending clinic verification.",
+      "In-clinic facial treatments using professional-strength products to refresh and smooth skin's surface.",
     category: "facial",
     verified: false,
     verifiedDate: null,
@@ -196,7 +196,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     displayName: "Pigmentation Removal", // PLACEHOLDER: confirm exact current naming (may overlap with BBL)
     slug: "pigmentation-removal",
     shortDescription:
-      "Treatment aimed at fading sun-related dark spots and evening out overall skin tone. Description pending clinic verification.",
+      "Treatment aimed at fading sun-related dark spots and evening out overall skin tone.",
     category: "skin-rejuvenation",
     verified: false,
     verifiedDate: null,
