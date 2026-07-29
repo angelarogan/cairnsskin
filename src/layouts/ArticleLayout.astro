@@ -7,12 +7,11 @@ import KeyPoints from "../components/ui/KeyPoints.astro";
 import RelatedContent from "../components/ui/RelatedContent.astro";
 import FAQ from "../components/ui/FAQ.astro";
 import ReferenceList from "../components/ui/ReferenceList.astro";
-import AuthorProfile from "../components/ui/AuthorProfile.astro";
-import ReviewerProfile from "../components/ui/ReviewerProfile.astro";
 import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
 import { articleSchema, breadcrumbSchema } from "../utils/schema";
+import { SITE_NAME } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -23,9 +22,6 @@ interface Props {
 
 const { entry, keyPoints = [], relatedFaq = [] } = Astro.props;
 const { data } = entry;
-
-const [authorEntry] = await resolveRefs(data.author ? [data.author] : []);
-const [reviewerEntry] = await resolveRefs(data.reviewedBy ? [data.reviewedBy] : []);
 
 const relatedConcerns = await resolveRefs(data.relatedConcern);
 const relatedTreatments = await resolveRefs(data.relatedTreatments);
@@ -38,8 +34,7 @@ const schemas = [
   articleSchema({
     headline: data.primaryQuestion,
     description: data.shortAnswer,
-    authorName: authorEntry?.data.name ?? "Cairns Skin",
-    reviewerName: reviewerEntry?.data.name,
+    authorName: SITE_NAME,
     publishDate: data.publishDate,
     updatedDate: data.updatedDate,
     url: `/questions/${entry.slug}/`,
@@ -108,24 +103,6 @@ const schemas = [
     />
 
     <ReferenceList sources={data.sources} />
-
-    <div class="grid sm:grid-cols-2 gap-6 my-10 pt-8 border-t border-stone-200">
-      {authorEntry && (
-        <AuthorProfile
-          name={authorEntry.data.name}
-          role={authorEntry.data.role}
-          credentials={authorEntry.data.credentials}
-        />
-      )}
-      {reviewerEntry && (
-        <ReviewerProfile
-          name={reviewerEntry.data.name}
-          role={reviewerEntry.data.role}
-          credentials={reviewerEntry.data.credentials}
-          reviewDate={data.reviewDate}
-        />
-      )}
-    </div>
 
     <ConsultationCTA />
     <MedicalDisclaimer />
