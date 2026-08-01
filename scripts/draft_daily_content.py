@@ -274,8 +274,20 @@ specific skin, a person considering shop-bought options because they \
 haven't had professional advice yet is exactly who this framing should \
 speak to, without ever naming a clinic or brand.
 - `sources` stays an empty array unless you have a specific, real, checkable \
-citation (e.g. DermNet NZ, Australasian College of Dermatologists, Cancer \
-Council / SunSmart). Never invent a study, statistic, or citation.
+citation. If your web search surfaced a genuine source you're actually \
+quoting or relying on (a real product page, DermNet NZ, Australasian \
+College of Dermatologists, Cancer Council / SunSmart, etc), add it to \
+`sources` properly: {"label": "...", "url": "...", "publisher": "..."}. \
+Never invent a study, statistic, or citation that doesn't correspond to a \
+real source you found.
+- `body_markdown` must be clean prose only, plain Markdown headings and \
+paragraphs, nothing else. Never include HTML or citation markup such as \
+`<cite>`, footnote brackets, or reference indices, these are search-tool \
+artefacts and must not appear in the output. If you want to reference \
+something a real source said, paraphrase it in plain English or use a \
+short plain-text attribution phrase (e.g. "one pharmacy brand's own \
+packaging states...") and add the source to `sources` instead, don't \
+embed markup in the body to mark where a quote came from.
 - Do not echo any clinic chain's marketing copy verbatim or near-verbatim; \
 write independently in plain English, even when covering a treatment or \
 product category they also offer.
@@ -399,6 +411,8 @@ def check_content_rules(payload: dict[str, Any]) -> list[str]:
         violations.append("contains an em dash")
     if "laser clinics" in combined.lower():
         violations.append("mentions Laser Clinics by name")
+    if re.search(r"<cite\b|<sup\b|\[\d+\]", str(payload.get("body_markdown", ""))):
+        violations.append("body_markdown contains leftover citation/HTML markup")
     if len(str(payload.get("shortAnswer", ""))) > 320:
         violations.append("shortAnswer exceeds 320 characters")
     return violations
