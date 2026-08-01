@@ -1,0 +1,66 @@
+name: Cairns Skin Question Radar
+
+# Runs scripts/skin_question_radar.py on a schedule and on manual trigger,
+# then commits the generated reports back to main. See README-radar.md
+# for the required repository secrets and manual-run instructions.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Queensland does not observe daylight saving, so it stays UTC+10
+    # year-round: 6:30am Queensland time is always 20:30 UTC the previous
+    # day. GitHub's scheduler can run a little late during busy periods.
+    - cron: "30 20 * * *"
+
+# Needed so the default GITHUB_TOKEN used by checkout/push below can write
+# back to the repository (report commits), not just read it.
+permissions:
+  contents: write
+
+# Avoid two runs (a scheduled one and a manual one) writing reports and
+# pushing at the same time; queue rather than cancel, so a manual run
+# never gets silently discarded.
+concurrency:
+  group: skin-question-radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    name: Run content-opportunity radar
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements-radar.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-radar.txt
+
+      - name: Run radar script
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/skin_question_radar.py
+
+      - name: Commit updated reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Update content-opportunity reports ($(date -u +%Y-%m-%d))"
+            git pull --rebase origin main
+            git push origin main
+          fi
