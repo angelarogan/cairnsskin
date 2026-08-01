@@ -29,9 +29,19 @@ data, it cannot grant itself access.
 
 Outputs (relative to the repo root):
 
-    reports/latest.csv
-    reports/daily/YYYY-MM-DD.csv
-    reports/content-opportunities.md
+    reports/latest.csv                  Today's run only, overwritten daily.
+    reports/daily/YYYY-MM-DD.csv         Archived per-day snapshot.
+    reports/content-opportunities.md     Today's opportunities, overwritten daily.
+    reports/search-log.csv               Every day's rows, appended forever.
+    reports/weekly-top-searches.md       Rolling 7-day top 10, recomputed daily
+                                          from search-log.csv, cross-checked
+                                          against current site content and
+                                          against reports/articles-from-radar.csv
+                                          (written by the separate content-
+                                          drafting workflow) so it shows which
+                                          weekly searches already have an
+                                          article and which are still open
+                                          ideas, e.g. for Instagram planning.
 
 Usage:
     python scripts/skin_question_radar.py
@@ -67,6 +77,13 @@ from googleapiclient.errors import HttpError
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REPORTS_DIR = REPO_ROOT / "reports"
 DAILY_REPORTS_DIR = REPORTS_DIR / "daily"
+SEARCH_LOG_PATH = REPORTS_DIR / "search-log.csv"
+WEEKLY_SUMMARY_PATH = REPORTS_DIR / "weekly-top-searches.md"
+# Written by the separate daily content-drafting workflow, not this script.
+# Read here (if present) purely to annotate the weekly summary with which
+# searches already have an article.
+ARTICLES_LOG_PATH = REPORTS_DIR / "articles-from-radar.csv"
+WEEKLY_WINDOW_DAYS = 7
 CONTENT_DIRS = (
     REPO_ROOT / "src" / "content" / "questions",
     REPO_ROOT / "src" / "content" / "concerns",
@@ -483,6 +500,111 @@ def write_csv(opportunities: list[Opportunity], path: Path) -> None:
     logger.info("Wrote %s (%d rows)", path, len(opportunities))
 
 
+def append_search_log(opportunities: list[Opportunity], path: Path, today_str: str) -> None:
+    """Appends today's full opportunity list to a persistent, never-
+    overwritten log, so search-demand history accumulates across days
+    instead of being lost when latest.csv is replaced tomorrow.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    is_new_file = not path.exists()
+    with path.open("a", newline="", encoding="utf-8") as csv_file:
+        fieldnames = ["date", *CSV_FIELDNAMES]
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        if is_new_file:
+            writer.writeheader()
+        for opportunity in opportunities:
+            writer.writerow({"date": today_str, **opportunity.as_row()})
+    logger.info("Appended %d rows to %s", len(opportunities), path)
+
+
+def _load_articles_log(path: Path) -> dict[str, str]:
+    """Reads the query -> article_slug mapping written by the separate
+    daily content-drafting workflow (reports/articles-from-radar.csv), so
+    the weekly summary can show which searches already have an article.
+    Returns an empty mapping if that log doesn't exist yet.
+    """
+    mapping: dict[str, str] = {}
+    if not path.exists():
+        return mapping
+    with path.open(newline="", encoding="utf-8") as csv_file:
+        for row in csv.DictReader(csv_file):
+            query = row.get("query")
+            slug = row.get("article_slug")
+            if query and slug:
+                mapping[query] = slug
+    return mapping
+
+
+def write_weekly_summary(
+    search_log_path: Path,
+    articles_log_path: Path,
+    output_path: Path,
+    coverage: dict[str, str],
+    days: int = WEEKLY_WINDOW_DAYS,
+) -> None:
+    """Aggregates the trailing `days` of search-log.csv by query and writes
+    a fresh top-10 markdown summary, recomputed every run.
+
+    Coverage is re-checked at rollup time (rather than trusting the
+    already_covered flag recorded on the day a query was first logged) so
+    a query that has since been turned into an article shows up correctly.
+    This is the file intended for weekly Instagram planning: queries with
+    no article yet are open content ideas, queries with one are ready to
+    repurpose as a post linking back to that page.
+    """
+    if not search_log_path.exists():
+        logger.info("No search log yet at %s; skipping weekly summary", search_log_path)
+        return
+
+    cutoff = date.today() - timedelta(days=days - 1)
+    aggregated: dict[str, dict[str, Any]] = {}
+    with search_log_path.open(newline="", encoding="utf-8") as csv_file:
+        for row in csv.DictReader(csv_file):
+            try:
+                row_date = date.fromisoformat(row["date"])
+            except (KeyError, ValueError):
+                continue
+            if row_date < cutoff:
+                continue
+            query = row.get("query", "")
+            if not query:
+                continue
+            score = float(row.get("score") or 0.0)
+            existing = aggregated.get(query)
+            if existing is None or score > existing["score"]:
+                aggregated[query] = {
+                    "score": score,
+                    "source": row.get("source", ""),
+                    "impressions": row.get("impressions", ""),
+                }
+
+    articles_by_query = _load_articles_log(articles_log_path)
+    ranked = sorted(aggregated.items(), key=lambda item: item[1]["score"], reverse=True)
+
+    today_str = date.today().isoformat()
+    lines = [
+        f"# Top searches this week: {today_str}",
+        "",
+        f"Rolling {days}-day window ending today, from {len(aggregated)} distinct "
+        "queries seen. Queries with no article yet are open content ideas; "
+        "queries that already have one are ready to repurpose as an "
+        "Instagram post linking back to that page.",
+        "",
+        "| # | Query | Source | Score | Article |",
+        "|---:|---|---|---:|---|",
+    ]
+    for rank, (query, info) in enumerate(ranked[:10], start=1):
+        slug = articles_by_query.get(query) or find_existing_match(query, coverage)
+        article_note = slug if slug else "_none yet_"
+        lines.append(
+            f"| {rank} | {query} | {info['source']} | {info['score']:.1f} | {article_note} |"
+        )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    logger.info("Wrote %s", output_path)
+
+
 def write_markdown_report(
     opportunities: list[Opportunity],
     path: Path,
@@ -560,6 +682,8 @@ def main() -> int:
     write_csv(opportunities, REPORTS_DIR / "latest.csv")
     write_csv(opportunities, DAILY_REPORTS_DIR / f"{today_str}.csv")
     write_markdown_report(opportunities, REPORTS_DIR / "content-opportunities.md")
+    append_search_log(opportunities, SEARCH_LOG_PATH, today_str)
+    write_weekly_summary(SEARCH_LOG_PATH, ARTICLES_LOG_PATH, WEEKLY_SUMMARY_PATH, coverage)
 
     logger.info("Done. %d total opportunities scored.", len(opportunities))
     return 0
