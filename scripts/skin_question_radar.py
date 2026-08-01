@@ -49,6 +49,7 @@ import logging
 import os
 import re
 import sys
+import time
 from dataclasses import dataclass
 from datetime import date, timedelta
 from pathlib import Path
@@ -76,6 +77,11 @@ DATAFORSEO_AUTOCOMPLETE_URL = "https://api.dataforseo.com/v3/serp/google/autocom
 DATAFORSEO_LOCATION_NAME = "Cairns,Queensland,Australia"
 DATAFORSEO_LANGUAGE_CODE = "en"
 DATAFORSEO_TIMEOUT_SECONDS = 30
+# Some DataForSEO account tiers only accept one task per request, so
+# suggestions are fetched sequentially (see fetch_autocomplete_suggestions).
+# This delay is between those sequential requests, to stay well clear of
+# rate limits rather than to satisfy the one-task-per-request rule itself.
+DATAFORSEO_REQUEST_DELAY_SECONDS = 1.0
 
 # cairnsskin.com.au was verified in Search Console via the HTML-file
 # method (googlede9df805273e22ad.html), which Google only supports for
@@ -191,65 +197,79 @@ def fetch_autocomplete_suggestions(
     seed_terms: tuple[str, ...],
 ) -> list[str]:
     """Calls DataForSEO's SERP Google Autocomplete Live Advanced endpoint
-    for each seed term, scoped to Cairns, and returns the flattened,
+    once per seed term, scoped to Cairns, and returns the flattened,
     deduplicated list of suggested query strings.
 
     Docs: https://docs.dataforseo.com/v3/serp/google/autocomplete/live/advanced/
 
-    Network or API-level failures are logged and result in an empty list
-    rather than raising, so a temporary DataForSEO outage doesn't stop the
-    Search Console half of the report from being written.
+    Requests are sent one keyword at a time, sequentially, with a short
+    delay between each, rather than batching every seed term into a
+    single request. Some DataForSEO account tiers reject a multi-task
+    request outright with "You can set only one task at a time", so
+    sequential single-task requests are used unconditionally here since
+    they work on every tier, at the cost of being slower than one batched
+    call.
+
+    A failure on any individual keyword (network issue or a per-task API
+    error) is logged and that keyword is skipped, rather than aborting the
+    whole run, so one bad request doesn't lose suggestions already
+    collected from the rest.
     """
-    tasks = [
-        {
-            "keyword": term,
-            "location_name": DATAFORSEO_LOCATION_NAME,
-            "language_code": DATAFORSEO_LANGUAGE_CODE,
-        }
-        for term in seed_terms
-    ]
-
-    try:
-        response = requests.post(
-            DATAFORSEO_AUTOCOMPLETE_URL,
-            auth=(login, password),
-            json=tasks,
-            timeout=DATAFORSEO_TIMEOUT_SECONDS,
-        )
-        response.raise_for_status()
-    except requests.RequestException as exc:
-        logger.error("DataForSEO autocomplete request failed: %s", exc)
-        return []
-
-    try:
-        payload = response.json()
-    except ValueError as exc:
-        logger.error("DataForSEO response was not valid JSON: %s", exc)
-        return []
-
-    if payload.get("status_code") != 20000:
-        logger.error(
-            "DataForSEO API error %s: %s",
-            payload.get("status_code"),
-            payload.get("status_message"),
-        )
-        return []
-
     suggestions: set[str] = set()
-    for task in payload.get("tasks", []):
-        if task.get("status_code") != 20000:
-            keyword = (task.get("data") or {}).get("keyword", "<unknown>")
-            logger.warning(
-                "DataForSEO task error for keyword '%s': %s",
-                keyword,
-                task.get("status_message"),
+
+    for index, term in enumerate(seed_terms):
+        task = [
+            {
+                "keyword": term,
+                "location_name": DATAFORSEO_LOCATION_NAME,
+                "language_code": DATAFORSEO_LANGUAGE_CODE,
+            }
+        ]
+
+        try:
+            response = requests.post(
+                DATAFORSEO_AUTOCOMPLETE_URL,
+                auth=(login, password),
+                json=task,
+                timeout=DATAFORSEO_TIMEOUT_SECONDS,
+            )
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            logger.error("DataForSEO autocomplete request failed for '%s': %s", term, exc)
+            continue
+
+        try:
+            payload = response.json()
+        except ValueError as exc:
+            logger.error("DataForSEO response for '%s' was not valid JSON: %s", term, exc)
+            continue
+
+        if payload.get("status_code") != 20000:
+            logger.error(
+                "DataForSEO API error for '%s': %s %s",
+                term,
+                payload.get("status_code"),
+                payload.get("status_message"),
             )
             continue
-        for result in task.get("result") or []:
-            for item in result.get("items") or []:
-                suggestion = item.get("suggestion")
-                if suggestion:
-                    suggestions.add(suggestion.strip())
+
+        for task_result in payload.get("tasks", []):
+            if task_result.get("status_code") != 20000:
+                logger.warning(
+                    "DataForSEO task error for keyword '%s': %s",
+                    term,
+                    task_result.get("status_message"),
+                )
+                continue
+            for result in task_result.get("result") or []:
+                for item in result.get("items") or []:
+                    suggestion = item.get("suggestion")
+                    if suggestion:
+                        suggestions.add(suggestion.strip())
+
+        # Skip the delay after the last term; there's nothing left to wait for.
+        if index < len(seed_terms) - 1:
+            time.sleep(DATAFORSEO_REQUEST_DELAY_SECONDS)
 
     logger.info("Collected %d autocomplete suggestions", len(suggestions))
     return sorted(suggestions)
