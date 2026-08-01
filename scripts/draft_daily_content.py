@@ -264,6 +264,15 @@ moisturiser, ageing, etc).
 - Never use an em dash. Use commas, colons, full stops, or rewrite instead.
 - Never name "Laser Clinics" or any specific clinic brand in the body text.
 - Never name or recommend a specific third-party retailer or store.
+- Never frame shop-bought or pharmacy products as the primary or best way to \
+solve a concern, even when the query is literally asking where to buy \
+something. Reframe toward education instead: what actives/ingredients \
+actually matter and why, what concentration and formulation questions to \
+ask, and what limits a shop-bought product has. Where relevant, note that a \
+professional consultation can identify what's actually right for someone's \
+specific skin, a person considering shop-bought options because they \
+haven't had professional advice yet is exactly who this framing should \
+speak to, without ever naming a clinic or brand.
 - `sources` stays an empty array unless you have a specific, real, checkable \
 citation (e.g. DermNet NZ, Australasian College of Dermatologists, Cancer \
 Council / SunSmart). Never invent a study, statistic, or citation.
