@@ -91,10 +91,18 @@ jobs:
           git checkout -b "$branch"
           git add src/content reports/articles-from-radar.csv .claude/content-rotation-state.json
           git commit -m "Draft content from real search demand (${today})"
-          git push origin "$branch"
-          gh pr create \
-            --base main \
-            --head "$branch" \
-            --reviewer angelarogan \
-            --title "Content draft: ${today}" \
-            --body "Drafted automatically from today's real search-demand data (reports/content-opportunities.md). Review the new files under src/content/, then merge to publish, or close to discard. Nothing here is live until this PR is merged."
+          # Force-push: this branch is single-purpose and scoped to today's
+          # date, so a same-day retry (e.g. after a transient failure)
+          # should simply replace the previous attempt rather than fail.
+          git push --force origin "$branch"
+          open_pr_count=$(gh pr list --head "$branch" --state open --json number --jq 'length')
+          if [ "$open_pr_count" = "0" ]; then
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --reviewer angelarogan \
+              --title "Content draft: ${today}" \
+              --body "Drafted automatically from today's real search-demand data (reports/content-opportunities.md). Review the new files under src/content/, then merge to publish, or close to discard. Nothing here is live until this PR is merged."
+          else
+            echo "An open PR already exists for $branch; branch updated in place, nothing further to do."
+          fi
