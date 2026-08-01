@@ -1,3 +1,18 @@
 query,source,impressions,clicks,ctr,position,already_covered,matched_slug,score
+pigmentation around mouth,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation cream,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation cream chemist warehouse,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation laser,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation live,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation meaning,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation on face,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation serum,autocomplete,0,0,0.0,0.0,False,,15.0
+pigmentation laser treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
+pigmentation on face treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
+pigmentation removal,autocomplete,0,0,0.0,0.0,True,pigmentation-removal,1.5
+pigmentation removal cream,autocomplete,0,0,0.0,0.0,True,pigmentation-removal,1.5
+pigmentation removal laser,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+pigmentation skin,autocomplete,0,0,0.0,0.0,True,pigmentation,1.5
+pigmentation treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
 rejuran skin therapy in cairns,search_console,1,0,0,12,False,,1.06
 skin needling cairns,search_console,1,0,0,57,True,does-skin-needling-help-acne-scarring,0.16
