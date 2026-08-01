@@ -1,0 +1,100 @@
+name: Cairns Skin Daily Content Draft
+
+# Runs scripts/draft_daily_content.py on a schedule and on manual trigger.
+# The script drafts up to 3 new Knowledge Library articles from real
+# search-demand data (reports/content-opportunities.md, written earlier
+# the same morning by the separate skin-question-radar workflow), then
+# this workflow verifies the build and opens a pull request for human
+# review. Nothing here ever merges or pushes to main directly: the site
+# owner reviews and merges the PR themselves, from the GitHub mobile app
+# or otherwise. Merging the PR is the approval step and is what publishes
+# the content.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # Queensland does not observe daylight saving, so it stays UTC+10
+    # year-round. 22:00 UTC = 8:00am Queensland, giving the radar workflow
+    # (20:30 UTC) time to land its report commit on main first.
+    - cron: "0 22 * * *"
+
+# contents: write is only used to push the new content branch (never
+# main). pull-requests: write is needed to open the review PR.
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: daily-content-draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    name: Draft articles and open review PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements-content.txt
+
+      - name: Install Python dependencies
+        run: pip install -r requirements-content.txt
+
+      - name: Draft articles
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/draft_daily_content.py
+
+      - name: Check for drafted content
+        id: changes
+        run: |
+          if git status --porcelain -- src/content reports/articles-from-radar.csv .claude/content-rotation-state.json | grep -q .; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing was drafted today; skipping the rest of the workflow."
+          fi
+
+      - name: Set up Node
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node dependencies
+        if: steps.changes.outputs.changed == 'true'
+        run: npm ci
+
+      - name: Verify the build
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run build
+
+      - name: Open pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          today=$(date -u +%Y-%m-%d)
+          branch="content-draft/${today}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add src/content reports/articles-from-radar.csv .claude/content-rotation-state.json
+          git commit -m "Draft content from real search demand (${today})"
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --reviewer angelarogan \
+            --title "Content draft: ${today}" \
+            --body "Drafted automatically from today's real search-demand data (reports/content-opportunities.md). Review the new files under src/content/, then merge to publish, or close to discard. Nothing here is live until this PR is merged."
