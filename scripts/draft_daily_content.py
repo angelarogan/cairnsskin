@@ -460,19 +460,24 @@ def render_frontmatter(payload: dict[str, Any], today_str: str) -> str:
         f"evidenceLevel: {payload.get('evidenceLevel', 'clinical-experience')}",
     ]
 
-    sources = payload.get("sources") or []
-    if sources:
+    source_lines: list[str] = []
+    for source in payload.get("sources") or []:
+        if not isinstance(source, dict) or not source.get("label"):
+            continue
+        source_lines.append(f"  - label: {q(str(source['label']))}")
+        if source.get("url"):
+            source_lines.append(f"    url: {q(str(source['url']))}")
+        if source.get("publisher"):
+            source_lines.append(f"    publisher: {q(str(source['publisher']))}")
+        if source.get("year"):
+            source_lines.append(f"    year: {int(source['year'])}")
+
+    if source_lines:
+        # Only emit the "sources:" header once at least one entry survived
+        # filtering: a header with no list items under it parses in YAML as
+        # null, not [], which fails the schema's z.array() validation.
         lines.append("sources:")
-        for source in sources:
-            if not isinstance(source, dict) or not source.get("label"):
-                continue
-            lines.append(f"  - label: {q(str(source['label']))}")
-            if source.get("url"):
-                lines.append(f"    url: {q(str(source['url']))}")
-            if source.get("publisher"):
-                lines.append(f"    publisher: {q(str(source['publisher']))}")
-            if source.get("year"):
-                lines.append(f"    year: {int(source['year'])}")
+        lines.extend(source_lines)
     else:
         lines.append("sources: []")
 
@@ -585,6 +590,21 @@ def main() -> int:
         if not slug or slug in used_slugs:
             slug = f"{slug or 'article'}-{today_str}"
         used_slugs.add(slug)
+
+        # Drop any relatedConcern/relatedTreatments/relatedQuestions slug the
+        # model invented that doesn't actually exist: Astro's reference()
+        # schema validation fails the whole build on a dangling reference,
+        # so an invalid slug here is worse than just omitting the link.
+        if payload.get("relatedConcern") not in site_map["concerns"]:
+            payload["relatedConcern"] = None
+        payload["relatedTreatments"] = [
+            s for s in (payload.get("relatedTreatments") or []) if s in site_map["treatments"]
+        ]
+        payload["relatedQuestions"] = [
+            s
+            for s in (payload.get("relatedQuestions") or [])
+            if s in site_map["question_titles"] and s != slug
+        ]
 
         path = write_article(payload, slug, today_str)
         logger.info("Wrote %s", path)
