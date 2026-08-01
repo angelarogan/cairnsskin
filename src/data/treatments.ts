@@ -131,17 +131,18 @@ export const treatments: Record<string, TreatmentMeta> = {
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
   },
-  "medical-grade-skincare": {
-    key: "medical-grade-skincare",
-    displayName: "Medical Grade Skincare", // PLACEHOLDER: confirm stocked brands at Cairns
-    slug: "medical-grade-skincare",
+  skinstitut: {
+    key: "skinstitut",
+    displayName: "Skinstitut",
+    slug: "skinstitut",
     shortDescription:
-      "Clinically formulated take-home skincare recommended alongside in-clinic treatments.",
+      "Cosmeceutical take-home skincare range recommended alongside in-clinic treatments.",
     category: "skincare",
-    verified: false,
-    verifiedDate: null,
-    availabilityAtCairns: "unconfirmed",
+    verified: true,
+    verifiedDate: "2026-08-01",
+    availabilityAtCairns: "confirmed",
     clinicVerificationRequired: true,
+    notes: "Confirmed directly by the site owner as the skincare brand used/recommended, 2026-08-01.",
   },
   microdermabrasion: {
     key: "microdermabrasion",
