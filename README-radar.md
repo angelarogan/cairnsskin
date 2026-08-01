@@ -45,18 +45,20 @@ GitHub scheduled workflows can occasionally begin a little later during busy per
 
 ### Search Console property format
 
-The script currently uses:
-
-`sc-domain:cairnsskin.com.au`
-
-This is correct when Search Console shows the property as a Domain property.
-
-If the property was added as a URL-prefix property instead, replace it in
-`scripts/skin_question_radar.py` with:
+The script uses:
 
 `https://cairnsskin.com.au/`
 
-The text must match Search Console exactly.
+This is a URL-prefix property, not a Domain property. This is confirmed,
+not a guess: cairnsskin.com.au was verified in Search Console using the
+HTML-file method, and Google only supports that verification method for
+URL-prefix properties (Domain properties require DNS TXT verification
+instead), so the property must be URL-prefix.
+
+If this ever changes (for example, if the property is re-verified via DNS
+as a Domain property), override it without editing the script by setting
+an optional `GSC_SITE_URL` secret/variable to the new value, which the
+script reads in preference to its built-in default.
 
 ### DataForSEO account balance
 
