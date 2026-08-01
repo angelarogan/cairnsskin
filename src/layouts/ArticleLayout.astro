@@ -10,7 +10,7 @@ import ReferenceList from "../components/ui/ReferenceList.astro";
 import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
-import { articleSchema, breadcrumbSchema } from "../utils/schema";
+import { articleSchema, breadcrumbSchema, faqSchema } from "../utils/schema";
 import { SITE_NAME } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
@@ -26,6 +26,15 @@ const { data } = entry;
 const relatedConcerns = await resolveRefs(data.relatedConcern);
 const relatedTreatments = await resolveRefs(data.relatedTreatments);
 
+// Every question article is itself a single-question FAQ entry (that's
+// what the Knowledge Library is), so it always qualifies for FAQPage
+// schema using its own primaryQuestion/shortAnswer. relatedFaq lets a
+// specific article add further sub-questions on top of that, when set.
+const faqEntries = [
+  { question: data.primaryQuestion, answer: data.shortAnswer },
+  ...relatedFaq,
+];
+
 const schemas = [
   breadcrumbSchema([
     { name: "Knowledge Library", url: "/questions/" },
@@ -39,19 +48,7 @@ const schemas = [
     updatedDate: data.updatedDate,
     url: `/questions/${entry.slug}/`,
   }),
-  ...(relatedFaq.length > 0
-    ? [
-        {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: relatedFaq.map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: { "@type": "Answer", text: f.answer },
-          })),
-        },
-      ]
-    : []),
+  faqSchema(faqEntries),
 ];
 ---
 
