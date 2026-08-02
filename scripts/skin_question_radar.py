@@ -207,6 +207,27 @@ def require_env(name: str) -> str:
 # DataForSEO: Google Autocomplete
 # --------------------------------------------------------------------------
 
+# Bare seed terms like "acne" or "aquafacial" sometimes surface unrelated
+# global-popularity results (a fashion brand, foreign-language phrases)
+# rather than genuine Cairns skin queries, e.g. "acne" autocompleting to
+# the clothing brand Acne Studios. Filtered out before scoring so this
+# noise never reaches the daily report or a drafted article.
+AUTOCOMPLETE_NOISE_PATTERNS: tuple[str, ...] = (
+    "acne studios",
+    "studios",
+)
+
+
+def _is_relevant_suggestion(suggestion: str) -> bool:
+    lowered = suggestion.lower()
+    if any(pattern in lowered for pattern in AUTOCOMPLETE_NOISE_PATTERNS):
+        return False
+    # Non-ASCII characters (umlauts etc) are a reliable signal of
+    # foreign-language autocomplete leakage for this site's audience.
+    if not suggestion.isascii():
+        return False
+    return True
+
 
 def fetch_autocomplete_suggestions(
     login: str,
@@ -281,7 +302,7 @@ def fetch_autocomplete_suggestions(
             for result in task_result.get("result") or []:
                 for item in result.get("items") or []:
                     suggestion = item.get("suggestion")
-                    if suggestion:
+                    if suggestion and _is_relevant_suggestion(suggestion):
                         suggestions.add(suggestion.strip())
 
         # Skip the delay after the last term; there's nothing left to wait for.
