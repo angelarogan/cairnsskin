@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-01
+# Content opportunities: 2026-08-02
 
-233 queries analysed, 139 not yet covered by existing content.
+236 queries analysed, 132 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -12,42 +12,42 @@
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
 | acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne scars | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios bag | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios hoodie | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios jeans | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios long sleeve | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios scarf | autocomplete | 0 | 0.0 | 15.0 |
-| acne studios t shirt | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial bar | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial before and after | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial behandlung | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial benefits | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial berlin | autocomplete | 0 | 0.0 | 15.0 |
-| aquafacial gerät | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial laser clinics | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial machine | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial near me | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial reviews | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial treatment | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial vs hydrafacial | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial vs microdermabrasion | autocomplete | 0 | 0.0 | 15.0 |
+| aquafacial was ist das | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
+| cairns skin clinic | what-should-i-look-for-in-a-skin-clinic-in-cairns |
 | acne scar treatment | skin-needling |
 | acne treatment | skin-needling |
 | bbl skin treatment | what-to-avoid-on-skin-after-treatment-in-humidity |
+| cairns skin cancer and cosmetic clinic | what-should-i-look-for-in-a-skin-clinic-in-cairns |
+| cairns skin cancer clinic | what-should-i-look-for-in-a-skin-clinic-in-cairns |
+| cairns skin care clinic | what-should-i-look-for-in-a-skin-clinic-in-cairns |
+| cairns skin clinic dfo | what-should-i-look-for-in-a-skin-clinic-in-cairns |
+| cairns skin clinic smithfield | what-should-i-look-for-in-a-skin-clinic-in-cairns |
 | dry skin around eyes | enlarged-pores |
 | dry skin around mouth | enlarged-pores |
 | dry skin around nose | enlarged-pores |
 | dry skin rash | why-do-bites-and-heat-rash-leave-dark-marks-in-cairns |
+| enlarged pores and blackheads | enlarged-pores |
 | enlarged pores before and after | enlarged-pores |
 | enlarged pores causes | enlarged-pores |
 | enlarged pores meaning in hindi | enlarged-pores |
 | enlarged pores means | enlarged-pores |
 | enlarged pores on breast | enlarged-pores |
-| enlarged pores on cheeks | enlarged-pores |
-| enlarged pores on face | enlarged-pores |
-| enlarged pores on face treatment | enlarged-pores |
-| enlarged pores on forehead | enlarged-pores |
-| enlarged pores on nose | enlarged-pores |
-| enlarged pores on nose treatment | enlarged-pores |
-| enlarged pores reddit | enlarged-pores |
