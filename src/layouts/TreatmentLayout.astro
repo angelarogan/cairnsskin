@@ -9,7 +9,7 @@ import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
 import { breadcrumbSchema, articleSchema } from "../utils/schema";
-import { SITE_NAME } from "../utils/seo";
+import { SITE_NAME, formatDisplayDate } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -18,6 +18,9 @@ interface Props {
 
 const { entry } = Astro.props;
 const { data } = entry;
+
+const lastPublishedDate = data.updatedDate ?? data.publishDate;
+const lastPublishedLabel = data.updatedDate ? "Last updated" : "Last published";
 
 const relatedConcerns = await resolveRefs(data.relatedConcerns);
 const relatedQuestions = await resolveRefs(data.relatedQuestions);
@@ -49,8 +52,13 @@ const schemas = [
   <article class="mx-auto max-w-prose px-5 md:px-8 py-14 md:py-20">
     <Breadcrumbs items={[{ label: "Treatments", href: "/treatments/" }, { label: data.title }]} />
 
-    <div class="mb-6">
+    <div class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2">
       <ReviewBadge status={data.reviewStatus} />
+      {lastPublishedDate && (
+        <span class="text-xs text-stone-500">
+          {lastPublishedLabel} {formatDisplayDate(lastPublishedDate)}
+        </span>
+      )}
     </div>
 
     <h1 class="mb-4">{data.title}</h1>
