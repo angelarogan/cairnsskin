@@ -11,7 +11,7 @@ import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
 import { articleSchema, breadcrumbSchema, faqSchema } from "../utils/schema";
-import { SITE_NAME } from "../utils/seo";
+import { SITE_NAME, formatDisplayDate } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -22,6 +22,9 @@ interface Props {
 
 const { entry, keyPoints = [], relatedFaq = [] } = Astro.props;
 const { data } = entry;
+
+const lastPublishedDate = data.updatedDate ?? data.publishDate;
+const lastPublishedLabel = data.updatedDate ? "Last updated" : "Last published";
 
 const relatedConcerns = await resolveRefs(data.relatedConcern);
 const relatedTreatments = await resolveRefs(data.relatedTreatments);
@@ -61,8 +64,13 @@ const schemas = [
   <article class="mx-auto max-w-prose px-5 md:px-8 py-14 md:py-20">
     <Breadcrumbs items={[{ label: "Knowledge Library", href: "/questions/" }, { label: data.title }]} />
 
-    <div class="mb-6">
+    <div class="mb-6 flex flex-wrap items-center gap-x-3 gap-y-2">
       <ReviewBadge status={data.reviewStatus} />
+      {lastPublishedDate && (
+        <span class="text-xs text-stone-500">
+          {lastPublishedLabel} {formatDisplayDate(lastPublishedDate)}
+        </span>
+      )}
     </div>
 
     <h1 class="mb-6">{data.primaryQuestion}</h1>

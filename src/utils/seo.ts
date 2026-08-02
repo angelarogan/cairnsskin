@@ -11,6 +11,10 @@ export interface SeoProps {
   noindex?: boolean;
 }
 
+export function formatDisplayDate(date: Date): string {
+  return date.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
+}
+
 export function buildSeo({ title, description, canonicalUrl, path, noindex }: SeoProps) {
   const fullTitle = title.includes(SITE_NAME) ? title : `${title} | ${SITE_NAME}`;
   const canonical = canonicalUrl ?? new URL(path, SITE_URL).toString();
