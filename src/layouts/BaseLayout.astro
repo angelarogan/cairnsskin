@@ -74,18 +74,34 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
     ))}
 
     {gaId && (
-      <>
-        <script async is:inline src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-        <script is:inline define:vars={{ gaId }}>
+      <script is:inline define:vars={{ gaId }}>
+        (function () {
+          // Self-service opt-out: visiting ?ga_exclude=1 once on a device
+          // sets a permanent flag in that browser so all future visits
+          // (any page) skip analytics entirely, including pageviews.
+          // Visit ?ga_include=1 to turn tracking back on for that device.
+          // IP-based exclusion (GA4's built-in method) isn't reliable
+          // across phone/laptop on different networks, so this is used
+          // instead.
+          var params = new URLSearchParams(window.location.search);
+          if (params.has("ga_exclude")) localStorage.setItem("ga_exclude", "1");
+          if (params.has("ga_include")) localStorage.removeItem("ga_exclude");
+          if (localStorage.getItem("ga_exclude") === "1") return;
+
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
+          window.gtag = gtag;
           gtag("js", new Date());
           gtag("config", gaId);
-        </script>
-        <script is:inline>
+
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
+          document.head.appendChild(script);
+
           document.addEventListener("click", (event) => {
             const link = event.target.closest("a");
-            if (!link || typeof gtag !== "function") return;
+            if (!link) return;
             if (link.getAttribute("href") === "/book/") {
               gtag("event", "book_consultation_click", {
                 event_category: "engagement",
@@ -97,8 +113,8 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
               });
             }
           });
-        </script>
-      </>
+        })();
+      </script>
     )}
   </head>
   <body class="min-h-screen flex flex-col bg-paper-warm">
