@@ -205,6 +205,32 @@ export const treatments: Record<string, TreatmentMeta> = {
     clinicVerificationRequired: true,
     notes: "Confirm how this is distinguished from BBL in current Laser Clinics Cairns service naming, to avoid overlapping/duplicate treatment claims.",
   },
+  "melanopro-peel": {
+    key: "melanopro-peel",
+    displayName: "Melanopro Peel", // PLACEHOLDER: confirm exact current naming/availability at Cairns
+    slug: "melanopro-peel",
+    shortDescription:
+      "Two-phase cosmetic-grade depigmentation peel aimed at superficial pigmentation and melasma.",
+    category: "peel",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+    notes: "Confirm availability at Laser Clinics Cairns specifically; only suited to superficial or mixed-depth melasma, not deep/dermal melasma.",
+  },
+  "kleresca-rosacea": {
+    key: "kleresca-rosacea",
+    displayName: "Kleresca Rosacea Treatment", // PLACEHOLDER: confirm exact current naming/availability at Cairns
+    slug: "kleresca-rosacea",
+    shortDescription:
+      "Light-based biophotonic treatment used to calm inflammation and redness associated with rosacea.",
+    category: "light-therapy",
+    verified: false,
+    verifiedDate: null,
+    availabilityAtCairns: "unconfirmed",
+    clinicVerificationRequired: true,
+    notes: "Confirm availability at Laser Clinics Cairns specifically; distinct platform from standard LED light therapy.",
+  },
 };
 
 export function getTreatment(key: string): TreatmentMeta | undefined {
