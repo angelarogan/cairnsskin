@@ -215,6 +215,19 @@ def require_env(name: str) -> str:
 AUTOCOMPLETE_NOISE_PATTERNS: tuple[str, ...] = (
     "acne studios",
     "studios",
+    # Internationally-branded treatment names (aquafacial, BBL, Kleresca
+    # etc) repeatedly surface German-market autocomplete leakage that
+    # doesn't contain non-ASCII characters, so the isascii() check below
+    # doesn't catch it. Extend this list as new leakage patterns show up.
+    "berlin",
+    "münchen",
+    "hamburg",
+    "behandlung",
+    "was ist das",
+    "kosten",
+    "preis",
+    "erfahrungen",
+    "nebenwirkungen",
 )
 
 
