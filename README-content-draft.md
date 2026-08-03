@@ -42,6 +42,16 @@ covered) opportunities, the script falls back to
 `.claude/content-rotation-state.json`, a fixed rotation of skin-concern
 topics, advancing one step only if actually used.
 
+## Excluding a topic permanently
+
+Deleting a drafted article's file only removes that one instance: if the
+underlying query keeps showing up as real search demand, it'll get
+redrafted again on a later run. To stop a topic being drafted at all, add
+a substring to `.claude/excluded-topics.json`'s `excluded_query_substrings`
+array (case-insensitive match against each day's candidate query). Only do
+this for topics you don't want covered for a standing reason, not for a
+one-off quality issue that's better fixed by editing the article instead.
+
 ## Query-to-article log
 
 Every drafted article is appended to `reports/articles-from-radar.csv`

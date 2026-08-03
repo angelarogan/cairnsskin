@@ -1,0 +1,6 @@
+{
+  "_comment": "Topics that should never be drafted again by scripts/draft_daily_content.py, even if they keep showing up as real search demand. Matched as a case-insensitive substring against each day's candidate query. Add an entry here whenever a drafted article is deliberately removed for a reason that isn't going away (not just a one-off content-quality fix).",
+  "excluded_query_substrings": [
+    "acne face wash"
+  ]
+}
