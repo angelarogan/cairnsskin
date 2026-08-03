@@ -55,6 +55,7 @@ CONCERNS_DIR = REPO_ROOT / "src" / "content" / "concerns"
 TREATMENTS_DIR = REPO_ROOT / "src" / "content" / "treatments"
 OPPORTUNITIES_REPORT = REPO_ROOT / "reports" / "content-opportunities.md"
 ROTATION_STATE_PATH = REPO_ROOT / ".claude" / "content-rotation-state.json"
+EXCLUDED_TOPICS_PATH = REPO_ROOT / ".claude" / "excluded-topics.json"
 ARTICLES_LOG_PATH = REPO_ROOT / "reports" / "articles-from-radar.csv"
 ARTICLES_LOG_FIELDNAMES: tuple[str, ...] = (
     "date",
@@ -235,6 +236,24 @@ def read_top_opportunities(path: Path, limit: int = 10) -> list[dict[str, str]]:
             }
         )
     return rows[:limit]
+
+
+def load_excluded_topics() -> list[str]:
+    """Reads a permanent, site-owner-maintained list of topics that should
+    never be drafted again, e.g. because a previous draft on that topic
+    was deliberately removed. Matched as a case-insensitive substring
+    against each candidate query, since real demand data rarely repeats a
+    topic with identical phrasing day to day.
+    """
+    if not EXCLUDED_TOPICS_PATH.exists():
+        return []
+    data = json.loads(EXCLUDED_TOPICS_PATH.read_text(encoding="utf-8"))
+    return [str(topic).lower() for topic in data.get("excluded_query_substrings", [])]
+
+
+def is_excluded_topic(query: str, excluded_substrings: list[str]) -> bool:
+    lowered = query.lower()
+    return any(substring in lowered for substring in excluded_substrings)
 
 
 def load_rotation_state() -> dict[str, Any]:
@@ -562,8 +581,11 @@ def main() -> int:
     coverage = load_existing_coverage()
     site_map = build_site_map()
 
+    excluded_topics = load_excluded_topics()
+
     candidates = read_top_opportunities(OPPORTUNITIES_REPORT)
     candidates = [c for c in candidates if not find_existing_match(c["query"], coverage)]
+    candidates = [c for c in candidates if not is_excluded_topic(c["query"], excluded_topics)]
 
     fallback_used = False
     if len(candidates) < MAX_ARTICLES_PER_RUN:
