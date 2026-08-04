@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-03
+# Content opportunities: 2026-08-04
 
-236 queries analysed, 131 not yet covered by existing content.
+224 queries analysed, 123 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -9,6 +9,7 @@
 | cairns skin centre | both | 3 | 59.3 | 29.8 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
+| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne scars | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial bar | autocomplete | 0 | 0.0 | 15.0 |
@@ -25,13 +26,13 @@
 | bbl asx | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
 | bbl cricket | autocomplete | 0 | 0.0 | 15.0 |
-| bbl draft | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | why-isnt-my-acne-cream-working |
 | acne scar treatment | skin-needling |
 | acne treatment | skin-needling |
@@ -50,4 +51,3 @@
 | enlarged pores means | enlarged-pores |
 | enlarged pores on breast | enlarged-pores |
 | enlarged pores on cheeks | enlarged-pores |
-| enlarged pores on face | enlarged-pores |
