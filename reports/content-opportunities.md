@@ -1,16 +1,20 @@
-# Content opportunities: 2026-08-04
+# Content opportunities: 2026-08-06
 
-224 queries analysed, 123 not yet covered by existing content.
+247 queries analysed, 136 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
+| pigmentation meaning | both | 5 | 86.0 | 33.0 |
 | cairns skin centre | both | 3 | 59.3 | 29.8 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
+| acne rosacea | autocomplete | 0 | 0.0 | 15.0 |
+| acne scar treatment | autocomplete | 0 | 0.0 | 15.0 |
 | acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne scars | autocomplete | 0 | 0.0 | 15.0 |
+| acne treatment | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial bar | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial before and after | autocomplete | 0 | 0.0 | 15.0 |
@@ -22,20 +26,14 @@
 | aquafacial treatment | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial vs hydrafacial | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial vs microdermabrasion | autocomplete | 0 | 0.0 | 15.0 |
-| bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
-| bbl asx | autocomplete | 0 | 0.0 | 15.0 |
-| bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
-| bbl cricket | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
-| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | why-isnt-my-acne-cream-working |
-| acne scar treatment | skin-needling |
-| acne treatment | skin-needling |
+| bbl skin treatment | what-to-avoid-on-skin-after-treatment-in-humidity |
 | cairns skin cancer and cosmetic clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin cancer clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin care clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
@@ -51,3 +49,5 @@
 | enlarged pores means | enlarged-pores |
 | enlarged pores on breast | enlarged-pores |
 | enlarged pores on cheeks | enlarged-pores |
+| enlarged pores on face | enlarged-pores |
+| enlarged pores on face treatment | enlarged-pores |
