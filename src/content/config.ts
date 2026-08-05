@@ -76,6 +76,11 @@ const treatments = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      // Optional on-page H1 override, falls back to title. Lets a specific
+      // page target a longer, more specific heading (e.g. "X in Cairns")
+      // without changing the shorter title used in breadcrumbs, nav cards
+      // and other pages' related-content listings.
+      h1: z.string().optional(),
       treatmentDataKey: z.string(), // maps to src/data/treatments.ts entry
       shortSummary: z.string().max(220),
       description: z.string(),
