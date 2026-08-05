@@ -228,6 +228,11 @@ AUTOCOMPLETE_NOISE_PATTERNS: tuple[str, ...] = (
     "preis",
     "erfahrungen",
     "nebenwirkungen",
+    # "BBL" collides with Australia's Big Bash League cricket competition
+    # and, occasionally, ASX-style stock ticker chatter.
+    "cricket",
+    "big bash",
+    "asx",
 )
 
 
