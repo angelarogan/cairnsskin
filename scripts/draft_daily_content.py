@@ -93,8 +93,13 @@ MODEL = "claude-sonnet-5"
 MAX_ARTICLES_PER_RUN = 3
 # A cooldown skip still costs an API call, so cap total attempts per run
 # well above MAX_ARTICLES_PER_RUN to bound worst-case cost if the
-# candidate pool is unusually full of same-concern queries.
-MAX_DRAFT_ATTEMPTS = 8
+# candidate pool is unusually full of same-concern queries. Raised from
+# an initial 8 to 20 after a real run's top opportunities were 8+
+# variations of "aquafacial" (all landing on the same concern): once the
+# first one succeeded, the cooldown correctly rejected the rest, but 8
+# attempts wasn't enough headroom to reach 3 genuinely different
+# concerns before running out.
+MAX_DRAFT_ATTEMPTS = 20
 MAX_TOKENS = 4096
 GITHUB_API_URL = "https://api.github.com"
 # Don't redraft into a concern that already had a question published (or
@@ -744,7 +749,7 @@ def main() -> int:
     coverage.update(pr_coverage)
     avoid_concerns = load_recently_used_concerns(CONCERN_COOLDOWN_DAYS) | pending_concerns
 
-    candidates = read_top_opportunities(OPPORTUNITIES_REPORT, limit=15)
+    candidates = read_top_opportunities(OPPORTUNITIES_REPORT, limit=MAX_DRAFT_ATTEMPTS)
     candidates = [c for c in candidates if not find_existing_match(c["query"], coverage)]
     candidates = [c for c in candidates if not is_excluded_topic(c["query"], excluded_topics)]
 
