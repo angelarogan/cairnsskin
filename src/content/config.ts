@@ -45,6 +45,16 @@ const concerns = defineCollection({
       shortSummary: z.string().max(220),
       description: z.string(),
       heroImage: image().optional(),
+      video: z
+        .object({
+          url: z.string().url(),
+          title: z.string(),
+          description: z.string(),
+          thumbnailUrl: z.string().url(),
+          uploadDate: z.date(),
+          durationSeconds: z.number().optional(),
+        })
+        .optional(),
       relatedTreatments: z.array(reference("treatments")).default([]),
       relatedQuestions: z.array(reference("questions")).default([]),
       tropicalContext: z.string().optional(),
