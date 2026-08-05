@@ -60,7 +60,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
-            git commit -m "Update content-opportunity reports ($(date -u +%Y-%m-%d))"
+            git commit -m "Update content-opportunity reports ($(TZ=Australia/Brisbane date +%Y-%m-%d))"
             git pull --rebase origin main
             git push origin main
           fi

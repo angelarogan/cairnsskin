@@ -39,7 +39,7 @@ import logging
 import os
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -48,6 +48,17 @@ import anthropic
 # --------------------------------------------------------------------------
 # Configuration
 # --------------------------------------------------------------------------
+
+# Queensland has no daylight saving, so it's always a fixed UTC+10. GitHub
+# Actions runners use UTC, so date.today() there can be a day behind what
+# a Cairns reader would call "today" for several hours each morning.
+# Matches the same helper in skin_question_radar.py, so both scripts'
+# "today" always agrees.
+QUEENSLAND_UTC_OFFSET = timezone(timedelta(hours=10))
+
+
+def queensland_today() -> date:
+    return datetime.now(QUEENSLAND_UTC_OFFSET).date()
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 QUESTIONS_DIR = REPO_ROOT / "src" / "content" / "questions"
@@ -577,7 +588,7 @@ def main() -> int:
         return 1
 
     client = anthropic.Anthropic(api_key=api_key)
-    today_str = date.today().isoformat()
+    today_str = queensland_today().isoformat()
 
     coverage = load_existing_coverage()
     site_map = build_site_map()

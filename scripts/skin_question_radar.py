@@ -61,7 +61,7 @@ import re
 import sys
 import time
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -84,6 +84,18 @@ WEEKLY_SUMMARY_PATH = REPORTS_DIR / "weekly-top-searches.md"
 # searches already have an article.
 ARTICLES_LOG_PATH = REPORTS_DIR / "articles-from-radar.csv"
 WEEKLY_WINDOW_DAYS = 7
+
+# Queensland has no daylight saving, so it's always a fixed UTC+10. GitHub
+# Actions runners use UTC, so date.today() there can be a day behind what
+# a Cairns reader would call "today" for several hours each morning
+# (e.g. 21:47 UTC is already 07:47 the next day in Cairns). Every "what
+# date is it" decision in this script uses this instead, so report dates
+# match the audience's actual local day.
+QUEENSLAND_UTC_OFFSET = timezone(timedelta(hours=10))
+
+
+def queensland_today() -> date:
+    return datetime.now(QUEENSLAND_UTC_OFFSET).date()
 CONTENT_DIRS = (
     REPO_ROOT / "src" / "content" / "questions",
     REPO_ROOT / "src" / "content" / "concerns",
@@ -365,7 +377,7 @@ def fetch_search_console_queries(
         logger.error("Failed to build Search Console client: %s", exc)
         return []
 
-    end_date = date.today()
+    end_date = queensland_today()
     start_date = end_date - timedelta(days=lookback_days)
 
     request_body = {
@@ -595,7 +607,7 @@ def write_weekly_summary(
         logger.info("No search log yet at %s; skipping weekly summary", search_log_path)
         return
 
-    cutoff = date.today() - timedelta(days=days - 1)
+    cutoff = queensland_today() - timedelta(days=days - 1)
     aggregated: dict[str, dict[str, Any]] = {}
     with search_log_path.open(newline="", encoding="utf-8") as csv_file:
         for row in csv.DictReader(csv_file):
@@ -620,7 +632,7 @@ def write_weekly_summary(
     articles_by_query = _load_articles_log(articles_log_path)
     ranked = sorted(aggregated.items(), key=lambda item: item[1]["score"], reverse=True)
 
-    today_str = date.today().isoformat()
+    today_str = queensland_today().isoformat()
     lines = [
         f"# Top searches this week: {today_str}",
         "",
@@ -650,7 +662,7 @@ def write_markdown_report(
     top_n: int = 20,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    today_str = date.today().isoformat()
+    today_str = queensland_today().isoformat()
     new_opportunities = [o for o in opportunities if not o.already_covered]
     covered_opportunities = [o for o in opportunities if o.already_covered]
 
@@ -717,7 +729,7 @@ def main() -> int:
     coverage = load_existing_coverage()
     opportunities = score_opportunities(autocomplete_suggestions, gsc_rows, coverage)
 
-    today_str = date.today().isoformat()
+    today_str = queensland_today().isoformat()
     write_csv(opportunities, REPORTS_DIR / "latest.csv")
     write_csv(opportunities, DAILY_REPORTS_DIR / f"{today_str}.csv")
     write_markdown_report(opportunities, REPORTS_DIR / "content-opportunities.md")
