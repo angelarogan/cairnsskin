@@ -452,15 +452,29 @@ specific skin, a person considering shop-bought options because they \
 haven't had professional advice yet is exactly who this framing should \
 speak to, without ever naming a clinic or brand.
 - `sources` stays an empty array unless you have a specific, real, checkable \
-citation. If your web search surfaced a genuine source you're actually \
-quoting or relying on (a real, checkable page: DermNet NZ, Australasian \
-College of Dermatologists, Cancer Council / SunSmart, a government health \
-site, a peer-reviewed article on PubMed/PMC, etc), add it to `sources` \
-properly: {"label": "...", "url": "...", "publisher": "..."}. Citability \
-matters here, AI answer engines and search both reward pages that cite \
-real sources, so use a genuine one whenever you found one, rather than \
-defaulting to an empty array. Never invent a study, statistic, or citation \
-that doesn't correspond to a real source you found.
+citation, and citations should come from the Australian authorities that \
+actually set the rules on this topic, in this priority order:
+  1. Clinical/dermatology claims (what a condition is, how it behaves, \
+which ingredients or treatments genuinely help): the Australasian College \
+of Dermatologists (dermcoll.edu.au, especially their "A to Z of Skin" \
+patient information) is the primary Australian authority, or the \
+Australasian Journal of Dermatology (via Wiley Online Library or PubMed, \
+citable by its abstract/listing page even where full text is paywalled) \
+as a peer-reviewed secondary source.
+  2. Laser/light-based treatment regulation (licensing, safety standards): \
+the relevant state health department, e.g. Queensland Health \
+(health.qld.gov.au) for anything Queensland-specific.
+  3. Injectables and other prescription/practitioner-scope claims: AHPRA \
+(ahpra.gov.au).
+  4. Cancer Council / SunSmart for sun protection and skin cancer content, \
+DermNet NZ or a government health site as a fallback only when none of the \
+above has relevant coverage.
+Add a genuine source to `sources` properly: {"label": "...", "url": "...", \
+"publisher": "..."}. Citability matters here, AI answer engines and search \
+both reward pages that cite real, authoritative sources, so use one \
+whenever you found one, rather than defaulting to an empty array. Never \
+invent a study, statistic, or citation that doesn't correspond to a real \
+source you found.
 - `body_markdown` must be clean prose only, plain Markdown headings and \
 paragraphs, nothing else. Never include HTML or citation markup such as \
 `<cite>`, footnote brackets, or reference indices, these are search-tool \
