@@ -28,6 +28,33 @@ export function faqSchema(items: { question: string; answer: string }[]) {
   };
 }
 
+export function videoSchema(params: {
+  contentUrl: string;
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: Date;
+  durationSeconds?: number;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: params.name,
+    description: params.description,
+    thumbnailUrl: [params.thumbnailUrl],
+    contentUrl: params.contentUrl,
+    uploadDate: params.uploadDate.toISOString(),
+    ...(params.durationSeconds
+      ? { duration: `PT${Math.round(params.durationSeconds)}S` }
+      : {}),
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
 export function articleSchema(params: {
   headline: string;
   description: string;

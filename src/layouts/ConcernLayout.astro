@@ -5,7 +5,7 @@ import RelatedContent from "../components/ui/RelatedContent.astro";
 import MedicalDisclaimer from "../components/ui/MedicalDisclaimer.astro";
 import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
-import { breadcrumbSchema, articleSchema } from "../utils/schema";
+import { breadcrumbSchema, articleSchema, videoSchema } from "../utils/schema";
 import { SITE_NAME } from "../utils/seo";
 import type { CollectionEntry } from "astro:content";
 
@@ -34,6 +34,18 @@ const schemas = [
     updatedDate: data.updatedDate,
     url: `/skin-concerns/${entry.slug}/`,
   }),
+  ...(data.video
+    ? [
+        videoSchema({
+          contentUrl: data.video.url,
+          name: data.video.title,
+          description: data.video.description,
+          thumbnailUrl: data.video.thumbnailUrl,
+          uploadDate: data.video.uploadDate,
+          durationSeconds: data.video.durationSeconds,
+        }),
+      ]
+    : []),
 ];
 ---
 
