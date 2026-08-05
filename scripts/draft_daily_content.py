@@ -451,22 +451,24 @@ professional consultation can identify what's actually right for someone's \
 specific skin, a person considering shop-bought options because they \
 haven't had professional advice yet is exactly who this framing should \
 speak to, without ever naming a clinic or brand.
-- `sources` always stays an empty array `[]`. This site deliberately \
-doesn't link out to external articles or citations, for consistency \
-across every page, so never populate this field even if your web search \
-surfaced a genuine, checkable source. Use that research to write \
-accurately and confidently in your own words instead (e.g. "research on \
-combining X and Y has found..." rather than naming or linking a specific \
-study), and never invent a study, statistic, or citation that doesn't \
-correspond to something you actually found.
+- `sources` stays an empty array unless you have a specific, real, checkable \
+citation. If your web search surfaced a genuine source you're actually \
+quoting or relying on (a real, checkable page: DermNet NZ, Australasian \
+College of Dermatologists, Cancer Council / SunSmart, a government health \
+site, a peer-reviewed article on PubMed/PMC, etc), add it to `sources` \
+properly: {"label": "...", "url": "...", "publisher": "..."}. Citability \
+matters here, AI answer engines and search both reward pages that cite \
+real sources, so use a genuine one whenever you found one, rather than \
+defaulting to an empty array. Never invent a study, statistic, or citation \
+that doesn't correspond to a real source you found.
 - `body_markdown` must be clean prose only, plain Markdown headings and \
 paragraphs, nothing else. Never include HTML or citation markup such as \
 `<cite>`, footnote brackets, or reference indices, these are search-tool \
 artefacts and must not appear in the output. If you want to reference \
 something a real source said, paraphrase it in plain English or use a \
 short plain-text attribution phrase (e.g. "one pharmacy brand's own \
-packaging states..."), don't embed markup in the body to mark where a \
-quote came from, and remember `sources` stays `[]` regardless.
+packaging states...") and add the source to `sources` instead, don't \
+embed markup in the body to mark where a quote came from.
 - Do not echo any clinic chain's marketing copy verbatim or near-verbatim; \
 write independently in plain English, even when covering a treatment or \
 product category they also offer.
