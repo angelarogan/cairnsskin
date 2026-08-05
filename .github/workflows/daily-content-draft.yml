@@ -12,11 +12,12 @@ name: Cairns Skin Daily Content Draft
 
 on:
   workflow_dispatch: {}
-  schedule:
-    # Queensland does not observe daylight saving, so it stays UTC+10
-    # year-round. 22:00 UTC = 8:00am Queensland, giving the radar workflow
-    # (20:30 UTC) time to land its report commit on main first.
-    - cron: "0 22 * * *"
+  # Scheduled run paused 2026-08-05: strategic shift away from adding
+  # more pages toward strengthening existing ones (evidence, indexing,
+  # backlinks, internal linking) for AI answer engine discoverability.
+  # Still runs on manual trigger. To resume daily drafting, restore:
+  #   schedule:
+  #     - cron: "0 22 * * *"
 
 # contents: write is only used to push the new content branch (never
 # main). pull-requests: write is needed to open the review PR.
