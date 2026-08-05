@@ -84,7 +84,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          today=$(date -u +%Y-%m-%d)
+          # Queensland has no daylight saving (fixed UTC+10 year-round), so
+          # this uses that zone directly rather than the runner's UTC clock,
+          # which can be a day behind for several hours each Cairns morning.
+          today=$(TZ=Australia/Brisbane date +%Y-%m-%d)
           branch="content-draft/${today}"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
