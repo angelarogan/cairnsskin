@@ -52,6 +52,7 @@ jobs:
       - name: Draft articles
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: python scripts/draft_daily_content.py
 
       - name: Check for drafted content
