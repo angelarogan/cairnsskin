@@ -22,6 +22,17 @@ un-merged PR is the draft state.
 
 Credentials are read from environment variables only:
     ANTHROPIC_API_KEY
+    GITHUB_TOKEN, GITHUB_REPOSITORY   optional; both are auto-provided in
+        GitHub Actions. If set, still-open content-draft PRs are checked
+        for duplication too, not just what's merged on main. Without
+        these the script still runs fine, just with a smaller view of
+        what's already been drafted.
+
+To keep daily drafting spread across all ten concerns rather than
+repeatedly mining whichever one currently has the most autocomplete
+variants, a concern that already had a question published (or is
+sitting in a still-open PR) within CONCERN_COOLDOWN_DAYS is skipped in
+favour of the next candidate.
 
 Outputs (relative to repo root):
     src/content/questions/<new-slug>.mdx    one file per drafted article
@@ -33,6 +44,7 @@ Usage:
 
 from __future__ import annotations
 
+import base64
 import csv
 import json
 import logging
@@ -44,6 +56,7 @@ from pathlib import Path
 from typing import Any
 
 import anthropic
+import requests
 
 # --------------------------------------------------------------------------
 # Configuration
@@ -78,7 +91,18 @@ ARTICLES_LOG_FIELDNAMES: tuple[str, ...] = (
 
 MODEL = "claude-sonnet-5"
 MAX_ARTICLES_PER_RUN = 3
+# A cooldown skip still costs an API call, so cap total attempts per run
+# well above MAX_ARTICLES_PER_RUN to bound worst-case cost if the
+# candidate pool is unusually full of same-concern queries.
+MAX_DRAFT_ATTEMPTS = 8
 MAX_TOKENS = 4096
+GITHUB_API_URL = "https://api.github.com"
+# Don't redraft into a concern that already had a question published (or
+# is sitting in a still-open, unmerged PR) within this many days, so
+# daily drafting spreads across all ten concerns rather than repeatedly
+# mining whichever one currently has the most autocomplete variants
+# (acne and pigmentation dominate the raw demand data).
+CONCERN_COOLDOWN_DAYS = 3
 
 logging.basicConfig(
     level=logging.INFO,
@@ -134,6 +158,20 @@ def _extract_reference_slugs(text: str, field_name: str) -> list[str]:
     return re.findall(r"slug:\s*(\S+)", match.group(1))
 
 
+def _extract_frontmatter_date(text: str, field_name: str) -> date | None:
+    """Extracts a bare, unquoted YAML date value, e.g. publishDate: 2026-08-03
+    (dates in this project's frontmatter are never quoted, unlike the
+    string fields _extract_frontmatter_string handles)."""
+    pattern = re.compile(rf"^{re.escape(field_name)}:\s*(\d{{4}}-\d{{2}}-\d{{2}})", re.MULTILINE)
+    found = pattern.search(text)
+    if not found:
+        return None
+    try:
+        return date.fromisoformat(found.group(1))
+    except ValueError:
+        return None
+
+
 def load_existing_coverage() -> dict[str, str]:
     """Builds a lookup of lowercase title/question/summary text -> slug
     for every piece of content in the repo, mirroring
@@ -166,6 +204,111 @@ def find_existing_match(query: str, coverage: dict[str, str]) -> str | None:
         if len(overlap) >= max(2, len(query_words) // 2):
             return slug
     return None
+
+
+def load_recently_used_concerns(cooldown_days: int) -> set[str]:
+    """Concerns whose most recently published question falls within the
+    cooldown window. See CONCERN_COOLDOWN_DAYS for why this exists.
+    """
+    cutoff = queensland_today() - timedelta(days=cooldown_days)
+    recent: set[str] = set()
+    for path in QUESTIONS_DIR.glob("*.mdx"):
+        text = path.read_text(encoding="utf-8")
+        publish_date = _extract_frontmatter_date(text, "publishDate")
+        if publish_date and publish_date >= cutoff:
+            recent.update(_extract_reference_slugs(text, "relatedConcern"))
+    return recent
+
+
+def fetch_open_pr_coverage(
+    repo_full_name: str | None, github_token: str | None
+) -> tuple[dict[str, str], set[str]]:
+    """Extends duplication and concern-cooldown checking to cover
+    questions sitting in still-open, unmerged content-draft PRs, not just
+    what's already on main. Without this, two separate daily runs can
+    each independently draft a very similar article on consecutive days,
+    since neither run's coverage check can see the other's not-yet-merged
+    work (this is exactly what produced two near-duplicate acne-scarring
+    articles on 2026-08-03 and 2026-08-04).
+
+    Best-effort: any failure (missing token, network issue, rate limit)
+    is logged and treated as no extra coverage, rather than failing the
+    whole run, since this is additive on top of the main-branch check,
+    not a hard requirement.
+
+    Returns (title_text_coverage, concern_slugs_pending_in_open_prs).
+    """
+    coverage: dict[str, str] = {}
+    pending_concerns: set[str] = set()
+
+    if not repo_full_name or not github_token:
+        logger.info("No GITHUB_REPOSITORY/GITHUB_TOKEN set; skipping open-PR coverage check.")
+        return coverage, pending_concerns
+
+    headers = {
+        "Authorization": f"Bearer {github_token}",
+        "Accept": "application/vnd.github+json",
+    }
+
+    try:
+        prs_response = requests.get(
+            f"{GITHUB_API_URL}/repos/{repo_full_name}/pulls",
+            headers=headers,
+            params={"state": "open", "base": "main", "per_page": 50},
+            timeout=30,
+        )
+        prs_response.raise_for_status()
+        pulls = prs_response.json()
+    except requests.RequestException as exc:
+        logger.warning("Could not list open pull requests: %s", exc)
+        return coverage, pending_concerns
+
+    for pr in pulls:
+        head_sha = pr.get("head", {}).get("sha")
+        if not head_sha:
+            continue
+        try:
+            tree_response = requests.get(
+                f"{GITHUB_API_URL}/repos/{repo_full_name}/git/trees/{head_sha}",
+                headers=headers,
+                params={"recursive": "1"},
+                timeout=30,
+            )
+            tree_response.raise_for_status()
+            tree = tree_response.json()
+        except requests.RequestException as exc:
+            logger.warning("Could not read tree for PR #%s: %s", pr.get("number"), exc)
+            continue
+
+        question_blobs = [
+            item
+            for item in tree.get("tree", [])
+            if item.get("type") == "blob"
+            and item.get("path", "").startswith("src/content/questions/")
+            and item.get("path", "").endswith(".mdx")
+        ]
+        for item in question_blobs:
+            try:
+                blob_response = requests.get(item["url"], headers=headers, timeout=30)
+                blob_response.raise_for_status()
+                blob = blob_response.json()
+                content = base64.b64decode(blob["content"]).decode("utf-8")
+            except (requests.RequestException, KeyError, ValueError) as exc:
+                logger.warning("Could not read blob %s: %s", item.get("path"), exc)
+                continue
+            slug = Path(item["path"]).stem
+            for field_name in ("title", "primaryQuestion", "shortSummary"):
+                value = _extract_frontmatter_string(content, field_name)
+                if value:
+                    coverage[value.lower()] = slug
+            pending_concerns.update(_extract_reference_slugs(content, "relatedConcern"))
+
+    logger.info(
+        "Loaded coverage from %d open pull request(s), %d pending concern(s)",
+        len(pulls),
+        len(pending_concerns),
+    )
+    return coverage, pending_concerns
 
 
 def build_site_map() -> dict[str, Any]:
@@ -595,7 +738,13 @@ def main() -> int:
 
     excluded_topics = load_excluded_topics()
 
-    candidates = read_top_opportunities(OPPORTUNITIES_REPORT)
+    pr_coverage, pending_concerns = fetch_open_pr_coverage(
+        os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_TOKEN")
+    )
+    coverage.update(pr_coverage)
+    avoid_concerns = load_recently_used_concerns(CONCERN_COOLDOWN_DAYS) | pending_concerns
+
+    candidates = read_top_opportunities(OPPORTUNITIES_REPORT, limit=15)
     candidates = [c for c in candidates if not find_existing_match(c["query"], coverage)]
     candidates = [c for c in candidates if not is_excluded_topic(c["query"], excluded_topics)]
 
@@ -611,7 +760,6 @@ def main() -> int:
             )
             fallback_used = True
 
-    candidates = candidates[:MAX_ARTICLES_PER_RUN]
     if not candidates:
         logger.info("No candidates available today; nothing to draft.")
         return 0
@@ -619,7 +767,9 @@ def main() -> int:
     used_slugs: set[str] = {p.stem for p in QUESTIONS_DIR.glob("*.mdx")}
     drafted: list[dict[str, str]] = []
 
-    for opportunity in candidates:
+    for attempt, opportunity in enumerate(candidates):
+        if len(drafted) >= MAX_ARTICLES_PER_RUN or attempt >= MAX_DRAFT_ATTEMPTS:
+            break
         try:
             payload = draft_article(client, opportunity, site_map, used_slugs)
         except Exception:
@@ -634,17 +784,27 @@ def main() -> int:
             logger.error("Skipping '%s': %s", opportunity["query"], "; ".join(violations))
             continue
 
-        slug = slugify(payload.get("slug") or payload["title"])
-        if not slug or slug in used_slugs:
-            slug = f"{slug or 'article'}-{today_str}"
-        used_slugs.add(slug)
-
         # Drop any relatedConcern/relatedTreatments/relatedQuestions slug the
         # model invented that doesn't actually exist: Astro's reference()
         # schema validation fails the whole build on a dangling reference,
         # so an invalid slug here is worse than just omitting the link.
         if payload.get("relatedConcern") not in site_map["concerns"]:
             payload["relatedConcern"] = None
+
+        related_concern = payload.get("relatedConcern")
+        if related_concern and related_concern in avoid_concerns:
+            logger.info(
+                "Skipping '%s': concern '%s' was drafted too recently, trying the next candidate",
+                opportunity["query"],
+                related_concern,
+            )
+            continue
+
+        slug = slugify(payload.get("slug") or payload["title"])
+        if not slug or slug in used_slugs:
+            slug = f"{slug or 'article'}-{today_str}"
+        used_slugs.add(slug)
+
         payload["relatedTreatments"] = [
             s for s in (payload.get("relatedTreatments") or []) if s in site_map["treatments"]
         ]
@@ -657,7 +817,15 @@ def main() -> int:
         path = write_article(payload, slug, today_str)
         logger.info("Wrote %s", path)
 
-        related_concern = payload.get("relatedConcern")
+        # Keep this run's own picks spread across concerns too, and stop
+        # a later candidate in the same batch matching this one's title.
+        if related_concern:
+            avoid_concerns.add(related_concern)
+        for field_name in ("title", "primaryQuestion", "shortAnswer"):
+            value = payload.get(field_name)
+            if value:
+                coverage[str(value).lower()] = slug
+
         if related_concern in site_map["concerns"]:
             concern_path = CONCERNS_DIR / f"{related_concern}.mdx"
             if concern_path.exists():
