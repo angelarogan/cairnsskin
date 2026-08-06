@@ -10,6 +10,7 @@ import ConsultationCTA from "../components/ui/ConsultationCTA.astro";
 import { resolveRefs } from "../utils/relatedContent";
 import { breadcrumbSchema, articleSchema } from "../utils/schema";
 import { SITE_NAME, formatDisplayDate } from "../utils/seo";
+import { getTreatment } from "../data/treatments";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -18,6 +19,8 @@ interface Props {
 
 const { entry } = Astro.props;
 const { data } = entry;
+
+const bookingUrl = getTreatment(data.treatmentDataKey)?.bookingUrl;
 
 const lastPublishedDate = data.updatedDate ?? data.publishDate;
 const lastPublishedLabel = data.updatedDate ? "Last updated" : "Last published";
@@ -132,7 +135,7 @@ const schemas = [
 
     <ReferenceList sources={data.sources} />
 
-    <ConsultationCTA />
+    <ConsultationCTA href={bookingUrl} />
     <MedicalDisclaimer />
   </article>
 </BaseLayout>
