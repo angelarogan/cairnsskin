@@ -1,4 +1,6 @@
 ---
+const isFinderPage = Astro.url.pathname.startsWith("/tools/skin-treatment-finder/");
+
 const columns = [
   {
     heading: "Skin Concerns",
@@ -33,6 +35,23 @@ const columns = [
 ---
 
 <footer class="border-t border-stone-200 bg-paper-warm mt-24">
+  {!isFinderPage && (
+    <div class="mx-auto max-w-editorial px-5 md:px-8 pt-14">
+      <div class="rounded-2xl bg-ink text-paper-warm px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div>
+          <p class="eyebrow !text-eucalyptus-400 mb-2">Not sure where to start?</p>
+          <p class="text-lg text-paper-warm">Find the right treatment path for your skin concern.</p>
+        </div>
+        <a
+          href="/tools/skin-treatment-finder/"
+          class="btn-primary !bg-paper-warm !text-ink hover:!bg-eucalyptus-400 no-underline shrink-0"
+        >
+          Try the Treatment Finder
+        </a>
+      </div>
+    </div>
+  )}
+
   <div class="mx-auto max-w-editorial px-5 md:px-8 py-14">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
       <div class="col-span-2 md:col-span-1">
