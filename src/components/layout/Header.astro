@@ -1,6 +1,7 @@
 ---
 const navLinks = [
   { label: "Skin Concerns", href: "/skin-concerns/" },
+  { label: "Treatment Finder", href: "/tools/skin-treatment-finder/" },
   { label: "Treatments", href: "/treatments/" },
   { label: "Knowledge Library", href: "/questions/" },
   { label: "About", href: "/about/" },
@@ -13,11 +14,11 @@ const navLinks = [
       Cairns Skin
     </a>
 
-    <nav aria-label="Primary" class="hidden md:flex items-center gap-9">
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-7">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="relative pb-[3px] font-mono text-[13px] tracking-[0.04em] text-stone-700 no-underline hover:text-ink transition-colors duration-200 group"
+          class="relative pb-[3px] font-mono text-[13px] tracking-[0.04em] text-stone-700 no-underline hover:text-ink transition-colors duration-200 group whitespace-nowrap"
         >
           {link.label}
           <span class="absolute left-0 right-0 bottom-0 h-px bg-eucalyptus-700 scale-x-0 origin-right transition-transform duration-300 ease-editorial group-hover:scale-x-100 group-hover:origin-left" aria-hidden="true"></span>
@@ -25,7 +26,7 @@ const navLinks = [
       ))}
     </nav>
 
-    <div class="hidden md:block">
+    <div class="hidden lg:block">
       <a href="/book/" class="btn-primary text-sm py-2.5 px-5 no-underline">
         Book a Consultation
       </a>
@@ -34,7 +35,7 @@ const navLinks = [
     <button
       id="mobile-menu-toggle"
       type="button"
-      class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-stone-300"
+      class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-full border border-stone-300"
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
@@ -47,7 +48,7 @@ const navLinks = [
 
   <div
     id="mobile-menu"
-    class="hidden md:hidden fixed top-[78px] inset-x-0 h-screen overflow-y-auto z-40 bg-paper-warm/95 backdrop-blur-md"
+    class="hidden lg:hidden fixed top-[78px] inset-x-0 h-screen overflow-y-auto z-40 bg-paper-warm/95 backdrop-blur-md"
   >
     <nav aria-label="Mobile" class="flex flex-col gap-1 px-5 pt-6">
       {navLinks.map((link) => (
