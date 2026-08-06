@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs.astro";
+import MedicalDisclaimer from "../../../components/ui/MedicalDisclaimer.astro";
+import FinderApp from "../../../components/finder/FinderApp.astro";
+import { breadcrumbSchema, webApplicationSchema } from "../../../utils/schema";
+
+const seoTitle = "Skin Treatment Finder | Explore Options by Skin Concern";
+const seoDescription =
+  "Explore which skin treatment categories may be relevant to concerns such as pigmentation, acne scarring, redness, fine lines and texture. Evidence-informed educational guidance from Cairns Skin.";
+
+const schemas = [
+  breadcrumbSchema([{ name: "Skin Treatment Finder", url: "/tools/skin-treatment-finder/" }]),
+  webApplicationSchema({
+    name: "Cairns Skin Treatment Finder",
+    description: seoDescription,
+    url: "/tools/skin-treatment-finder/",
+  }),
+];
+---
+
+<BaseLayout title={seoTitle} description={seoDescription} structuredData={schemas}>
+  <div class="mx-auto max-w-editorial px-5 md:px-8 pt-10">
+    <Breadcrumbs items={[{ label: "Skin Treatment Finder" }]} />
+  </div>
+  <FinderApp />
+  <div class="mx-auto max-w-editorial px-5 md:px-8">
+    <MedicalDisclaimer />
+  </div>
+</BaseLayout>

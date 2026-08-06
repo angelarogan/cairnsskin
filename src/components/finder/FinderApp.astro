@@ -1,0 +1,426 @@
+---
+import FinderIcon from "./FinderIcon.astro";
+import ResultsPanel from "./ResultsPanel.astro";
+import NotSurePanel from "./NotSurePanel.astro";
+import { concerns } from "../../data/treatmentFinder";
+---
+
+<section class="finder-hero px-5 md:px-8 pt-10 md:pt-14">
+  <div class="finder-console mx-auto max-w-editorial rounded-[2rem] bg-ink text-paper-warm p-8 md:p-14 lg:p-16 relative overflow-hidden">
+    <div class="finder-console-glow" aria-hidden="true"></div>
+    <div class="grid lg:grid-cols-[1.08fr,0.92fr] gap-10 lg:gap-14 items-center relative">
+      <div>
+        <p class="eyebrow !text-eucalyptus-400 mb-5">Skin Concern Treatment Finder</p>
+        <h1 class="text-paper-warm mb-6 max-w-xl">Find the right treatment path for your skin concern</h1>
+        <p class="text-stone-300 text-lg max-w-xl mb-6 leading-relaxed">
+          Start with what you'd like to improve. We'll show you the treatment categories commonly considered for
+          that concern, what they target, and where to learn more.
+        </p>
+        <p class="font-mono text-xs tracking-[0.06em] text-eucalyptus-400 mb-9">
+          Evidence-informed. No diagnosis. No product promotion.
+        </p>
+
+        <button type="button" id="finder-start-cta" class="finder-cta-btn no-underline">
+          Find my options
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="finder-flow-cue mt-10 flex items-center gap-3 md:gap-4 flex-wrap" aria-hidden="true">
+          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Concern</span>
+          <span class="text-stone-600">&rarr;</span>
+          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Treatment options</span>
+          <span class="text-stone-600">&rarr;</span>
+          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Learn more</span>
+        </div>
+      </div>
+
+      <div class="finder-preview hidden lg:block" aria-hidden="true">
+        <div class="finder-preview-card fp-1">
+          <FinderIcon name="pigmentation" class="w-5 h-5 text-eucalyptus-600 mb-3" />
+          <p class="text-sm font-medium text-ink">Pigmentation</p>
+          <span class="finder-preview-pill">Strong option to explore</span>
+        </div>
+        <div class="finder-preview-card fp-2">
+          <FinderIcon name="redness" class="w-5 h-5 text-eucalyptus-600 mb-3" />
+          <p class="text-sm font-medium text-ink">Redness</p>
+          <span class="finder-preview-pill">May be relevant</span>
+        </div>
+        <div class="finder-preview-card fp-3">
+          <FinderIcon name="texture" class="w-5 h-5 text-eucalyptus-600 mb-3" />
+          <p class="text-sm font-medium text-ink">Texture</p>
+          <span class="finder-preview-pill">Assessment recommended</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="finder-app" class="finder-app-section" aria-label="Skin Concern Treatment Finder">
+  <div class="mx-auto max-w-editorial px-5 md:px-8 pb-20 md:pb-28">
+    <div class="finder-progress flex items-center justify-between gap-4 mt-8 mb-10 md:mt-10 md:mb-14 flex-wrap">
+      <button type="button" id="finder-back" class="finder-nav-btn" hidden>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2.5L3 7l5.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back
+      </button>
+
+      <ol class="finder-segmented mx-auto" aria-label="Progress">
+        <li data-step-indicator="1" class="finder-segment is-active">01 Concern</li>
+        <li data-step-indicator="2" class="finder-segment">02 Details</li>
+        <li data-step-indicator="3" class="finder-segment">03 Options</li>
+      </ol>
+
+      <button type="button" id="finder-restart" class="finder-nav-btn" hidden>Restart</button>
+    </div>
+
+    <div id="finder-step-1" class="finder-step" data-step="1" tabindex="-1">
+      <h2 class="mb-8 text-center">What would you like to improve?</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        {concerns.map((concern) => (
+          <button type="button" class="finder-concern-card glass-card p-6 text-left" data-concern={concern.slug}>
+            <FinderIcon name={concern.icon} class="w-7 h-7 text-eucalyptus-700 mb-4" />
+            <h3 class="text-base mb-1.5">{concern.label}</h3>
+            <p class="text-sm text-stone-600">{concern.shortDescription}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    {concerns.map((concern) => (
+      <div
+        id={`finder-step2-${concern.slug}`}
+        class="finder-step"
+        data-step="2"
+        data-concern={concern.slug}
+        hidden
+        tabindex="-1"
+      >
+        <h2 class="mb-8 text-center">What type of {concern.label.toLowerCase()} is it?</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {concern.subConcerns.map((sub) => (
+            <button
+              type="button"
+              class="finder-subconcern-card card-flat p-5 text-left"
+              data-concern={concern.slug}
+              data-subconcern={sub.slug}
+            >
+              <span class="text-ink font-medium">{sub.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    ))}
+
+    {concerns.map((concern) =>
+      concern.subConcerns.map((sub) => (
+        <div
+          id={`finder-step3-${concern.slug}-${sub.slug}`}
+          class="finder-step"
+          data-step="3"
+          data-concern={concern.slug}
+          data-subconcern={sub.slug}
+          hidden
+          tabindex="-1"
+        >
+          <h2 class="mb-8 text-center">{sub.label}</h2>
+          {sub.pathway === "not_sure" ? (
+            <NotSurePanel />
+          ) : (
+            <ResultsPanel concern={concern.slug} subConcern={sub.slug} />
+          )}
+        </div>
+      )),
+    )}
+  </div>
+</section>
+
+<style>
+  .finder-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-family: theme("fontFamily.mono");
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: theme("colors.stone.600");
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: color 200ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-nav-btn:hover {
+    color: theme("colors.eucalyptus.700");
+  }
+
+  .finder-console {
+    box-shadow: 0 40px 80px -32px rgba(13, 14, 12, 0.45);
+  }
+
+  .finder-console-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(480px 320px at 88% -10%, rgba(147, 167, 154, 0.35), transparent 70%),
+      radial-gradient(420px 280px at 10% 110%, rgba(147, 167, 154, 0.18), transparent 70%);
+  }
+
+  .finder-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    background: theme("colors.paper.warm");
+    color: theme("colors.ink.DEFAULT");
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 200ms theme("transitionTimingFunction.editorial"), transform 200ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-cta-btn:hover {
+    background: theme("colors.eucalyptus.400");
+    transform: translateY(-1px);
+  }
+
+  .finder-preview {
+    position: relative;
+    height: 320px;
+  }
+
+  .finder-preview-card {
+    position: absolute;
+    width: 208px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: theme("borderRadius.xl2");
+    padding: 1.25rem;
+    box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .fp-1 {
+    top: 0;
+    right: 8%;
+    transform: rotate(-4deg);
+    z-index: 3;
+  }
+
+  .fp-2 {
+    top: 96px;
+    right: 32%;
+    transform: rotate(3deg);
+    z-index: 2;
+  }
+
+  .fp-3 {
+    top: 200px;
+    right: 2%;
+    transform: rotate(-2deg);
+    z-index: 1;
+  }
+
+  .finder-preview-pill {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-family: theme("fontFamily.mono");
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: theme("colors.eucalyptus.700");
+    border: 1px solid rgba(147, 167, 154, 0.5);
+    border-radius: 9999px;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .finder-segmented {
+    position: relative;
+    display: inline-flex;
+    gap: 2px;
+    background: theme("colors.paper.DEFAULT");
+    border: 1px solid theme("colors.stone.200");
+    border-radius: 9999px;
+    padding: 4px;
+  }
+
+  .finder-segment {
+    font-family: theme("fontFamily.mono");
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: theme("colors.stone.400");
+    border-radius: 9999px;
+    padding: 0.5rem 0.9rem;
+    transition: color 250ms theme("transitionTimingFunction.editorial"), background-color 250ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-segment.is-active {
+    color: theme("colors.paper.warm");
+    background: theme("colors.ink.DEFAULT");
+  }
+
+  .finder-segment.is-done {
+    color: theme("colors.eucalyptus.700");
+  }
+
+  @media (max-width: 640px) {
+    .finder-segment {
+      font-size: 10px;
+      padding: 0.45rem 0.55rem;
+    }
+  }
+
+  .finder-concern-card,
+  .finder-subconcern-card {
+    cursor: pointer;
+    font: inherit;
+    width: 100%;
+  }
+
+  .finder-step {
+    animation: finder-step-in 320ms theme("transitionTimingFunction.editorial");
+  }
+
+  @keyframes finder-step-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .finder-step {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  type Step = 1 | 2 | 3;
+
+  const state: { step: Step; concern: string | null; subConcern: string | null } = {
+    step: 1,
+    concern: null,
+    subConcern: null,
+  };
+
+  const stepEls = Array.from(document.querySelectorAll<HTMLElement>(".finder-step"));
+  const stepIndicators = Array.from(document.querySelectorAll<HTMLElement>("[data-step-indicator]"));
+  const backBtn = document.getElementById("finder-back") as HTMLButtonElement | null;
+  const restartBtn = document.getElementById("finder-restart") as HTMLButtonElement | null;
+  const startCta = document.getElementById("finder-start-cta") as HTMLButtonElement | null;
+
+  function gaEvent(name: string, params: Record<string, unknown> = {}) {
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void };
+    w.gtag?.("event", name, { event_category: "treatment_finder", ...params });
+  }
+
+  function updateProgress() {
+    stepIndicators.forEach((el) => {
+      const n = Number(el.dataset.stepIndicator);
+      el.classList.toggle("is-active", n === state.step);
+      el.classList.toggle("is-done", n < state.step);
+    });
+    if (backBtn) backBtn.hidden = state.step === 1;
+    if (restartBtn) restartBtn.hidden = state.step === 1;
+  }
+
+  function showOnly(target: HTMLElement) {
+    stepEls.forEach((el) => {
+      el.hidden = el !== target;
+    });
+    target.scrollIntoView({ block: "start", behavior: "smooth" });
+    window.requestAnimationFrame(() => target.focus({ preventScroll: true }));
+  }
+
+  function showStep1() {
+    state.step = 1;
+    state.concern = null;
+    state.subConcern = null;
+    const el = document.getElementById("finder-step-1");
+    if (el) showOnly(el);
+    updateProgress();
+  }
+
+  function showStep2(concernSlug: string) {
+    const el = document.getElementById(`finder-step2-${concernSlug}`);
+    if (!el) return;
+    state.step = 2;
+    state.concern = concernSlug;
+    state.subConcern = null;
+    showOnly(el);
+    updateProgress();
+  }
+
+  function showStep3(concernSlug: string, subConcernSlug: string) {
+    const el = document.getElementById(`finder-step3-${concernSlug}-${subConcernSlug}`);
+    if (!el) return;
+    state.step = 3;
+    state.concern = concernSlug;
+    state.subConcern = subConcernSlug;
+    showOnly(el);
+    updateProgress();
+    gaEvent("treatment_result_viewed", { concern: concernSlug, sub_concern: subConcernSlug });
+  }
+
+  startCta?.addEventListener("click", () => {
+    gaEvent("treatment_finder_started");
+    document.getElementById("finder-app")?.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".finder-concern-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const concern = card.dataset.concern;
+      if (!concern) return;
+      gaEvent("concern_selected", { concern });
+      showStep2(concern);
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>(".finder-subconcern-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const { concern, subconcern } = card.dataset;
+      if (!concern || !subconcern) return;
+      gaEvent("subconcern_selected", { concern, sub_concern: subconcern });
+      showStep3(concern, subconcern);
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-finder-goto]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const [concern, subconcern] = (btn.dataset.finderGoto ?? "").split(":");
+      if (!concern || !subconcern) return;
+      gaEvent("subconcern_selected", { concern, sub_concern: subconcern, via: "goto" });
+      showStep3(concern, subconcern);
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-finder-track="treatment_compare_clicked"]').forEach((el) => {
+    el.addEventListener("click", () => gaEvent("treatment_compare_clicked", { concern: state.concern, sub_concern: state.subConcern }));
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-finder-track="treatment_learn_more_clicked"]').forEach((el) => {
+    el.addEventListener("click", () => gaEvent("treatment_learn_more_clicked", { treatment: el.dataset.treatment }));
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-finder-track="local_consultation_clicked"]').forEach((el) => {
+    el.addEventListener("click", () => gaEvent("local_consultation_clicked", { concern: state.concern, sub_concern: state.subConcern }));
+  });
+
+  backBtn?.addEventListener("click", () => {
+    if (state.step === 3 && state.concern) {
+      showStep2(state.concern);
+    } else if (state.step === 2) {
+      showStep1();
+    }
+  });
+
+  restartBtn?.addEventListener("click", () => {
+    gaEvent("treatment_finder_restarted");
+    showStep1();
+  });
+</script>

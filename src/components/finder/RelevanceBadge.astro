@@ -1,0 +1,28 @@
+---
+import { RELEVANCE_LABEL, type Relevance } from "../../data/treatmentFinder";
+
+interface Props {
+  relevance: Relevance;
+}
+
+const { relevance } = Astro.props;
+
+const styles: Record<Relevance, string> = {
+  strong: "border-eucalyptus-600/50 text-eucalyptus-700 bg-eucalyptus-50/60",
+  consider: "border-stone-300 text-stone-600",
+  supportive: "border-stone-200 text-stone-500",
+  assess: "border-ink/30 text-ink bg-stone-50",
+};
+
+const dot: Record<Relevance, string> = {
+  strong: "bg-eucalyptus-600",
+  consider: "bg-stone-400",
+  supportive: "bg-stone-300",
+  assess: "bg-ink",
+};
+---
+
+<span class={`pill-status ${styles[relevance]}`}>
+  <span class={`w-1.5 h-1.5 rounded-full ${dot[relevance]}`} aria-hidden="true"></span>
+  {RELEVANCE_LABEL[relevance]}
+</span>

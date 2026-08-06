@@ -1,0 +1,54 @@
+---
+import type { ResolvedMatch } from "../../data/treatmentFinder";
+
+interface Props {
+  resolved: ResolvedMatch[];
+}
+
+const { resolved } = Astro.props;
+---
+
+<details class="finder-compare mt-8 glass-card p-6 md:p-7">
+  <summary
+    class="flex items-center justify-between cursor-pointer list-none text-sm font-medium text-ink"
+    data-finder-track="treatment_compare_clicked"
+  >
+    <span>Compare options</span>
+    <svg class="finder-chevron w-4 h-4 text-stone-400 transition-transform duration-200 ease-editorial" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </summary>
+
+  <div class="mt-5 overflow-x-auto">
+    <table class="w-full text-sm border-collapse min-w-[560px]">
+      <thead>
+        <tr class="border-b border-stone-200 text-left">
+          <th class="py-3 pr-4 font-mono text-[11px] tracking-[0.06em] text-stone-500 font-medium">Treatment</th>
+          <th class="py-3 pr-4 font-mono text-[11px] tracking-[0.06em] text-stone-500 font-medium">What it targets</th>
+          <th class="py-3 pr-4 font-mono text-[11px] tracking-[0.06em] text-stone-500 font-medium">Downtime</th>
+          <th class="py-3 font-mono text-[11px] tracking-[0.06em] text-stone-500 font-medium">Key limitation</th>
+        </tr>
+      </thead>
+      <tbody>
+        {resolved.map(({ match, category }) => (
+          <tr class="border-b border-stone-100 align-top">
+            <td class="py-3 pr-4 text-ink font-medium">{category.label}</td>
+            <td class="py-3 pr-4 text-stone-600">{category.shortDescription}</td>
+            <td class="py-3 pr-4 text-stone-600 whitespace-nowrap">{category.downtime ?? "Varies"}</td>
+            <td class="py-3 text-stone-600">{match.limitations}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<style>
+  .finder-compare summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .finder-compare[open] > summary .finder-chevron {
+    transform: rotate(180deg);
+  }
+</style>
