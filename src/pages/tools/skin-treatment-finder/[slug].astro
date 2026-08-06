@@ -1,0 +1,51 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../../components/ui/Breadcrumbs.astro";
+import MedicalDisclaimer from "../../../components/ui/MedicalDisclaimer.astro";
+import ResultsPanel from "../../../components/finder/ResultsPanel.astro";
+import { shareableResults } from "../../../data/treatmentFinder/shareableResults";
+import { breadcrumbSchema, articleSchema } from "../../../utils/schema";
+import { SITE_NAME } from "../../../utils/seo";
+
+export function getStaticPaths() {
+  return shareableResults.map((result) => ({
+    params: { slug: result.slug },
+    props: { result },
+  }));
+}
+
+const { result } = Astro.props;
+
+const schemas = [
+  breadcrumbSchema([
+    { name: "Skin Treatment Finder", url: "/tools/skin-treatment-finder/" },
+    { name: result.h1, url: `/tools/skin-treatment-finder/${result.slug}/` },
+  ]),
+  articleSchema({
+    headline: result.h1,
+    description: result.seoDescription,
+    authorName: SITE_NAME,
+    url: `/tools/skin-treatment-finder/${result.slug}/`,
+  }),
+];
+---
+
+<BaseLayout title={result.seoTitle} description={result.seoDescription} structuredData={schemas}>
+  <article class="mx-auto max-w-editorial px-5 md:px-8 py-14 md:py-20">
+    <Breadcrumbs
+      items={[{ label: "Skin Treatment Finder", href: "/tools/skin-treatment-finder/" }, { label: result.h1 }]}
+    />
+
+    <h1 class="mb-8 max-w-2xl">{result.h1}</h1>
+
+    <ResultsPanel concern={result.concern} subConcern={result.subConcern} introOverride={result.intro} />
+
+    <div class="mt-12 text-center">
+      <a href="/tools/skin-treatment-finder/" class="btn-secondary no-underline">
+        Try the interactive Treatment Finder
+      </a>
+    </div>
+
+    <MedicalDisclaimer />
+  </article>
+</BaseLayout>

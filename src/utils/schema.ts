@@ -55,6 +55,32 @@ export function videoSchema(params: {
   };
 }
 
+export function webApplicationSchema(params: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: params.name,
+    description: params.description,
+    url: new URL(params.url, SITE_URL).toString(),
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "AUD",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+  };
+}
+
 export function articleSchema(params: {
   headline: string;
   description: string;

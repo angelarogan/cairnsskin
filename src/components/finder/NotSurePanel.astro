@@ -1,0 +1,34 @@
+---
+import { NOT_SURE_PIGMENTATION, NOT_SURE_CLOSING, MEDICAL_SAFETY_NOTE, FINDER_DISCLAIMER, LOCAL_CTA } from "../../data/treatmentFinder";
+---
+
+<div class="finder-results">
+  <p class="eyebrow mb-3">Understanding pigmentation types</p>
+  <h3 class="text-xl mb-5">A few common types, in plain English</h3>
+
+  <div class="space-y-4 max-w-prose">
+    {NOT_SURE_PIGMENTATION.map((type) => (
+      <div class="border-b border-stone-200 pb-4">
+        <p class="font-medium text-ink mb-1">{type.label}</p>
+        <p class="text-sm text-stone-600">{type.description}</p>
+      </div>
+    ))}
+  </div>
+
+  <p class="text-stone-700 mt-6 max-w-prose">{NOT_SURE_CLOSING}</p>
+
+  <div class="flex gap-3 items-start rounded-xl border border-stone-200 bg-stone-50 p-4 mt-8 max-w-prose">
+    <span class="mt-0.5 text-stone-400" aria-hidden="true">&#9432;</span>
+    <p class="text-xs text-stone-500 leading-relaxed">{MEDICAL_SAFETY_NOTE}</p>
+  </div>
+
+  <div class="glass-card p-7 md:p-8 mt-8 text-center">
+    <h3 class="text-xl mb-2">{LOCAL_CTA.heading}</h3>
+    <p class="text-stone-600 mb-5 max-w-prose mx-auto">{LOCAL_CTA.body}</p>
+    <a href={LOCAL_CTA.href} class="btn-primary no-underline" data-finder-track="local_consultation_clicked">
+      {LOCAL_CTA.linkLabel}
+    </a>
+  </div>
+
+  <p class="text-xs text-stone-500 leading-relaxed mt-8 max-w-prose">{FINDER_DISCLAIMER}</p>
+</div>

@@ -1,0 +1,84 @@
+---
+import RelevanceBadge from "./RelevanceBadge.astro";
+import type { ResolvedMatch } from "../../data/treatmentFinder";
+
+interface Props {
+  resolved: ResolvedMatch;
+}
+
+const { resolved } = Astro.props;
+const { match, category } = resolved;
+const learnMoreHref = category.internalLink ?? "/treatments/";
+---
+
+<article class="finder-result-card glass-card p-6 md:p-7">
+  <div class="flex items-start justify-between gap-4 mb-3">
+    <h3 class="text-lg leading-snug">{category.label}</h3>
+  </div>
+
+  <RelevanceBadge relevance={match.relevance} />
+
+  <p class="text-sm text-stone-600 mt-4">{category.shortDescription}</p>
+
+  <details class="finder-expand mt-5 border-t border-stone-200 pt-4">
+    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-medium text-ink">
+      <span>Why is this showing?</span>
+      <svg class="finder-chevron w-4 h-4 text-stone-400 transition-transform duration-200 ease-editorial" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </summary>
+    <p class="text-sm text-stone-600 mt-3 leading-relaxed">{match.shortReason}</p>
+  </details>
+
+  <details class="finder-expand mt-2 border-t border-stone-200 pt-4">
+    <summary class="flex items-center justify-between cursor-pointer list-none text-sm font-medium text-ink">
+      <span>Important to know</span>
+      <svg class="finder-chevron w-4 h-4 text-stone-400 transition-transform duration-200 ease-editorial" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </summary>
+    <p class="text-sm text-stone-600 mt-3 leading-relaxed">{match.limitations}</p>
+  </details>
+
+  <div class="mt-5 pt-4 border-t border-stone-200 flex items-center justify-end gap-3">
+    <a
+      href={learnMoreHref}
+      class="font-mono text-xs text-eucalyptus-700 no-underline shrink-0"
+      data-finder-track="treatment_learn_more_clicked"
+      data-treatment={category.id}
+    >
+      Explore {category.label} &rarr;
+    </a>
+  </div>
+</article>
+
+<style>
+  .finder-expand summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .finder-expand[open] > summary .finder-chevron {
+    transform: rotate(180deg);
+  }
+
+  .finder-expand[open] > p {
+    animation: finder-fade-in 220ms ease-editorial;
+  }
+
+  @keyframes finder-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .finder-expand[open] > p {
+      animation: none;
+    }
+  }
+</style>

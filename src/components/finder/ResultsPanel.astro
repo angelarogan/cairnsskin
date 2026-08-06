@@ -1,0 +1,95 @@
+---
+import TreatmentResultCard from "./TreatmentResultCard.astro";
+import CompareTable from "./CompareTable.astro";
+import {
+  resolveMatches,
+  getIntroNote,
+  ASSESSMENT_ONLY_COPY,
+  MEDICAL_SAFETY_NOTE,
+  FINDER_DISCLAIMER,
+  LOCAL_CTA,
+} from "../../data/treatmentFinder";
+
+interface Props {
+  concern: string;
+  subConcern: string;
+  /** Overrides the default "Options worth exploring" intro sentence, used by shareable static pages. */
+  introOverride?: string;
+}
+
+const { concern, subConcern, introOverride } = Astro.props;
+
+const key = `${concern}:${subConcern}`;
+const assessmentOnly = ASSESSMENT_ONLY_COPY[key];
+const resolved = assessmentOnly ? [] : resolveMatches(concern, subConcern);
+const introNote = getIntroNote(concern, subConcern);
+const comparable = resolved.filter((r) => r.match.relevance === "strong" || r.match.relevance === "consider");
+---
+
+<div class="finder-results">
+  <p class="eyebrow mb-3">Options worth exploring</p>
+
+  {assessmentOnly ? (
+    <div class="glass-card p-7 md:p-8">
+      <h3 class="text-xl mb-3">{assessmentOnly.heading}</h3>
+      <p class="text-stone-600 leading-relaxed">{assessmentOnly.body}</p>
+    </div>
+  ) : resolved.length === 0 ? (
+    <div class="glass-card p-7 md:p-8">
+      <h3 class="text-xl mb-3">Assessment may be the best next step</h3>
+      <p class="text-stone-600 leading-relaxed">
+        Evidence for this concern is still developing, or it depends heavily on individual factors that are best
+        assessed in person rather than guessed at here.
+      </p>
+    </div>
+  ) : (
+    <>
+      {introOverride && <p class="text-stone-600 text-lg mb-6 max-w-prose">{introOverride}</p>}
+
+      {introNote && (
+        <div class="flex gap-3 items-start rounded-xl border border-eucalyptus-200 bg-eucalyptus-50/60 p-4 mb-6 max-w-prose">
+          <span class="mt-0.5 text-eucalyptus-600" aria-hidden="true">&#9432;</span>
+          <p class="text-sm text-stone-700">
+            {introNote}
+            {concern === "acne" && subConcern === "marks-after-acne" && (
+              <>
+                {" "}If the marks are indented rather than flat or red, that's more likely to be scarring: see
+                {" "}
+                <button type="button" class="text-eucalyptus-700 underline underline-offset-4" data-finder-goto="acne:acne-scarring">
+                  acne scarring options
+                </button>.
+              </>
+            )}
+          </p>
+        </div>
+      )}
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        {resolved.map((r) => (
+          <TreatmentResultCard resolved={r} />
+        ))}
+      </div>
+
+      {comparable.length > 1 && <CompareTable resolved={comparable} />}
+    </>
+  )}
+
+  <div class="flex gap-3 items-start rounded-xl border border-stone-200 bg-stone-50 p-4 mt-8 max-w-prose">
+    <span class="mt-0.5 text-stone-400" aria-hidden="true">&#9432;</span>
+    <p class="text-xs text-stone-500 leading-relaxed">{MEDICAL_SAFETY_NOTE}</p>
+  </div>
+
+  <div class="glass-card p-7 md:p-8 mt-8 text-center">
+    <h3 class="text-xl mb-2">{LOCAL_CTA.heading}</h3>
+    <p class="text-stone-600 mb-5 max-w-prose mx-auto">{LOCAL_CTA.body}</p>
+    <a
+      href={LOCAL_CTA.href}
+      class="btn-primary no-underline"
+      data-finder-track="local_consultation_clicked"
+    >
+      {LOCAL_CTA.linkLabel}
+    </a>
+  </div>
+
+  <p class="text-xs text-stone-500 leading-relaxed mt-8 max-w-prose">{FINDER_DISCLAIMER}</p>
+</div>
