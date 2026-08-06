@@ -2,11 +2,14 @@
 interface Props {
   heading?: string;
   body?: string;
+  /** Overrides the default /book/ link. Pass the treatment's own bookingUrl so the CTA lands on the correct Laser Clinics Australia booking category, not a generic one. */
+  href?: string;
 }
 
 const {
   heading = "Considering a consultation?",
   body = "A consultation is the best way to understand what's suitable for your skin. Laser Clinics Cairns can talk through options based on your individual circumstances.",
+  href = "/book/",
 } = Astro.props;
 ---
 
@@ -15,5 +18,5 @@ const {
     <p class="text-base font-medium text-ink mb-1">{heading}</p>
     <p class="text-sm text-stone-600 max-w-md">{body}</p>
   </div>
-  <a href="/book/" class="btn-primary no-underline shrink-0">Book a Consultation</a>
+  <a href={href} class="btn-primary no-underline shrink-0">Book a Consultation</a>
 </div>

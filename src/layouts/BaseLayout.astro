@@ -107,7 +107,7 @@ const gaId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
                 event_category: "engagement",
                 page_path: window.location.pathname,
               });
-            } else if (link.href.startsWith("https://www.laserclinics.com.au/skin-consultation")) {
+            } else if (link.href.startsWith("https://www.laserclinics.com.au/booking/")) {
               gtag("event", "book_consultation_outbound_click", {
                 event_category: "conversion",
               });

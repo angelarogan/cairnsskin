@@ -93,7 +93,7 @@ export const concerns: Concern[] = [
     shortDescription: "Localised fat, stretch marks and skin tightening.",
     icon: "body",
     subConcerns: [
-      { slug: "localised-fat", label: "Localised fat" },
+      { slug: "localised-fat", label: "Stubborn fat" },
       { slug: "stretch-marks", label: "Stretch marks" },
       { slug: "skin-tightening", label: "Skin tightening" },
     ],

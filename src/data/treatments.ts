@@ -42,6 +42,14 @@ export interface TreatmentMeta {
   verifiedDate: string | null;
   availabilityAtCairns: TreatmentAvailability;
   clinicVerificationRequired: true;
+  /**
+   * The correct Laser Clinics Australia booking/consultation URL for this
+   * treatment's category, verified by navigating each LCA treatment page's
+   * own "Book a Consultation" link. Laser hair removal and cosmetic
+   * aesthetics (Rejuran) use different booking flows to general skin
+   * treatments, so this must never default to a single site-wide URL.
+   */
+  bookingUrl: string;
   notes?: string;
 }
 
@@ -57,6 +65,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
     notes: "Do not label as IPL in published copy: confirm BBL is the correct current term for this location.",
   },
   rejuran: {
@@ -70,6 +79,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/cosmetic-aesthetics/",
   },
   "skin-needling": {
     key: "skin-needling",
@@ -82,6 +92,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "laser-hair-removal": {
     key: "laser-hair-removal",
@@ -94,6 +105,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/laser-hair-removal/",
   },
   "led-light-therapy": {
     key: "led-light-therapy",
@@ -106,6 +118,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "fractional-rf": {
     key: "fractional-rf",
@@ -118,6 +131,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "medical-grade-peels": {
     key: "medical-grade-peels",
@@ -130,6 +144,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   skinstitut: {
     key: "skinstitut",
@@ -142,6 +157,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: "2026-08-01",
     availabilityAtCairns: "confirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/complimentary-consultation/",
     notes: "Confirmed directly by the site owner as the skincare brand used/recommended, 2026-08-01.",
   },
   microdermabrasion: {
@@ -155,6 +171,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   aquafacial: {
     key: "aquafacial",
@@ -167,6 +184,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "capillary-reduction": {
     key: "capillary-reduction",
@@ -179,6 +197,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "cosmetic-grade-facials": {
     key: "cosmetic-grade-facials",
@@ -191,6 +210,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
   },
   "pigmentation-removal": {
     key: "pigmentation-removal",
@@ -203,6 +223,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
     notes: "Confirm how this is distinguished from BBL in current Laser Clinics Cairns service naming, to avoid overlapping/duplicate treatment claims.",
   },
   "melanopro-peel": {
@@ -216,6 +237,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
     notes: "Confirm availability at Laser Clinics Cairns specifically; only suited to superficial or mixed-depth melasma, not deep/dermal melasma.",
   },
   "kleresca-rosacea": {
@@ -229,6 +251,7 @@ export const treatments: Record<string, TreatmentMeta> = {
     verifiedDate: null,
     availabilityAtCairns: "unconfirmed",
     clinicVerificationRequired: true,
+    bookingUrl: "https://www.laserclinics.com.au/booking/skin-treatments/",
     notes: "Confirm availability at Laser Clinics Cairns specifically; distinct platform from standard LED light therapy.",
   },
 };
