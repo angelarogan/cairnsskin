@@ -1,12 +1,12 @@
-# Content opportunities: 2026-08-06
+# Content opportunities: 2026-08-07
 
-247 queries analysed, 136 not yet covered by existing content.
+249 queries analysed, 138 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| pigmentation meaning | both | 5 | 86.0 | 33.0 |
+| pigmentation meaning | both | 6 | 85.2 | 34.6 |
 | cairns skin centre | both | 3 | 59.3 | 29.8 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
@@ -32,6 +32,7 @@
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | why-isnt-my-acne-cream-working |
 | bbl skin treatment | what-to-avoid-on-skin-after-treatment-in-humidity |
 | cairns skin cancer and cosmetic clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
@@ -50,4 +51,3 @@
 | enlarged pores on breast | enlarged-pores |
 | enlarged pores on cheeks | enlarged-pores |
 | enlarged pores on face | enlarged-pores |
-| enlarged pores on face treatment | enlarged-pores |
