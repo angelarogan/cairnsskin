@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-07
+# Content opportunities: 2026-08-08
 
-249 queries analysed, 138 not yet covered by existing content.
+256 queries analysed, 142 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -32,7 +32,6 @@
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
-| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | why-isnt-my-acne-cream-working |
 | bbl skin treatment | what-to-avoid-on-skin-after-treatment-in-humidity |
 | cairns skin cancer and cosmetic clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
@@ -51,3 +50,4 @@
 | enlarged pores on breast | enlarged-pores |
 | enlarged pores on cheeks | enlarged-pores |
 | enlarged pores on face | enlarged-pores |
+| enlarged pores on face treatment | enlarged-pores |
