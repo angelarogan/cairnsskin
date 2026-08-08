@@ -26,53 +26,27 @@ import { concerns } from "../../data/treatmentFinder";
         </button>
       </div>
 
-      <ol class="finder-path hidden lg:flex" aria-hidden="true">
+      <ol class="finder-path flex" aria-hidden="true">
         <li class="finder-path-step">
           <span class="finder-path-node">01</span>
-          <p class="finder-path-label">What to improve</p>
+          <p class="finder-path-label">Select your skin concern</p>
         </li>
         <li class="finder-path-arrow">
           <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v14M2 11l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="finder-path-step">
           <span class="finder-path-node">02</span>
-          <p class="finder-path-label">Pick your Skin Concern</p>
+          <p class="finder-path-label">Select the specific type</p>
         </li>
         <li class="finder-path-arrow">
           <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v14M2 11l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </li>
         <li class="finder-path-step">
           <span class="finder-path-node">03</span>
-          <p class="finder-path-label">See your options</p>
-        </li>
-        <li class="finder-path-arrow">
-          <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v14M2 11l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-        <li class="finder-path-step">
-          <span class="finder-path-node">04</span>
-          <p class="finder-path-label">Why these options are recommended</p>
+          <p class="finder-path-label">See your treatment options and why they're recommended</p>
         </li>
       </ol>
     </div>
-
-    <ol class="finder-steps-preview relative mt-14 pt-10 border-t border-white/10 grid grid-cols-2 lg:hidden gap-3 md:gap-4">
-      <li class="finder-step-tile">
-        <p class="font-mono text-xs text-eucalyptus-600 mb-2">01</p>
-        <p class="text-ink text-sm font-medium leading-snug">What to improve</p>
-      </li>
-      <li class="finder-step-tile">
-        <p class="font-mono text-xs text-eucalyptus-600 mb-2">02</p>
-        <p class="text-ink text-sm font-medium leading-snug">Pick your Skin Concern</p>
-      </li>
-      <li class="finder-step-tile">
-        <p class="font-mono text-xs text-eucalyptus-600 mb-2">03</p>
-        <p class="text-ink text-sm font-medium leading-snug">See your options</p>
-      </li>
-      <li class="finder-step-tile">
-        <p class="font-mono text-xs text-eucalyptus-600 mb-2">04</p>
-        <p class="text-ink text-sm font-medium leading-snug">Why options are recommended</p>
-      </li>
-    </ol>
   </div>
 </section>
 
@@ -208,12 +182,19 @@ import { concerns } from "../../data/treatmentFinder";
   }
 
   .finder-step-tile {
+    display: flex;
+    align-items: center;
+    min-height: 4.5rem;
     background: theme("colors.paper.DEFAULT");
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: theme("borderRadius.xl2");
     padding: 1rem 1.1rem;
     box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.4);
     transition: transform 200ms theme("transitionTimingFunction.editorial"), box-shadow 200ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-step-tile > div {
+    width: 100%;
   }
 
   .finder-step-tile:hover {
@@ -223,14 +204,25 @@ import { concerns } from "../../data/treatmentFinder";
 
   .finder-path {
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 1rem;
+    align-items: stretch;
+    width: 100%;
+    max-width: 19rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .finder-path {
+      margin-top: 0;
+      margin-left: auto;
+    }
   }
 
   .finder-path-step {
     display: flex;
     align-items: center;
     gap: 0.9rem;
+    min-height: 5.25rem;
+    width: 100%;
     background: theme("colors.paper.DEFAULT");
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: theme("borderRadius.xl2");
@@ -257,7 +249,8 @@ import { concerns } from "../../data/treatmentFinder";
     color: theme("colors.ink.DEFAULT");
     font-size: 0.9375rem;
     font-weight: 500;
-    max-width: 15rem;
+    line-height: 1.3;
+    flex: 1;
   }
 
   .finder-path-arrow {
