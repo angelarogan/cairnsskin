@@ -24,14 +24,6 @@ import { concerns } from "../../data/treatmentFinder";
           Find my options
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-
-        <div class="finder-flow-cue mt-10 flex items-center gap-3 md:gap-4 flex-wrap" aria-hidden="true">
-          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Concern</span>
-          <span class="text-stone-600">&rarr;</span>
-          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Treatment options</span>
-          <span class="text-stone-600">&rarr;</span>
-          <span class="font-mono text-[11px] tracking-[0.06em] text-stone-400">Learn more</span>
-        </div>
       </div>
 
       <div class="finder-preview hidden lg:block" aria-hidden="true">
@@ -52,6 +44,25 @@ import { concerns } from "../../data/treatmentFinder";
         </div>
       </div>
     </div>
+
+    <ol class="finder-steps-preview relative mt-14 pt-10 border-t border-white/10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
+      <li>
+        <p class="font-mono text-xs text-eucalyptus-400 mb-2">01</p>
+        <p class="text-paper-warm text-sm leading-relaxed">What would you like to improve?</p>
+      </li>
+      <li>
+        <p class="font-mono text-xs text-eucalyptus-400 mb-2">02</p>
+        <p class="text-paper-warm text-sm leading-relaxed">Define your specific concern from the options provided</p>
+      </li>
+      <li>
+        <p class="font-mono text-xs text-eucalyptus-400 mb-2">03</p>
+        <p class="text-paper-warm text-sm leading-relaxed">See the treatment options worth exploring</p>
+      </li>
+      <li>
+        <p class="font-mono text-xs text-eucalyptus-400 mb-2">04</p>
+        <p class="text-paper-warm text-sm leading-relaxed">Learn more about what may help, and why</p>
+      </li>
+    </ol>
   </div>
 </section>
 
