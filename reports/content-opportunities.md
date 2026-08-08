@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-08
+# Content opportunities: 2026-08-09
 
-256 queries analysed, 142 not yet covered by existing content.
+258 queries analysed, 140 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -10,9 +10,7 @@
 | cairns skin centre | both | 3 | 59.3 | 29.8 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
-| acne rosacea | autocomplete | 0 | 0.0 | 15.0 |
 | acne scar treatment | autocomplete | 0 | 0.0 | 15.0 |
-| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne scars | autocomplete | 0 | 0.0 | 15.0 |
 | acne treatment | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
@@ -26,12 +24,15 @@
 | aquafacial treatment | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial vs hydrafacial | autocomplete | 0 | 0.0 | 15.0 |
 | aquafacial vs microdermabrasion | autocomplete | 0 | 0.0 | 15.0 |
+| bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
+| bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
 | Query | Matched page |
 |---|---|
 | skin needling cairns | does-skin-needling-help-acne-scarring |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | why-isnt-my-acne-cream-working |
 | bbl skin treatment | what-to-avoid-on-skin-after-treatment-in-humidity |
 | cairns skin cancer and cosmetic clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
@@ -50,4 +51,3 @@
 | enlarged pores on breast | enlarged-pores |
 | enlarged pores on cheeks | enlarged-pores |
 | enlarged pores on face | enlarged-pores |
-| enlarged pores on face treatment | enlarged-pores |
