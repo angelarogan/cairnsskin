@@ -305,6 +305,9 @@ import { concerns } from "../../data/treatmentFinder";
   }
 
   .finder-step {
+    /* The site header is sticky at 78px tall. Without this, scrollIntoView
+       lands the step's heading right underneath it, hiding the question. */
+    scroll-margin-top: 96px;
     animation: finder-step-in 320ms theme("transitionTimingFunction.editorial");
   }
 
