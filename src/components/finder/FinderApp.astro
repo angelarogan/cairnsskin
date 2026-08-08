@@ -21,7 +21,7 @@ import { concerns } from "../../data/treatmentFinder";
         </p>
 
         <button type="button" id="finder-start-cta" class="finder-cta-btn no-underline">
-          Find my options
+          Try the Skin Treatment Finder Tool
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
       </div>
@@ -45,22 +45,22 @@ import { concerns } from "../../data/treatmentFinder";
       </div>
     </div>
 
-    <ol class="finder-steps-preview relative mt-14 pt-10 border-t border-white/10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8">
-      <li>
+    <ol class="finder-steps-preview relative mt-14 pt-10 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+      <li class="finder-step-tile">
         <p class="font-mono text-xs text-eucalyptus-400 mb-2">01</p>
-        <p class="text-paper-warm text-sm leading-relaxed">What would you like to improve?</p>
+        <p class="text-paper-warm text-sm font-medium leading-snug">What to improve</p>
       </li>
-      <li>
+      <li class="finder-step-tile">
         <p class="font-mono text-xs text-eucalyptus-400 mb-2">02</p>
-        <p class="text-paper-warm text-sm leading-relaxed">Define your specific concern from the options provided</p>
+        <p class="text-paper-warm text-sm font-medium leading-snug">Pick your concern</p>
       </li>
-      <li>
+      <li class="finder-step-tile">
         <p class="font-mono text-xs text-eucalyptus-400 mb-2">03</p>
-        <p class="text-paper-warm text-sm leading-relaxed">See the treatment options worth exploring</p>
+        <p class="text-paper-warm text-sm font-medium leading-snug">See your options</p>
       </li>
-      <li>
+      <li class="finder-step-tile">
         <p class="font-mono text-xs text-eucalyptus-400 mb-2">04</p>
-        <p class="text-paper-warm text-sm leading-relaxed">Learn more about what may help, and why</p>
+        <p class="text-paper-warm text-sm font-medium leading-snug">Learn more</p>
       </li>
     </ol>
   </div>
@@ -195,6 +195,19 @@ import { concerns } from "../../data/treatmentFinder";
   .finder-cta-btn:hover {
     background: theme("colors.eucalyptus.400");
     transform: translateY(-1px);
+  }
+
+  .finder-step-tile {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: theme("borderRadius.xl2");
+    padding: 1rem 1.1rem;
+    transition: background-color 200ms theme("transitionTimingFunction.editorial"), border-color 200ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-step-tile:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(147, 167, 154, 0.4);
   }
 
   .finder-preview {
