@@ -1938,3 +1938,271 @@ date,query,source,impressions,clicks,ctr,position,already_covered,matched_slug,s
 2026-08-09,what is pigmentation,search_console,1,0,0,97,True,what-causes-pigmentation-around-the-mouth,0.16
 2026-08-09,why do i have pigmentation around my mouth,search_console,1,0,0,78,True,can-i-get-pigmentation-treatment-with-a-tan,0.16
 2026-08-09,kleresca rosacea,search_console,1,0,0,10,True,kleresca-rosacea,0.1
+2026-08-10,pigmentation meaning,both,6,0,0,85.17,False,,34.6
+2026-08-10,cairns skin centre,both,3,0,0,59.33,False,,29.8
+2026-08-10,acne medication,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,acne scar treatment,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,acne scars,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,acne treatment,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,acne vulgaris,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial bar,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial before and after,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial benefits,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial laser clinics,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial machine,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial near me,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial reviews,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial treatment,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial vs hydrafacial,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,aquafacial vs microdermabrasion,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl 2026,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl before and after,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl drizzy,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl hero,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl jacket,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl jeans,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl laser,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl laser brisbane,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl meaning,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl privatisation,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl surgery,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,bbl teams,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin cancer,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin care,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin care centre,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin centre photos,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin check,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin doctors,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin doctors smithfield,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,cairns skin specialist,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin behind ear,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin in ears,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin moisturiser,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin moisturizer,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin on eyelid,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin on feet,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin pokemon,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin under beard,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,dry skin under eyes,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma causes,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma clinic brisbane,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma dermnet,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma meaning,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma mouth,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma mustache,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma pregnancy,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma skin,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma treatment,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma treatment brisbane,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma treatment cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma vs hyperpigmentation,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,melasma vs pigmentation,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion at home,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion before and after,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion benefits,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion cairns,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion facial,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion facial near me,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion gold coast,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion machine,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion mackay,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion near me,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion sunshine coast,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion toowoomba,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion townsville,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,microdermabrasion vs microneedling,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation cream chemist warehouse,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation laser,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation live,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,pigmentation serum,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea causes,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea cream chemist warehouse,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea dermnet,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea nose,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea pronunciation,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea skin,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea skin care,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea symptoms,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea triggers,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosacea types,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,rosaceae,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sagging skinny jeans,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage car,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage car paint repair,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage cream,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage on chest,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage on nose,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage paint repair,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage repair car,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damage to eyes,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damaged lips,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damaged paint on car,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damaged skin,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,sun damaged skin on face,autocomplete,0,0,0.0,0.0,False,,15.0
+2026-08-10,skin care cairns,search_console,8,0,0,82.12,False,,12.8
+2026-08-10,rejuran cairns,search_console,15,1,0.0667,10.73,False,,10.83
+2026-08-10,bbl for sun damage wilmington nc,search_console,5,0,0,91.8,False,,8.0
+2026-08-10,dermaplaning cairns,search_console,5,0,0,63.4,False,,8.0
+2026-08-10,rf fractional laser,search_console,5,0,0,52.8,False,,8.0
+2026-08-10,rf fractional skin resurfacing,search_console,4,0,0,66.25,False,,6.4
+2026-08-10,skin treatments cairns,search_console,4,0,0,75,False,,6.4
+2026-08-10,fractional rf laser,search_console,3,0,0,96.33,False,,4.8
+2026-08-10,skin needling cairns,both,14,0,0,41.21,True,does-skin-needling-help-acne-scarring,4.74
+2026-08-10,facial cairns,search_console,2,0,0,72,False,,3.2
+2026-08-10,fractional rf lasers,search_console,2,0,0,78,False,,3.2
+2026-08-10,fractional rf technology,search_console,2,0,0,49,False,,3.2
+2026-08-10,perioral discoloration,search_console,2,0,0,71,False,,3.2
+2026-08-10,perioral pigmentation,search_console,2,0,0,58.5,False,,3.2
+2026-08-10,redness and,search_console,2,0,0,89.5,False,,3.2
+2026-08-10,rf fractional lasers,search_console,2,0,0,61.5,False,,3.2
+2026-08-10,what is broadband light,search_console,2,0,0,72,False,,3.2
+2026-08-10,cairns skin clinic,both,2,0,0,66,True,dermatologist-vs-cosmetic-skin-clinic-cairns,2.82
+2026-08-10,07 4015 2917,search_console,3,0,0,3.67,False,,2.43
+2026-08-10,rejuran laser clinics,search_console,2,0,0,8,False,,1.88
+2026-08-10,bbl broadband light,search_console,1,0,0,72,False,,1.6
+2026-08-10,black ring around lips,search_console,1,0,0,79,False,,1.6
+2026-08-10,broad band light,search_console,1,0,0,87,False,,1.6
+2026-08-10,broadband light,search_console,1,0,0,73,False,,1.6
+2026-08-10,cairns facials,search_console,1,0,0,70,False,,1.6
+2026-08-10,fractional rf,search_console,1,0,0,100,False,,1.6
+2026-08-10,fractional rf skin resurfacing,search_console,1,0,0,55,False,,1.6
+2026-08-10,hydrafacial cairns,search_console,1,0,0,72,False,,1.6
+2026-08-10,hyperpigmentation around mouth,search_console,1,0,0,38,False,,1.6
+2026-08-10,hyperpigmentation near lips,search_console,1,0,0,82,False,,1.6
+2026-08-10,meaning of pigmentation,search_console,1,0,0,75,False,,1.6
+2026-08-10,rejuran,search_console,1,0,0,68,False,,1.6
+2026-08-10,rejuran injection,search_console,1,0,0,50,False,,1.6
+2026-08-10,skin care centre cairns,search_console,1,0,0,65,False,,1.6
+2026-08-10,what is rejuran,search_console,1,0,0,45,False,,1.6
+2026-08-10,why do i have hyperpigmentation around my mouth,search_console,1,0,0,85,False,,1.6
+2026-08-10,aquafacial,search_console,1,0,0,27,False,,1.51
+2026-08-10,acne cream,autocomplete,0,0,0.0,0.0,True,why-isnt-my-acne-cream-working,1.5
+2026-08-10,bbl skin treatment,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,cairns skin cancer and cosmetic clinic,autocomplete,0,0,0.0,0.0,True,dermatologist-vs-cosmetic-skin-clinic-cairns,1.5
+2026-08-10,cairns skin cancer clinic,autocomplete,0,0,0.0,0.0,True,dermatologist-vs-cosmetic-skin-clinic-cairns,1.5
+2026-08-10,cairns skin care clinic,autocomplete,0,0,0.0,0.0,True,dermatologist-vs-cosmetic-skin-clinic-cairns,1.5
+2026-08-10,cairns skin clinic dfo,autocomplete,0,0,0.0,0.0,True,dermatologist-vs-cosmetic-skin-clinic-cairns,1.5
+2026-08-10,cairns skin clinic smithfield,autocomplete,0,0,0.0,0.0,True,dermatologist-vs-cosmetic-skin-clinic-cairns,1.5
+2026-08-10,dry skin around eyes,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,dry skin around mouth,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,dry skin around nose,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,dry skin rash,autocomplete,0,0,0.0,0.0,True,why-do-bites-and-heat-rash-leave-dark-marks-in-cairns,1.5
+2026-08-10,enlarged pores before and after,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores causes,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores meaning in hindi,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores means,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on breast,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on cheeks,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on face,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on face treatment,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on forehead,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on nose,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores on nose treatment,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores reddit,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores serum,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores skincare,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,enlarged pores treatment,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,fine lines and wrinkles,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines around mouth,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines attitude strapless bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines face,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines lingerie,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines memory strapless bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines myer,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines on forehead,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines plunge bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines push up bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines strapless bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines t shirt bra,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines tattoo melbourne,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,fine lines under eyes,autocomplete,0,0,0.0,0.0,True,fine-lines-wrinkles,1.5
+2026-08-10,laser hair removal at home,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal brisbane,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal cairns,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal chermside,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal cost,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal device,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal gold coast,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal hervey bay,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal machine,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal mackay,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal near me,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal smithfield,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal sunshine coast,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal toowoomba,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,laser hair removal townsville,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,microdermabrasion vs skin needling,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,pigmentation around mouth,autocomplete,0,0,0.0,0.0,True,what-causes-pigmentation-around-the-mouth,1.5
+2026-08-10,pigmentation laser treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
+2026-08-10,pigmentation on face treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
+2026-08-10,pigmentation removal,autocomplete,0,0,0.0,0.0,True,pigmentation-removal,1.5
+2026-08-10,pigmentation removal cream,autocomplete,0,0,0.0,0.0,True,pigmentation-removal,1.5
+2026-08-10,pigmentation removal laser,autocomplete,0,0,0.0,0.0,True,is-laser-hair-removal-safe-on-tanned-skin,1.5
+2026-08-10,pigmentation skin,autocomplete,0,0,0.0,0.0,True,pigmentation,1.5
+2026-08-10,pigmentation treatment,autocomplete,0,0,0.0,0.0,True,can-i-get-pigmentation-treatment-with-a-tan,1.5
+2026-08-10,rosacea laser treatment,autocomplete,0,0,0.0,0.0,True,capillary-reduction,1.5
+2026-08-10,rosacea treatment,autocomplete,0,0,0.0,0.0,True,kleresca-rosacea,1.5
+2026-08-10,sagging skin after weight loss,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,sagging skin around mouth,autocomplete,0,0,0.0,0.0,True,enlarged-pores,1.5
+2026-08-10,sagging skin glp 1,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin inner thighs,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin meaning,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin near mouth,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin neck treatment,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,sagging skin on arms,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin on face,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin on neck,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin treatment,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,sagging skin under arms,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin under chin,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,sagging skin under eyes,autocomplete,0,0,0.0,0.0,True,sagging-skin-elasticity,1.5
+2026-08-10,skin needling aftercare,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling at home,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling before and after,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling benefits,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling brisbane,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling cost,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling downtime,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling gold coast,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling machine,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling mackay,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling near me,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling pen,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling sunshine coast,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,skin needling toowoomba,autocomplete,0,0,0.0,0.0,True,does-skin-needling-help-acne-scarring,1.5
+2026-08-10,sun damage skin treatment,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,sun damage skin treatment cream,autocomplete,0,0,0.0,0.0,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.5
+2026-08-10,skin treatment cairns,search_console,8,0,0,75.38,True,what-to-avoid-on-skin-after-treatment-in-humidity,1.28
+2026-08-10,rejuran skin therapy in cairns,search_console,5,0,0,12,True,rejuran,0.53
+2026-08-10,bbl light treatment,search_console,3,0,0,91,True,kleresca-rosacea,0.48
+2026-08-10,skin needling results,search_console,3,0,0,69,True,does-skin-needling-help-acne-scarring,0.48
+2026-08-10,difference between melasma and sun spots,search_console,2,0,0,75.5,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.32
+2026-08-10,what is pigmentation,search_console,2,0,0,98.5,True,what-causes-pigmentation-around-the-mouth,0.32
+2026-08-10,what is rejuran treatment,search_console,2,0,0,61.5,True,what-if-pigmentation-treatment-makes-it-worse,0.32
+2026-08-10,what is skin needling,search_console,2,0,0,83,True,does-skin-needling-help-acne-scarring,0.32
+2026-08-10,kleresca rosacea treatment,search_console,2,0,0,27.5,True,kleresca-rosacea,0.31
+2026-08-10,bbl light therapy,search_console,1,0,0,84,True,led-light-therapy,0.16
+2026-08-10,broadband light therapy,search_console,1,0,0,72,True,led-light-therapy,0.16
+2026-08-10,broadband light treatment,search_console,1,0,0,69,True,kleresca-rosacea,0.16
+2026-08-10,dark skin around mouth,search_console,1,0,0,42,True,what-causes-pigmentation-around-the-mouth,0.16
+2026-08-10,dark spots under lips,search_console,1,0,0,72,True,what-if-pigmentation-treatment-makes-it-worse,0.16
+2026-08-10,difference between tan and pigmentation,search_console,1,0,0,64,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.16
+2026-08-10,hydroquinone cream,search_console,1,0,0,98,True,is-hydroquinone-cream-safe-for-pigmentation,0.16
+2026-08-10,kleresca treatment,search_console,1,0,0,40,True,kleresca-rosacea,0.16
+2026-08-10,rough skin,search_console,1,0,0,78,True,rough-dry-skin,0.16
+2026-08-10,skin clinic cairns,search_console,1,0,0,68,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.16
+2026-08-10,what does rejuran do,search_console,1,0,0,65,True,what-does-pigmentation-mean,0.16
+2026-08-10,what is broadband light therapy,search_console,1,0,0,78,True,led-light-therapy,0.16
+2026-08-10,whats skin needling,search_console,1,0,0,82,True,does-skin-needling-help-acne-scarring,0.16
+2026-08-10,why do i have pigmentation around my mouth,search_console,1,0,0,78,True,can-i-get-pigmentation-treatment-with-a-tan,0.16
+2026-08-10,kleresca rosacea,search_console,1,0,0,10,True,kleresca-rosacea,0.1

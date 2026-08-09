@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-09
+# Content opportunities: 2026-08-10
 
-258 queries analysed, 140 not yet covered by existing content.
+268 queries analysed, 145 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -8,7 +8,6 @@
 |---|---|---:|---:|---:|
 | pigmentation meaning | both | 6 | 85.2 | 34.6 |
 | cairns skin centre | both | 3 | 59.3 | 29.8 |
-| acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
 | acne scar treatment | autocomplete | 0 | 0.0 | 15.0 |
 | acne scars | autocomplete | 0 | 0.0 | 15.0 |
@@ -26,6 +25,7 @@
 | aquafacial vs microdermabrasion | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
+| bbl drizzy | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
