@@ -427,10 +427,54 @@ def _extract_frontmatter_string(text: str, field_name: str) -> str | None:
     return found.group(1) if found else None
 
 
+# Generic words that show up in almost every page on the site (treatment
+# names, location, category boilerplate). A single overlapping word is only
+# taken as a match when it's meaningfully specific; these are excluded from
+# ever being that sole word, since matching on "skin" or "cairns" alone
+# would flag nearly any query as covered.
+GENERIC_OVERLAP_WORDS: frozenset[str] = frozenset(
+    {
+        "skin",
+        "facial",
+        "facials",
+        "treatment",
+        "treatments",
+        "cairns",
+        "laser",
+        "lasers",
+        "clinic",
+        "clinics",
+        "care",
+        "does",
+        "what",
+        "your",
+        "with",
+        "this",
+    }
+)
+
+_WORD_PATTERN = re.compile(r"[a-z0-9]+")
+
+
+def _tokenize(text: str) -> set[str]:
+    """Splits text into lowercase, punctuation-free words longer than 3
+    characters. Used for both query text and existing-content text so a
+    stray "(" or ")" (e.g. "BBL (BroadBand Light)") can't stop an otherwise
+    exact word match, which previously caused false "not covered" flags.
+    """
+    return {word for word in _WORD_PATTERN.findall(text.lower()) if len(word) > 3}
+
+
 def load_existing_coverage() -> dict[str, str]:
-    """Builds a lookup of lowercase title/question/summary text -> slug for
-    every piece of content in the repo, so new opportunities can be checked
-    against what the site already covers.
+    """Builds a lookup of lowercase title/question/summary/h1/slug text ->
+    slug for every piece of content in the repo, so new opportunities can
+    be checked against what the site already covers.
+
+    The slug itself (e.g. "fractional-rf") is included as matchable text
+    because short treatment names ("BBL", "Rejuran", "Fractional RF") often
+    don't carry enough long, distinctive words in their title alone to
+    clear the overlap threshold in find_existing_match, even though the
+    slug makes the topic unambiguous.
     """
     coverage: dict[str, str] = {}
     for directory in CONTENT_DIRS:
@@ -439,29 +483,50 @@ def load_existing_coverage() -> dict[str, str]:
         for path in sorted(directory.glob("*.mdx")):
             text = path.read_text(encoding="utf-8")
             slug = path.stem
-            for field_name in ("title", "primaryQuestion", "shortSummary"):
+            values = {slug.replace("-", " ")}
+            for field_name in ("title", "primaryQuestion", "shortSummary", "h1", "seoTitle"):
                 value = _extract_frontmatter_string(text, field_name)
                 if value:
-                    coverage[value.lower()] = slug
+                    values.add(value.lower())
+            for value in values:
+                coverage[value] = slug
     logger.info("Loaded %d existing content entries for duplication checks", len(coverage))
     return coverage
 
 
 def find_existing_match(query: str, coverage: dict[str, str]) -> str | None:
-    """Flags a query as already covered if a meaningful share of its
-    significant words (longer than 3 characters) overlap with an existing
-    title/question/summary. Deliberately approximate: the goal is to catch
-    obvious duplicates, not to be a precise semantic matcher.
+    """Flags a query as already covered if its significant words (longer
+    than 3 characters, punctuation stripped) meaningfully overlap with an
+    existing title/question/summary/h1/slug. Deliberately approximate: the
+    goal is to catch obvious duplicates, not to be a precise semantic
+    matcher.
+
+    The required overlap is capped by how many significant words are
+    actually available on each side, so a short name like "Rejuran" or
+    "Fractional RF" (which may only ever contribute one significant word)
+    isn't structurally unable to match. A lone matching word only counts
+    if it isn't in GENERIC_OVERLAP_WORDS, so this stays a real check for
+    short titles instead of drifting into false positives.
     """
-    query_words = {word for word in query.lower().split() if len(word) > 3}
+    query_words = _tokenize(query)
     if not query_words:
         return None
+    best_match: str | None = None
+    best_overlap_size = 0
     for text, slug in coverage.items():
-        text_words = set(text.split())
+        text_words = _tokenize(text)
+        if not text_words:
+            continue
         overlap = query_words & text_words
-        if len(overlap) >= max(2, len(query_words) // 2):
-            return slug
-    return None
+        if not overlap:
+            continue
+        required = max(1, min(2, len(query_words), len(text_words)))
+        if required == 1 and overlap <= GENERIC_OVERLAP_WORDS:
+            continue
+        if len(overlap) >= required and len(overlap) > best_overlap_size:
+            best_overlap_size = len(overlap)
+            best_match = slug
+    return best_match
 
 
 # --------------------------------------------------------------------------
