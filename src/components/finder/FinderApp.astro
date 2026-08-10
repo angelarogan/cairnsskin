@@ -5,54 +5,35 @@ import NotSurePanel from "./NotSurePanel.astro";
 import { concerns } from "../../data/treatmentFinder";
 ---
 
-<section class="finder-hero px-5 md:px-8 pt-10 md:pt-14">
+<section id="finder-step-1" class="finder-step finder-hero px-5 md:px-8 pt-10 md:pt-14" data-step="1" tabindex="-1">
   <div class="finder-console mx-auto max-w-editorial rounded-[2rem] bg-ink text-paper-warm p-8 md:p-14 lg:p-16 relative overflow-hidden">
     <div class="finder-console-glow" aria-hidden="true"></div>
-    <div class="grid lg:grid-cols-[1.08fr,0.92fr] gap-10 lg:gap-14 items-center relative">
-      <div>
-        <p class="eyebrow !text-eucalyptus-400 mb-5">Skin Concern Treatment Finder</p>
-        <h1 class="text-paper-warm mb-6 max-w-xl">Find the right treatment path for your skin concern</h1>
-        <p class="text-stone-300 text-lg max-w-xl mb-6 leading-relaxed">
-          Start with what you'd like to improve. We'll show you the treatment categories commonly considered for
-          that concern, what they target, and where to learn more.
-        </p>
-        <p class="font-mono text-xs tracking-[0.06em] text-eucalyptus-400 mb-9">
-          Evidence-informed. No diagnosis. No product promotion.
-        </p>
+    <div class="relative">
+      <p class="eyebrow !text-eucalyptus-400 mb-5">Skin Concern Treatment Finder</p>
+      <h1 class="text-[2.125rem] md:text-[2.5rem] leading-[1.15] text-paper-warm mb-4 max-w-2xl">Find the right treatment path for your skin concern</h1>
+      <p class="text-stone-300 text-sm max-w-2xl mb-3 leading-relaxed">
+        Step 1 of 3 — what's your main concern? Pick one to see the treatment categories commonly considered for it.
+      </p>
+      <p class="font-mono text-[11px] tracking-[0.08em] text-stone-600 mb-10">
+        Evidence-informed. No diagnosis. No product promotion.
+      </p>
 
-        <button type="button" id="finder-start-cta" class="finder-cta-btn no-underline">
-          Try the Skin Treatment Finder Tool
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M5 2.5L9.5 7 5 11.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {concerns.map((concern) => (
+          <button type="button" class="finder-concern-card p-4 text-left" data-concern={concern.slug}>
+            <FinderIcon name={concern.icon} class="w-6 h-6 text-eucalyptus-400 mb-3" />
+            <h3 class="text-sm font-normal text-paper-warm mb-1">{concern.label}</h3>
+            <p class="text-xs text-stone-500 leading-snug">{concern.shortDescription}</p>
+          </button>
+        ))}
       </div>
-
-      <ol class="finder-path flex" aria-hidden="true">
-        <li class="finder-path-step">
-          <span class="finder-path-node">01</span>
-          <p class="finder-path-label">Select your skin concern</p>
-        </li>
-        <li class="finder-path-arrow">
-          <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v14M2 11l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-        <li class="finder-path-step">
-          <span class="finder-path-node">02</span>
-          <p class="finder-path-label">Select the specific type</p>
-        </li>
-        <li class="finder-path-arrow">
-          <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1v14M2 11l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </li>
-        <li class="finder-path-step">
-          <span class="finder-path-node">03</span>
-          <p class="finder-path-label">See your treatment options and why they're recommended</p>
-        </li>
-      </ol>
     </div>
   </div>
 </section>
 
 <section id="finder-app" class="finder-app-section" aria-label="Skin Concern Treatment Finder">
   <div class="mx-auto max-w-editorial px-5 md:px-8 pb-20 md:pb-28">
-    <div class="finder-progress flex items-center justify-between gap-4 mt-8 mb-10 md:mt-10 md:mb-14 flex-wrap">
+    <div class="finder-progress flex items-center justify-between gap-4 mt-8 mb-10 md:mt-10 md:mb-14 flex-wrap" hidden>
       <button type="button" id="finder-back" class="finder-nav-btn" hidden>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2.5L3 7l5.5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back
@@ -65,19 +46,6 @@ import { concerns } from "../../data/treatmentFinder";
       </ol>
 
       <button type="button" id="finder-restart" class="finder-nav-btn" hidden>Restart</button>
-    </div>
-
-    <div id="finder-step-1" class="finder-step" data-step="1" tabindex="-1">
-      <h2 class="mb-8 text-center">What would you like to improve?</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
-        {concerns.map((concern) => (
-          <button type="button" class="finder-concern-card glass-card p-6 text-left" data-concern={concern.slug}>
-            <FinderIcon name={concern.icon} class="w-7 h-7 text-eucalyptus-700 mb-4" />
-            <h3 class="text-base mb-1.5">{concern.label}</h3>
-            <p class="text-sm text-stone-600">{concern.shortDescription}</p>
-          </button>
-        ))}
-      </div>
     </div>
 
     {concerns.map((concern) => (
@@ -161,106 +129,6 @@ import { concerns } from "../../data/treatmentFinder";
       radial-gradient(420px 280px at 10% 110%, rgba(147, 167, 154, 0.18), transparent 70%);
   }
 
-  .finder-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 9999px;
-    background: theme("colors.paper.warm");
-    color: theme("colors.ink.DEFAULT");
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    transition: background-color 200ms theme("transitionTimingFunction.editorial"), transform 200ms theme("transitionTimingFunction.editorial");
-  }
-
-  .finder-cta-btn:hover {
-    background: theme("colors.eucalyptus.400");
-    transform: translateY(-1px);
-  }
-
-  .finder-step-tile {
-    display: flex;
-    align-items: center;
-    min-height: 4.5rem;
-    background: theme("colors.paper.DEFAULT");
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: theme("borderRadius.xl2");
-    padding: 1rem 1.1rem;
-    box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.4);
-    transition: transform 200ms theme("transitionTimingFunction.editorial"), box-shadow 200ms theme("transitionTimingFunction.editorial");
-  }
-
-  .finder-step-tile > div {
-    width: 100%;
-  }
-
-  .finder-step-tile:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 32px -14px rgba(0, 0, 0, 0.45);
-  }
-
-  .finder-path {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    max-width: 19rem;
-    margin-top: 2.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    .finder-path {
-      margin-top: 0;
-      margin-left: auto;
-    }
-  }
-
-  .finder-path-step {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    min-height: 5.25rem;
-    width: 100%;
-    background: theme("colors.paper.DEFAULT");
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: theme("borderRadius.xl2");
-    padding: 0.7rem 1.1rem;
-    box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.4);
-  }
-
-  .finder-path-node {
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 9999px;
-    background: theme("colors.eucalyptus.50");
-    border: 1px solid rgba(147, 167, 154, 0.45);
-    font-family: theme("fontFamily.mono");
-    font-size: 11px;
-    color: theme("colors.eucalyptus.700");
-  }
-
-  .finder-path-label {
-    color: theme("colors.ink.DEFAULT");
-    font-size: 0.9375rem;
-    font-weight: 500;
-    line-height: 1.3;
-    flex: 1;
-  }
-
-  .finder-path-arrow {
-    display: flex;
-    justify-content: center;
-    width: 2.25rem;
-    color: rgba(147, 167, 154, 0.5);
-    padding: 0.15rem 0;
-  }
-
   .finder-segmented {
     position: relative;
     display: inline-flex;
@@ -304,6 +172,18 @@ import { concerns } from "../../data/treatmentFinder";
     width: 100%;
   }
 
+  .finder-concern-card {
+    background: #161616;
+    border: 0.5px solid theme("colors.stone.800");
+    border-radius: 0.75rem;
+    transition: border-color 200ms theme("transitionTimingFunction.editorial");
+  }
+
+  .finder-concern-card:hover,
+  .finder-concern-card:focus-visible {
+    border-color: theme("colors.stone.600");
+  }
+
   .finder-step {
     /* The site header is sticky at 78px tall. Without this, scrollIntoView
        lands the step's heading right underneath it, hiding the question. */
@@ -342,7 +222,7 @@ import { concerns } from "../../data/treatmentFinder";
   const stepIndicators = Array.from(document.querySelectorAll<HTMLElement>("[data-step-indicator]"));
   const backBtn = document.getElementById("finder-back") as HTMLButtonElement | null;
   const restartBtn = document.getElementById("finder-restart") as HTMLButtonElement | null;
-  const startCta = document.getElementById("finder-start-cta") as HTMLButtonElement | null;
+  const progressBar = document.querySelector<HTMLElement>(".finder-progress");
 
   function gaEvent(name: string, params: Record<string, unknown> = {}) {
     const w = window as unknown as { gtag?: (...args: unknown[]) => void };
@@ -357,6 +237,7 @@ import { concerns } from "../../data/treatmentFinder";
     });
     if (backBtn) backBtn.hidden = state.step === 1;
     if (restartBtn) restartBtn.hidden = state.step === 1;
+    if (progressBar) progressBar.hidden = state.step === 1;
   }
 
   function showOnly(target: HTMLElement) {
@@ -396,11 +277,6 @@ import { concerns } from "../../data/treatmentFinder";
     updateProgress();
     gaEvent("treatment_result_viewed", { concern: concernSlug, sub_concern: subConcernSlug });
   }
-
-  startCta?.addEventListener("click", () => {
-    gaEvent("treatment_finder_started");
-    document.getElementById("finder-app")?.scrollIntoView({ block: "start", behavior: "smooth" });
-  });
 
   document.querySelectorAll<HTMLButtonElement>(".finder-concern-card").forEach((card) => {
     card.addEventListener("click", () => {
