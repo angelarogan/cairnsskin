@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-13
+# Content opportunities: 2026-08-14
 
-289 queries analysed, 73 not yet covered by existing content.
+293 queries analysed, 73 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -36,8 +36,8 @@
 | cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin centre | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| melasma vs pigmentation | pigmentation-vs-melasma |
 | skin needling results | fractional-rf |
+| melasma vs pigmentation | pigmentation-vs-melasma |
 | aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |

@@ -1,6 +1,6 @@
-# Top searches this week: 2026-08-13
+# Top searches this week: 2026-08-14
 
-Rolling 7-day window ending today, from 320 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
+Rolling 7-day window ending today, from 322 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
 | # | Query | Source | Score | Article |
 |---:|---|---|---:|---|
