@@ -1,11 +1,12 @@
-# Content opportunities: 2026-08-14
+# Content opportunities: 2026-08-15
 
-293 queries analysed, 73 not yet covered by existing content.
+295 queries analysed, 74 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
+| bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
 | acne scarf | autocomplete | 0 | 0.0 | 15.0 |
@@ -25,7 +26,6 @@
 | bbl teams | autocomplete | 0 | 0.0 | 15.0 |
 | dry skin behind ear | autocomplete | 0 | 0.0 | 15.0 |
 | dry skin cream | autocomplete | 0 | 0.0 | 15.0 |
-| dry skin in ears | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -33,10 +33,10 @@
 |---|---|
 | skin needling cairns | skin-needling |
 | pigmentation meaning | pigmentation |
-| cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| cairns skin centre | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | skin needling results | fractional-rf |
+| cairns skin centre | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | melasma vs pigmentation | pigmentation-vs-melasma |
 | aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
