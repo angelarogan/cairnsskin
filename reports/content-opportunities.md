@@ -1,31 +1,31 @@
-# Content opportunities: 2026-08-20
+# Content opportunities: 2026-08-21
 
-302 queries analysed, 77 not yet covered by existing content.
+302 queries analysed, 79 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 13 | 73.4 | 20.8 |
+| facial cairns | search_console | 14 | 73.4 | 22.4 |
 | dermaplaning cairns | search_console | 12 | 62.2 | 19.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | acneclinicnyc | autocomplete | 0 | 0.0 | 15.0 |
+| bbl 16 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
 | bbl drizzy | autocomplete | 0 | 0.0 | 15.0 |
 | bbl fixtures | autocomplete | 0 | 0.0 | 15.0 |
-| bbl hero | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jacket | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jeans | autocomplete | 0 | 0.0 | 15.0 |
 | bbl laser | autocomplete | 0 | 0.0 | 15.0 |
 | bbl laser brisbane | autocomplete | 0 | 0.0 | 15.0 |
 | bbl meaning | autocomplete | 0 | 0.0 | 15.0 |
-| bbl smell | autocomplete | 0 | 0.0 | 15.0 |
 | bbl surgery | autocomplete | 0 | 0.0 | 15.0 |
 | bbl teams | autocomplete | 0 | 0.0 | 15.0 |
+| bbl tickets | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -48,6 +48,6 @@
 | acne scar treatment | led-light-therapy |
 | acne scars | acne-scarring |
 | acne treatment | led-light-therapy |
-| aquafacial bar | aquafacial-vs-microdermabrasion |
 | aquafacial before and after | aquafacial |
 | aquafacial laser clinics | aquafacial |
+| aquafacial machine | aquafacial |
