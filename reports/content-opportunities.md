@@ -1,4 +1,4 @@
-# Content opportunities: 2026-08-21
+# Content opportunities: 2026-08-22
 
 302 queries analysed, 79 not yet covered by existing content.
 
@@ -6,18 +6,18 @@
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 14 | 73.4 | 22.4 |
+| facial cairns | search_console | 15 | 73.3 | 24.0 |
 | dermaplaning cairns | search_console | 12 | 62.2 | 19.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
+| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
-| acneclinicnyc | autocomplete | 0 | 0.0 | 15.0 |
-| bbl 16 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
 | bbl drizzy | autocomplete | 0 | 0.0 | 15.0 |
 | bbl fixtures | autocomplete | 0 | 0.0 | 15.0 |
+| bbl hero | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jacket | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jeans | autocomplete | 0 | 0.0 | 15.0 |
 | bbl laser | autocomplete | 0 | 0.0 | 15.0 |
@@ -35,11 +35,11 @@
 | skin needling results | fractional-rf |
 | pigmentation meaning | pigmentation |
 | cairns skin centre | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | laser hair removal cairns | is-laser-hair-removal-safe-on-tanned-skin |
-| skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | rejuran cairns | rejuran |
 | fractional rf lasers | fractional-rf |
