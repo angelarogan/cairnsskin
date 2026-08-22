@@ -1,17 +1,17 @@
-# Content opportunities: 2026-08-22
+# Content opportunities: 2026-08-23
 
-302 queries analysed, 79 not yet covered by existing content.
+304 queries analysed, 80 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 15 | 73.3 | 24.0 |
-| dermaplaning cairns | search_console | 12 | 62.2 | 19.2 |
+| facial cairns | search_console | 16 | 73.2 | 25.6 |
+| dermaplaning cairns | search_console | 13 | 62.1 | 20.8 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
+| acne clinic nyc | autocomplete | 0 | 0.0 | 15.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
-| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
@@ -25,7 +25,7 @@
 | bbl meaning | autocomplete | 0 | 0.0 | 15.0 |
 | bbl surgery | autocomplete | 0 | 0.0 | 15.0 |
 | bbl teams | autocomplete | 0 | 0.0 | 15.0 |
-| bbl tickets | autocomplete | 0 | 0.0 | 15.0 |
+| bblauncher | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -40,8 +40,8 @@
 | cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | laser hair removal cairns | is-laser-hair-removal-safe-on-tanned-skin |
-| aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | rejuran cairns | rejuran |
+| aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | acne cream | which-acne-cream-ingredients-actually-work |
