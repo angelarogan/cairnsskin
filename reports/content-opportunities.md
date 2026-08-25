@@ -1,6 +1,6 @@
-# Content opportunities: 2026-08-25
+# Content opportunities: 2026-08-26
 
-308 queries analysed, 81 not yet covered by existing content.
+310 queries analysed, 81 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -9,9 +9,9 @@
 | facial cairns | search_console | 19 | 73.6 | 30.4 |
 | dermaplaning cairns | search_console | 13 | 62.1 | 20.8 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
-| acne body wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
+| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl bank | autocomplete | 0 | 0.0 | 15.0 |
@@ -42,8 +42,8 @@
 | cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran cairns | rejuran |
 | fractional rf lasers | fractional-rf |
-| aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | rf fractional lasers | fractional-rf |
+| aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | acne cream | which-acne-cream-ingredients-actually-work |
