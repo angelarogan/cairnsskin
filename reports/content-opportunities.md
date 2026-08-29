@@ -1,31 +1,31 @@
-# Content opportunities: 2026-08-29
+# Content opportunities: 2026-08-30
 
-318 queries analysed, 79 not yet covered by existing content.
+321 queries analysed, 78 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 22 | 73.7 | 35.2 |
+| facial cairns | search_console | 24 | 73.8 | 38.4 |
 | dermaplaning cairns | search_console | 13 | 62.1 | 20.8 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | acne face wash | autocomplete | 0 | 0.0 | 15.0 |
 | acne medication | autocomplete | 0 | 0.0 | 15.0 |
-| acne scarf | autocomplete | 0 | 0.0 | 15.0 |
 | acne vulgaris | autocomplete | 0 | 0.0 | 15.0 |
 | bbl 2026 | autocomplete | 0 | 0.0 | 15.0 |
 | bbl before and after | autocomplete | 0 | 0.0 | 15.0 |
-| bbl draft | autocomplete | 0 | 0.0 | 15.0 |
 | bbl drizzy | autocomplete | 0 | 0.0 | 15.0 |
 | bbl fixtures | autocomplete | 0 | 0.0 | 15.0 |
 | bbl hero | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jacket | autocomplete | 0 | 0.0 | 15.0 |
 | bbl jeans | autocomplete | 0 | 0.0 | 15.0 |
 | bbl laser | autocomplete | 0 | 0.0 | 15.0 |
+| bbl laser brisbane | autocomplete | 0 | 0.0 | 15.0 |
 | bbl meaning | autocomplete | 0 | 0.0 | 15.0 |
-| bbl news | autocomplete | 0 | 0.0 | 15.0 |
+| bbl signings | autocomplete | 0 | 0.0 | 15.0 |
 | bbl surgery | autocomplete | 0 | 0.0 | 15.0 |
 | bbl teams | autocomplete | 0 | 0.0 | 15.0 |
+| dry skin cream | autocomplete | 0 | 0.0 | 15.0 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -37,12 +37,12 @@
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | pigmentation meaning | pigmentation |
-| cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf lasers | fractional-rf |
-| rejuran cairns | rejuran |
+| cairns skin care | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin centre | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| laser hair removal cairns | is-laser-hair-removal-safe-on-tanned-skin |
+| rejuran cairns | rejuran |
 | rf fractional lasers | fractional-rf |
+| laser hair removal cairns | is-laser-hair-removal-safe-on-tanned-skin |
 | aquafacial benefits | what-are-the-real-benefits-of-an-aquafacial |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
