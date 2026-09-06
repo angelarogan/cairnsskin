@@ -1,21 +1,21 @@
-# Content opportunities: 2026-09-06
+# Content opportunities: 2026-09-07
 
-127 queries analysed, 26 not yet covered by existing content.
+130 queries analysed, 26 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 32 | 74.4 | 51.2 |
-| dermaplaning cairns | search_console | 18 | 60.4 | 28.8 |
+| facial cairns | search_console | 35 | 74.5 | 56.0 |
+| dermaplaning cairns | search_console | 19 | 60.2 | 30.4 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
-| cairns facials | search_console | 5 | 73.0 | 8.0 |
+| cairns facials | search_console | 6 | 70.5 | 9.6 |
 | laser clinics australia cairns | search_console | 5 | 43.4 | 8.0 |
 | laser clinics cairns central | search_console | 7 | 12.4 | 7.5 |
 | laser clinics cairns | search_console | 5 | 26.2 | 7.4 |
 | cairns facial | search_console | 4 | 73.5 | 6.4 |
+| laser cairns central | search_console | 6 | 11.7 | 6.3 |
 | cairns laser | search_console | 3 | 73.0 | 4.8 |
-| laser cairns central | search_console | 4 | 11.2 | 4.2 |
 | hydrafacial cairns | search_console | 2 | 71.0 | 3.2 |
 | perioral discoloration | search_console | 2 | 71.0 | 3.2 |
 | 07 4015 2917 | search_console | 3 | 3.7 | 2.4 |
@@ -35,18 +35,18 @@
 | skin needling cairns | skin-needling |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| fractional rf lasers | fractional-rf |
 | rejuran cairns | rejuran |
+| fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
-| rf fractional machines | fractional-rf |
 | rf fractional machine | fractional-rf |
+| rf fractional machines | fractional-rf |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| fractional rf machines | fractional-rf |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| fractional rf machines | fractional-rf |
-| skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf laser device | fractional-rf |
+| skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rf fractional laser device | fractional-rf |
 | fractional rf laser devices | fractional-rf |
 | pigmentation meaning | pigmentation |
