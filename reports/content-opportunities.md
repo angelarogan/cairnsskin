@@ -1,4 +1,4 @@
-# Content opportunities: 2026-09-09
+# Content opportunities: 2026-09-10
 
 134 queries analysed, 26 not yet covered by existing content.
 
