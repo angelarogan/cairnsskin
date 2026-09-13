@@ -1,17 +1,17 @@
-# Content opportunities: 2026-09-13
+# Content opportunities: 2026-09-14
 
-159 queries analysed, 37 not yet covered by existing content.
+160 queries analysed, 37 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 45 | 74.9 | 72.0 |
-| dermaplaning cairns | search_console | 27 | 59.0 | 43.2 |
+| facial cairns | search_console | 46 | 74.9 | 73.6 |
+| dermaplaning cairns | search_console | 28 | 58.9 | 44.8 |
 | laser clinics cairns | search_console | 11 | 25.5 | 16.1 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
-| laser clinics cairns central | search_console | 12 | 16.1 | 14.2 |
-| cairns facials | search_console | 8 | 68.5 | 12.8 |
+| laser clinics cairns central | search_console | 13 | 15.6 | 15.2 |
+| cairns facials | search_console | 9 | 67.7 | 14.4 |
 | laser clinics australia cairns | search_console | 6 | 42.3 | 9.6 |
 | laser cairns central | search_console | 8 | 11.8 | 8.4 |
 | cairns facial | search_console | 4 | 73.5 | 6.4 |
@@ -38,16 +38,16 @@
 | fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | rejuran cairns | rejuran |
-| skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional machine | fractional-rf |
+| skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional machines | fractional-rf |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| fractional rf machines | fractional-rf |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf laser device | fractional-rf |
+| fractional rf machines | fractional-rf |
 | fractional rf laser devices | fractional-rf |
-| rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rf fractional laser device | fractional-rf |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran polynucleotide | rejuran |
-| rejuran injection | rejuran |
+| laser clinic cairns central | dermatologist-vs-cosmetic-skin-clinic-cairns |
