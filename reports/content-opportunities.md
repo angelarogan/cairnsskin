@@ -1,16 +1,16 @@
-# Content opportunities: 2026-09-15
+# Content opportunities: 2026-09-16
 
-160 queries analysed, 37 not yet covered by existing content.
+162 queries analysed, 38 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 48 | 74.4 | 76.8 |
-| dermaplaning cairns | search_console | 29 | 58.8 | 46.4 |
+| facial cairns | search_console | 49 | 74.2 | 78.4 |
+| dermaplaning cairns | search_console | 30 | 58.8 | 48.0 |
 | laser clinics cairns | search_console | 13 | 27.2 | 19.7 |
+| laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
-| laser clinics cairns central | search_console | 13 | 15.6 | 15.2 |
 | cairns facials | search_console | 9 | 67.7 | 14.4 |
 | laser clinics australia cairns | search_console | 6 | 42.3 | 9.6 |
 | laser cairns central | search_console | 8 | 11.8 | 8.4 |
@@ -21,11 +21,11 @@
 | facials cairns | search_console | 2 | 68.5 | 3.2 |
 | facials in cairns | search_console | 2 | 65.0 | 3.2 |
 | hydrafacial cairns | search_console | 2 | 71.0 | 3.2 |
+| microneedling for scars | search_console | 2 | 67.0 | 3.2 |
 | perioral discoloration | search_console | 2 | 71.0 | 3.2 |
 | 07 4015 2917 | search_console | 3 | 3.7 | 2.4 |
+| laser clinics australia - cairns central | search_console | 2 | 11.5 | 2.1 |
 | bbl sunspots | search_console | 1 | 66.0 | 1.6 |
-| black ring around lips | search_console | 1 | 79.0 | 1.6 |
-| broad band light | search_console | 1 | 87.0 | 1.6 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -43,11 +43,11 @@
 | rf fractional machines | fractional-rf |
 | fractional rf laser device | fractional-rf |
 | fractional rf machines | fractional-rf |
+| rf fractional laser device | fractional-rf |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rf fractional laser device | fractional-rf |
 | fractional rf laser devices | fractional-rf |
-| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rejuran polynucleotide | rejuran |
+| cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rejuran polynucleotide | rejuran |
