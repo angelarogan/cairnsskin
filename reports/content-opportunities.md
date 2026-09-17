@@ -1,13 +1,13 @@
-# Content opportunities: 2026-09-17
+# Content opportunities: 2026-09-18
 
-164 queries analysed, 38 not yet covered by existing content.
+166 queries analysed, 38 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 50 | 74.0 | 80.0 |
-| dermaplaning cairns | search_console | 31 | 58.7 | 49.6 |
+| facial cairns | search_console | 51 | 73.7 | 81.6 |
+| dermaplaning cairns | search_console | 32 | 58.7 | 51.2 |
 | laser clinics cairns | search_console | 13 | 27.2 | 19.7 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
@@ -42,12 +42,12 @@
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | fractional rf laser device | fractional-rf |
 | rf fractional machines | fractional-rf |
-| fractional rf machines | fractional-rf |
 | rf fractional laser device | fractional-rf |
+| fractional rf machines | fractional-rf |
 | fractional rf laser devices | fractional-rf |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rejuran polynucleotide | rejuran |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns skin clinic | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rejuran polynucleotide | rejuran |
 | skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
