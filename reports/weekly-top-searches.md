@@ -1,6 +1,6 @@
-# Top searches this week: 2026-09-21
+# Top searches this week: 2026-09-22
 
-Rolling 7-day window ending today, from 168 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
+Rolling 7-day window ending today, from 173 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
 | # | Query | Source | Score | Article |
 |---:|---|---|---:|---|
@@ -11,6 +11,6 @@ Rolling 7-day window ending today, from 168 distinct queries seen. Queries with 
 | 5 | bbl for sun damage wilmington nc | search_console | 16.0 | _none yet_ |
 | 6 | cairns facials | search_console | 14.4 | _none yet_ |
 | 7 | skin needling results | search_console | 14.4 | fractional-rf |
-| 8 | skin needling cairns | search_console | 12.9 | skin-needling |
-| 9 | laser clinics australia cairns | search_console | 9.6 | _none yet_ |
-| 10 | laser cairns central | search_console | 9.4 | _none yet_ |
+| 8 | skin needling cairns | search_console | 13.0 | skin-needling |
+| 9 | laser cairns central | search_console | 10.5 | _none yet_ |
+| 10 | laser clinics australia cairns | search_console | 9.6 | _none yet_ |
