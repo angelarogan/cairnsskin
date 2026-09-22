@@ -1,4 +1,4 @@
-# Content opportunities: 2026-09-22
+# Content opportunities: 2026-09-23
 
 173 queries analysed, 40 not yet covered by existing content.
 
@@ -8,11 +8,11 @@
 |---|---|---:|---:|---:|
 | facial cairns | search_console | 52 | 73.5 | 83.2 |
 | dermaplaning cairns | search_console | 33 | 58.7 | 52.8 |
-| laser clinics cairns | search_console | 14 | 26.4 | 20.9 |
+| laser clinics cairns | search_console | 15 | 25.4 | 21.9 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | cairns facials | search_console | 9 | 67.7 | 14.4 |
-| laser cairns central | search_console | 10 | 11.7 | 10.5 |
+| laser cairns central | search_console | 11 | 11.5 | 11.5 |
 | laser clinics australia cairns | search_console | 6 | 42.3 | 9.6 |
 | microneedling cairns | search_console | 6 | 14.5 | 6.8 |
 | cairns facial | search_console | 4 | 73.5 | 6.4 |
@@ -38,8 +38,8 @@
 | fractional rf lasers | fractional-rf |
 | rejuran cairns | rejuran |
 | rf fractional lasers | fractional-rf |
-| rf fractional machine | fractional-rf |
 | fractional rf laser device | fractional-rf |
+| rf fractional machine | fractional-rf |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional laser device | fractional-rf |
 | rf fractional machines | fractional-rf |
