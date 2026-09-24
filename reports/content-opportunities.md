@@ -1,6 +1,6 @@
-# Content opportunities: 2026-09-24
+# Content opportunities: 2026-09-25
 
-174 queries analysed, 41 not yet covered by existing content.
+175 queries analysed, 41 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -15,8 +15,8 @@
 | laser cairns central | search_console | 11 | 11.5 | 11.5 |
 | laser clinics australia cairns | search_console | 6 | 42.3 | 9.6 |
 | cairns facial | search_console | 5 | 71.2 | 8.0 |
+| cairns laser | search_console | 5 | 65.6 | 8.0 |
 | microneedling cairns | search_console | 7 | 14.7 | 8.0 |
-| cairns laser | search_console | 4 | 67.8 | 6.4 |
 | facials cairns | search_console | 3 | 68.3 | 4.8 |
 | facials in cairns | search_console | 3 | 65.3 | 4.8 |
 | beauty treatments cairns | search_console | 2 | 80.0 | 3.2 |
@@ -35,8 +35,8 @@
 | skin needling cairns | skin-needling |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| fractional rf lasers | fractional-rf |
 | rejuran cairns | rejuran |
+| fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | fractional rf laser device | fractional-rf |
 | rf fractional machine | fractional-rf |
