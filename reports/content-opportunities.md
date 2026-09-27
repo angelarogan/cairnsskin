@@ -1,6 +1,6 @@
-# Content opportunities: 2026-09-27
+# Content opportunities: 2026-09-28
 
-176 queries analysed, 42 not yet covered by existing content.
+182 queries analysed, 43 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -9,11 +9,11 @@
 | facial cairns | search_console | 53 | 73.4 | 84.8 |
 | dermaplaning cairns | search_console | 33 | 58.7 | 52.8 |
 | laser clinics cairns | search_console | 19 | 29.9 | 30.4 |
+| cairns facials | search_console | 11 | 67.4 | 17.6 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
-| cairns facials | search_console | 10 | 67.6 | 16.0 |
+| laser clinics australia cairns | search_console | 8 | 38.9 | 12.8 |
 | laser cairns central | search_console | 11 | 11.5 | 11.5 |
-| laser clinics australia cairns | search_console | 7 | 40.9 | 11.2 |
 | cairns laser | search_console | 6 | 62.8 | 9.6 |
 | microneedling cairns | search_console | 8 | 14.8 | 9.1 |
 | cairns facial | search_console | 5 | 71.2 | 8.0 |
@@ -43,11 +43,11 @@
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional laser device | fractional-rf |
 | rf fractional machines | fractional-rf |
+| what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf laser devices | fractional-rf |
 | fractional rf machines | fractional-rf |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| skin needling benefits | skin-needling |
 | laser clinic cairns central | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | cairns clear skin | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
