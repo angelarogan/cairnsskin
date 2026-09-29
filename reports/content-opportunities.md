@@ -1,12 +1,12 @@
-# Content opportunities: 2026-09-29
+# Content opportunities: 2026-09-30
 
-183 queries analysed, 44 not yet covered by existing content.
+184 queries analysed, 44 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 54 | 73.5 | 86.4 |
+| facial cairns | search_console | 55 | 72.4 | 88.0 |
 | dermaplaning cairns | search_console | 33 | 58.7 | 52.8 |
 | laser clinics cairns | search_console | 19 | 29.9 | 30.4 |
 | cairns facials | search_console | 11 | 67.4 | 17.6 |
@@ -14,18 +14,18 @@
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | laser clinics australia cairns | search_console | 8 | 38.9 | 12.8 |
 | laser cairns central | search_console | 11 | 11.5 | 11.5 |
+| microneedling cairns | search_console | 9 | 14.8 | 10.3 |
 | cairns laser | search_console | 6 | 62.8 | 9.6 |
-| microneedling cairns | search_console | 8 | 14.8 | 9.1 |
 | cairns facial | search_console | 5 | 71.2 | 8.0 |
 | facials cairns | search_console | 3 | 68.3 | 4.8 |
 | facials in cairns | search_console | 3 | 65.3 | 4.8 |
 | beauty treatments cairns | search_console | 2 | 80.0 | 3.2 |
 | cairns laser clinics | search_console | 2 | 32.0 | 3.2 |
 | hydrafacial cairns | search_console | 2 | 71.0 | 3.2 |
+| laser cairns | search_console | 2 | 45.0 | 3.2 |
 | microneedling for scars | search_console | 2 | 67.0 | 3.2 |
 | perioral discoloration | search_console | 2 | 71.0 | 3.2 |
 | sensitive skin vs rosacea | search_console | 2 | 90.0 | 3.2 |
-| 07 4015 2917 | search_console | 3 | 3.7 | 2.4 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -39,8 +39,8 @@
 | fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | fractional rf laser device | fractional-rf |
-| rf fractional machine | fractional-rf |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
+| rf fractional machine | fractional-rf |
 | rf fractional laser device | fractional-rf |
 | rf fractional machines | fractional-rf |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
