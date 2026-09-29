@@ -1,12 +1,12 @@
-# Content opportunities: 2026-09-28
+# Content opportunities: 2026-09-29
 
-182 queries analysed, 43 not yet covered by existing content.
+183 queries analysed, 44 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 53 | 73.4 | 84.8 |
+| facial cairns | search_console | 54 | 73.5 | 86.4 |
 | dermaplaning cairns | search_console | 33 | 58.7 | 52.8 |
 | laser clinics cairns | search_console | 19 | 29.9 | 30.4 |
 | cairns facials | search_console | 11 | 67.4 | 17.6 |
