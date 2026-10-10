@@ -1,4 +1,4 @@
-# Top searches this week: 2026-10-09
+# Top searches this week: 2026-10-10
 
 Rolling 7-day window ending today, from 220 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
