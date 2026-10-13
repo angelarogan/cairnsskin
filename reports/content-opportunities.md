@@ -1,4 +1,4 @@
-# Content opportunities: 2026-10-12
+# Content opportunities: 2026-10-13
 
 234 queries analysed, 58 not yet covered by existing content.
 
@@ -6,7 +6,7 @@
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 63 | 70.5 | 100.8 |
+| facial cairns | search_console | 65 | 70.8 | 104.0 |
 | dermaplaning cairns | search_console | 37 | 58.6 | 59.2 |
 | laser clinics cairns | search_console | 20 | 31.5 | 32.0 |
 | cairns facials | search_console | 12 | 65.9 | 19.2 |
@@ -44,9 +44,9 @@
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional machines | fractional-rf |
 | rf fractional machine | fractional-rf |
+| rejuran injection | rejuran |
 | skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rejuran injection | rejuran |
 | skin needling benefits | skin-needling |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf laser devices | fractional-rf |
