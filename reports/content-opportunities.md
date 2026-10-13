@@ -1,6 +1,6 @@
-# Content opportunities: 2026-10-13
+# Content opportunities: 2026-10-14
 
-234 queries analysed, 58 not yet covered by existing content.
+239 queries analysed, 59 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -45,8 +45,8 @@
 | rf fractional machines | fractional-rf |
 | rf fractional machine | fractional-rf |
 | rejuran injection | rejuran |
-| skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | skin needling benefits | skin-needling |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | fractional rf laser devices | fractional-rf |
