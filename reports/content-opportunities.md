@@ -1,12 +1,12 @@
-# Content opportunities: 2026-10-24
+# Content opportunities: 2026-10-25
 
-259 queries analysed, 64 not yet covered by existing content.
+261 queries analysed, 65 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 77 | 71.1 | 123.2 |
+| facial cairns | search_console | 78 | 71.1 | 124.8 |
 | dermaplaning cairns | search_console | 39 | 58.6 | 62.4 |
 | laser clinics cairns | search_console | 22 | 33.6 | 35.2 |
 | cairns facials | search_console | 14 | 66.4 | 22.4 |
@@ -38,8 +38,8 @@
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | rejuran cairns | rejuran |
 | fractional rf lasers | fractional-rf |
-| rf fractional lasers | fractional-rf |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rf fractional lasers | fractional-rf |
 | rejuran injection | rejuran |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
 | rf fractional laser device | fractional-rf |
