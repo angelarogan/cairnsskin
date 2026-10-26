@@ -1,17 +1,17 @@
-# Content opportunities: 2026-10-26
+# Content opportunities: 2026-10-27
 
-261 queries analysed, 65 not yet covered by existing content.
+262 queries analysed, 65 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 79 | 71.2 | 126.4 |
+| facial cairns | search_console | 80 | 71.1 | 128.0 |
 | dermaplaning cairns | search_console | 39 | 58.6 | 62.4 |
 | laser clinics cairns | search_console | 22 | 33.6 | 35.2 |
 | cairns facials | search_console | 15 | 66.3 | 24.0 |
+| laser clinics australia cairns | search_console | 12 | 41.3 | 19.2 |
 | cairns facial | search_console | 11 | 60.9 | 17.6 |
-| laser clinics australia cairns | search_console | 11 | 40.7 | 17.6 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
 | bbl for sun damage wilmington nc | search_console | 10 | 85.4 | 16.0 |
 | microneedling cairns | search_console | 14 | 13.9 | 15.7 |
@@ -33,8 +33,8 @@
 |---|---|
 | skin needling cairns | skin-needling |
 | skin needling results | fractional-rf |
-| rejuran treatment | rejuran |
 | fractional rf laser device | fractional-rf |
+| rejuran treatment | rejuran |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | rejuran cairns | rejuran |
 | fractional rf lasers | fractional-rf |
