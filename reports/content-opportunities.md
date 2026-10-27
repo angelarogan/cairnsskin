@@ -1,4 +1,4 @@
-# Content opportunities: 2026-10-27
+# Content opportunities: 2026-10-28
 
 262 queries analysed, 65 not yet covered by existing content.
 
@@ -19,9 +19,9 @@
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
 | cairns laser | search_console | 8 | 53.1 | 12.8 |
 | facials in cairns | search_console | 6 | 67.8 | 9.6 |
+| bio stimulation cairns | search_console | 6 | 18.3 | 7.5 |
 | capillary dilatation | search_console | 4 | 54.5 | 6.4 |
 | led therapy for sensitive skin | search_console | 4 | 70.2 | 6.4 |
-| bio stimulation cairns | search_console | 5 | 18.2 | 6.2 |
 | bbl laser | search_console | 3 | 31.0 | 4.8 |
 | beauty treatments cairns | search_console | 3 | 82.7 | 4.8 |
 | best facial cairns | search_console | 3 | 50.3 | 4.8 |
@@ -37,8 +37,8 @@
 | rejuran treatment | rejuran |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | rejuran cairns | rejuran |
-| fractional rf lasers | fractional-rf |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | rejuran injection | rejuran |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
