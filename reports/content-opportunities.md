@@ -1,6 +1,6 @@
-# Content opportunities: 2026-10-31
+# Content opportunities: 2026-11-01
 
-264 queries analysed, 65 not yet covered by existing content.
+266 queries analysed, 65 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -14,18 +14,18 @@
 | cairns facial | search_console | 11 | 60.9 | 17.6 |
 | microneedling cairns | search_console | 15 | 13.5 | 16.6 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
+| bbl facial | search_console | 10 | 45.3 | 16.0 |
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
 | bbl for sun damage wilmington nc | search_console | 8 | 82.6 | 12.8 |
 | cairns laser | search_console | 8 | 53.1 | 12.8 |
-| bbl facial | search_console | 7 | 43.7 | 11.2 |
-| 07 4015 2917 | search_console | 12 | 3.7 | 9.7 |
+| 07 4015 2917 | search_console | 13 | 3.6 | 10.5 |
 | facials in cairns | search_console | 6 | 67.8 | 9.6 |
+| bbl face treatment | search_console | 5 | 36.8 | 8.0 |
 | bio stimulation cairns | search_console | 6 | 18.3 | 7.5 |
 | capillary dilatation | search_console | 4 | 54.5 | 6.4 |
 | led therapy for sensitive skin | search_console | 4 | 70.2 | 6.4 |
-| bbl laser | search_console | 3 | 31.0 | 4.8 |
-| beauty treatments cairns | search_console | 3 | 82.7 | 4.8 |
+| aqua facial benefits | search_console | 6 | 8.3 | 5.7 |
 
 ## Already covered (for reference, not new opportunities)
 
@@ -40,8 +40,8 @@
 | fractional rf lasers | fractional-rf |
 | rejuran cairns | rejuran |
 | rf fractional lasers | fractional-rf |
-| rejuran injection | rejuran |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
+| rejuran injection | rejuran |
 | skin needling benefits | skin-needling |
 | rf fractional laser device | fractional-rf |
 | rf fractional machines | fractional-rf |
@@ -50,4 +50,4 @@
 | rf fractional machine | fractional-rf |
 | aquafacial | aquafacial-vs-microdermabrasion |
 | rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| skin treatments cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| benefits of skin needling | skin-needling |
