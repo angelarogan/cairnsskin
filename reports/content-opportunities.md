@@ -1,6 +1,6 @@
-# Content opportunities: 2026-11-01
+# Content opportunities: 2026-11-02
 
-266 queries analysed, 65 not yet covered by existing content.
+260 queries analysed, 64 not yet covered by existing content.
 
 ## Top opportunities
 
@@ -10,19 +10,19 @@
 | dermaplaning cairns | search_console | 38 | 58.6 | 60.8 |
 | laser clinics cairns | search_console | 22 | 33.6 | 35.2 |
 | cairns facials | search_console | 14 | 66.0 | 22.4 |
+| bbl facial | search_console | 12 | 47.0 | 19.2 |
 | laser clinics australia cairns | search_console | 12 | 41.3 | 19.2 |
 | cairns facial | search_console | 11 | 60.9 | 17.6 |
 | microneedling cairns | search_console | 15 | 13.5 | 16.6 |
 | laser clinics cairns central | search_console | 14 | 15.2 | 16.2 |
-| bbl facial | search_console | 10 | 45.3 | 16.0 |
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
 | bbl for sun damage wilmington nc | search_console | 8 | 82.6 | 12.8 |
 | cairns laser | search_console | 8 | 53.1 | 12.8 |
-| 07 4015 2917 | search_console | 13 | 3.6 | 10.5 |
+| 07 4015 2917 | search_console | 12 | 3.6 | 9.7 |
 | facials in cairns | search_console | 6 | 67.8 | 9.6 |
+| bio stimulation cairns | search_console | 7 | 17.4 | 8.6 |
 | bbl face treatment | search_console | 5 | 36.8 | 8.0 |
-| bio stimulation cairns | search_console | 6 | 18.3 | 7.5 |
 | capillary dilatation | search_console | 4 | 54.5 | 6.4 |
 | led therapy for sensitive skin | search_console | 4 | 70.2 | 6.4 |
 | aqua facial benefits | search_console | 6 | 8.3 | 5.7 |
