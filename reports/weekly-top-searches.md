@@ -1,15 +1,15 @@
-# Top searches this week: 2026-11-03
+# Top searches this week: 2026-11-04
 
-Rolling 7-day window ending today, from 272 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
+Rolling 7-day window ending today, from 274 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
 | # | Query | Source | Score | Article |
 |---:|---|---|---:|---|
 | 1 | facial cairns | search_console | 129.6 | _none yet_ |
 | 2 | dermaplaning cairns | search_console | 62.4 | _none yet_ |
-| 3 | laser clinics cairns | search_console | 36.8 | _none yet_ |
-| 4 | cairns facials | search_console | 24.0 | _none yet_ |
-| 5 | bbl facial | search_console | 24.0 | _none yet_ |
-| 6 | skin needling cairns | search_console | 19.5 | skin-needling |
+| 3 | laser clinics cairns | search_console | 38.4 | _none yet_ |
+| 4 | bbl facial | search_console | 27.2 | _none yet_ |
+| 5 | cairns facials | search_console | 24.0 | _none yet_ |
+| 6 | skin needling cairns | search_console | 19.4 | skin-needling |
 | 7 | laser clinics australia cairns | search_console | 19.2 | _none yet_ |
 | 8 | cairns facial | search_console | 17.6 | _none yet_ |
 | 9 | microneedling cairns | search_console | 16.6 | _none yet_ |
