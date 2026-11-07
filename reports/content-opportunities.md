@@ -1,14 +1,14 @@
-# Content opportunities: 2026-11-06
+# Content opportunities: 2026-11-07
 
-248 queries analysed, 64 not yet covered by existing content.
+248 queries analysed, 65 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
 | facial cairns | search_console | 79 | 71.1 | 126.4 |
-| dermaplaning cairns | search_console | 35 | 57.9 | 56.0 |
-| laser clinics cairns | search_console | 25 | 31.7 | 40.0 |
+| dermaplaning cairns | search_console | 34 | 57.9 | 54.4 |
+| laser clinics cairns | search_console | 28 | 35.0 | 44.8 |
 | bbl facial | search_console | 17 | 52.0 | 27.2 |
 | cairns facials | search_console | 15 | 66.5 | 24.0 |
 | laser clinics australia cairns | search_console | 12 | 41.3 | 19.2 |
@@ -20,7 +20,7 @@
 | cairns laser | search_console | 8 | 53.1 | 12.8 |
 | facials in cairns | search_console | 7 | 69.9 | 11.2 |
 | 07 4015 2917 | search_console | 12 | 3.5 | 9.7 |
-| bio stimulation cairns | search_console | 7 | 17.4 | 8.6 |
+| bio stimulation cairns | search_console | 8 | 16.6 | 9.6 |
 | bbl face treatment | search_console | 5 | 36.8 | 8.0 |
 | bbl for sun damage wilmington nc | search_console | 5 | 79.0 | 8.0 |
 | aqua facial benefits | search_console | 7 | 8.0 | 6.6 |
@@ -32,8 +32,8 @@
 | Query | Matched page |
 |---|---|
 | skin needling cairns | skin-needling |
-| skin needling results | fractional-rf |
 | rejuran treatment | rejuran |
+| skin needling results | fractional-rf |
 | fractional rf laser device | fractional-rf |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | rejuran cairns | rejuran |
@@ -50,4 +50,4 @@
 | rf fractional machine | fractional-rf |
 | aquafacial | aquafacial-vs-microdermabrasion |
 | benefits of skin needling | skin-needling |
-| rejuran skin therapy in cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rejuran for skin texture | what-is-rejuran |
