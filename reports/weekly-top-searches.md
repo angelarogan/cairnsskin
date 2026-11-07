@@ -1,10 +1,10 @@
-# Top searches this week: 2026-11-07
+# Top searches this week: 2026-11-08
 
-Rolling 7-day window ending today, from 272 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
+Rolling 7-day window ending today, from 267 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
 | # | Query | Source | Score | Article |
 |---:|---|---|---:|---|
-| 1 | facial cairns | search_console | 128.0 | _none yet_ |
+| 1 | facial cairns | search_console | 129.6 | _none yet_ |
 | 2 | dermaplaning cairns | search_console | 60.8 | _none yet_ |
 | 3 | laser clinics cairns | search_console | 44.8 | _none yet_ |
 | 4 | bbl facial | search_console | 27.2 | _none yet_ |
