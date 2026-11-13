@@ -1,23 +1,23 @@
-# Content opportunities: 2026-11-12
+# Content opportunities: 2026-11-13
 
-239 queries analysed, 64 not yet covered by existing content.
+243 queries analysed, 66 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 77 | 70.6 | 123.2 |
-| dermaplaning cairns | search_console | 31 | 57.5 | 49.6 |
+| facial cairns | search_console | 76 | 70.6 | 121.6 |
+| dermaplaning cairns | search_console | 30 | 57.4 | 48.0 |
 | laser clinics cairns | search_console | 30 | 33.4 | 48.0 |
 | bbl facial | search_console | 17 | 52.0 | 27.2 |
-| cairns facials | search_console | 16 | 68.1 | 25.6 |
-| laser clinics australia cairns | search_console | 12 | 41.3 | 19.2 |
+| cairns facials | search_console | 15 | 67.7 | 24.0 |
+| laser clinics cairns central | search_console | 17 | 19.0 | 21.6 |
+| laser clinics australia cairns | search_console | 11 | 41.1 | 17.6 |
 | microneedling cairns | search_console | 16 | 12.6 | 17.2 |
 | cairns facial | search_console | 10 | 59.4 | 16.0 |
-| laser clinics cairns central | search_console | 13 | 15.2 | 15.0 |
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
-| 07 4015 2917 | search_console | 16 | 3.4 | 12.8 |
+| 07 4015 2917 | search_console | 17 | 3.4 | 13.6 |
 | cairns laser | search_console | 7 | 51.6 | 11.2 |
 | facials in cairns | search_console | 7 | 69.9 | 11.2 |
 | bio stimulation cairns | search_console | 9 | 16.2 | 10.7 |
@@ -39,8 +39,8 @@
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | skin needling results | fractional-rf |
 | rejuran injection | rejuran |
-| rejuran cairns | rejuran |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
+| rejuran cairns | rejuran |
 | rf fractional lasers | fractional-rf |
 | fractional rf lasers | fractional-rf |
 | skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
