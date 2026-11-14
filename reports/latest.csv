@@ -1,12 +1,12 @@
 query,source,impressions,clicks,ctr,position,already_covered,matched_slug,score
-facial cairns,search_console,76,0,0,70.59,False,,121.6
-dermaplaning cairns,search_console,30,0,0,57.37,False,,48.0
+facial cairns,search_console,73,0,0,70.47,False,,116.8
 laser clinics cairns,search_console,30,0,0,33.43,False,,48.0
+dermaplaning cairns,search_console,29,0,0,57.28,False,,46.4
 bbl facial,search_console,17,0,0,52,False,,27.2
 cairns facials,search_console,15,0,0,67.73,False,,24.0
 laser clinics cairns central,search_console,17,0,0,19,False,,21.59
-skin needling cairns,search_console,150,1,0.0067,17.22,True,skin-needling,17.65
 laser clinics australia cairns,search_console,11,0,0,41.09,False,,17.6
+skin needling cairns,search_console,149,1,0.0067,17.21,True,skin-needling,17.52
 microneedling cairns,search_console,16,0,0,12.56,False,,17.23
 rejuran treatment,search_console,106,0,0,45.77,True,rejuran,16.96
 cairns facial,search_console,10,0,0,59.4,False,,16.0
@@ -15,17 +15,17 @@ facials cairns,search_console,9,0,0,68.11,False,,14.4
 07 4015 2917,search_console,17,0,0,3.35,False,,13.61
 fractional rf laser device,search_console,82,0,0,43.99,True,fractional-rf,13.12
 skin needling benefits,search_console,75,0,0,70.16,True,skin-needling,12.0
-skin treatment cairns,search_console,74,0,0,59.15,True,what-to-avoid-on-skin-after-treatment-in-humidity,11.84
+skin treatment cairns,search_console,73,0,0,58.93,True,what-to-avoid-on-skin-after-treatment-in-humidity,11.68
 cairns laser,search_console,7,0,0,51.57,False,,11.2
 facials in cairns,search_console,7,0,0,69.86,False,,11.2
 bio stimulation cairns,search_console,9,0,0,16.22,False,,10.68
-skin care cairns,search_console,66,0,0,66.92,True,dermatologist-vs-cosmetic-skin-clinic-cairns,10.56
-skin needling results,search_console,66,0,0,65.77,True,fractional-rf,10.56
 rejuran injection,search_console,65,0,0,63.72,True,rejuran,10.4
-skin needling for acne,search_console,63,0,0,79.19,True,does-skin-needling-help-acne-scarring,10.08
-rejuran cairns,search_console,94,0,0,12.37,True,rejuran,10.07
-rf fractional lasers,search_console,60,0,0,54.25,True,fractional-rf,9.6
-fractional rf lasers,search_console,59,0,0,57.08,True,fractional-rf,9.44
+skin care cairns,search_console,65,0,0,66.62,True,dermatologist-vs-cosmetic-skin-clinic-cairns,10.4
+skin needling for acne,search_console,62,0,0,79.1,True,does-skin-needling-help-acne-scarring,9.92
+rejuran cairns,search_console,92,0,0,12.39,True,rejuran,9.86
+skin needling results,search_console,60,0,0,66,True,fractional-rf,9.6
+rf fractional lasers,search_console,59,0,0,54.22,True,fractional-rf,9.44
+fractional rf lasers,search_console,58,0,0,57.09,True,fractional-rf,9.28
 aqua facial,search_console,7,0,0,16.14,False,,8.29
 bbl face treatment,search_console,5,0,0,36.8,False,,8.0
 skin care centre cairns,search_console,48,0,0,66.21,True,dermatologist-vs-cosmetic-skin-clinic-cairns,7.68
@@ -71,15 +71,12 @@ dilated capillaries,search_console,13,0,0,50.46,True,dilated-capillaries,2.08
 rejuran scar,search_console,12,0,0,38.58,True,rejuran,1.92
 laser clinic bbl,search_console,2,0,0,6,False,,1.76
 facial bbl laser,search_console,11,0,0,73.36,True,capillary-reduction,1.76
-what does skin needling do,search_console,11,0,0,80.27,True,does-skin-needling-help-acne-scarring,1.76
 affordable anti-wrinkle treatments in cairns,search_console,1,0,0,67,False,,1.6
 bbl sunspots,search_console,1,0,0,66,False,,1.6
-can tanning even out hyperpigmentation,search_console,1,0,0,48,False,,1.6
 co2 laser cairns,search_console,1,0,0,63,False,,1.6
 diffuse redness,search_console,1,0,0,93,False,,1.6
 face treatments,search_console,1,0,0,54,False,,1.6
 facial rosacia,search_console,1,0,0,92,False,,1.6
-hydrafacial cairns,search_console,1,0,0,70,False,,1.6
 hydrafacial near me,search_console,1,0,0,57,False,,1.6
 hydrodermabrasion consultation,search_console,1,0,0,36,False,,1.6
 led treatment,search_console,1,0,0,43,False,,1.6
@@ -94,6 +91,7 @@ skin consultation,search_console,1,0,0,45,False,,1.6
 skinneedling,search_console,1,0,0,95,False,,1.6
 surgical needling,search_console,1,0,0,73,False,,1.6
 what cause blackheads,search_console,1,0,0,97,False,,1.6
+what does skin needling do,search_console,10,0,0,81.1,True,does-skin-needling-help-acne-scarring,1.6
 what is capillary dilation,search_console,1,0,0,42,False,,1.6
 sun damage evaluation queensland,search_console,1,0,0,25,False,,1.45
 fractional rf laser machine,search_console,9,0,0,30.44,True,fractional-rf,1.44
@@ -110,7 +108,6 @@ acne marks,search_console,1,0,0,12,False,,1.06
 what is aqua facial,search_console,1,0,0,11,False,,1.03
 what is aqua facial treatment,search_console,8,0,0,19,True,what-if-pigmentation-treatment-makes-it-worse,1.02
 what is bbl laser,search_console,1,0,0,10,False,,1.0
-clear skin cairns,search_console,6,0,0,55.83,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.96
 rejuran adelaide,search_console,6,0,0,34.17,True,rejuran,0.96
 what is skin needling good for,search_console,6,0,0,87.67,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.96
 wrinkle reduction cairns,search_console,1,0,0,8,False,,0.94
@@ -118,6 +115,7 @@ microdermabrasion cairns,search_console,8,0,0,14.38,True,microdermabrasion,0.91
 bbl laser clinic,search_console,1,0,0,5,False,,0.85
 pdrn treatment near me,search_console,1,0,0,4,False,,0.82
 bbl laser facial treatment,search_console,5,0,0,82,True,capillary-reduction,0.8
+clear skin cairns,search_console,5,0,0,56,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.8
 rejuran injections,search_console,5,0,0,85,True,rejuran,0.8
 skin needling australia,search_console,5,0,0,73.2,True,does-skin-needling-help-acne-scarring,0.8
 cairns laser clinic,search_console,6,1,0.1667,42.67,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.78
@@ -234,7 +232,6 @@ why is my skin darker around my mouth,search_console,1,0,0,11,True,what-causes-p
 microneedling skin clinic,search_console,1,0,0,10,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.1
 rejuran patches,search_console,1,0,0,10,True,rejuran,0.1
 bbl skin laser,search_console,1,0,0,9,True,is-laser-hair-removal-safe-on-tanned-skin,0.1
-cairns laser clinic cairns central,search_console,1,0,0,9,True,dermatologist-vs-cosmetic-skin-clinic-cairns,0.1
 what does pigmentation mean,search_console,1,0,0,9,True,what-does-pigmentation-mean,0.1
 skin needling laser clinics,search_console,1,0,0,8,True,does-skin-needling-help-acne-scarring,0.09
 bbl near me,search_console,1,0,0,7,True,dilated-capillaries,0.09

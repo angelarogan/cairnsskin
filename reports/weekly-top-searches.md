@@ -1,6 +1,6 @@
-# Top searches this week: 2026-11-13
+# Top searches this week: 2026-11-14
 
-Rolling 7-day window ending today, from 256 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
+Rolling 7-day window ending today, from 250 distinct queries seen. Queries with no article yet are open content ideas; queries that already have one are ready to repurpose as an Instagram post linking back to that page.
 
 | # | Query | Source | Score | Article |
 |---:|---|---|---:|---|
@@ -12,5 +12,5 @@ Rolling 7-day window ending today, from 256 distinct queries seen. Queries with 
 | 6 | laser clinics cairns central | search_console | 21.6 | _none yet_ |
 | 7 | laser clinics australia cairns | search_console | 19.2 | _none yet_ |
 | 8 | skin needling cairns | search_console | 17.8 | skin-needling |
-| 9 | microneedling cairns | search_console | 17.6 | _none yet_ |
-| 10 | cairns facial | search_console | 17.6 | _none yet_ |
+| 9 | cairns facial | search_console | 17.6 | _none yet_ |
+| 10 | microneedling cairns | search_console | 17.2 | _none yet_ |
