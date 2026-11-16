@@ -1,18 +1,18 @@
-# Content opportunities: 2026-11-15
+# Content opportunities: 2026-11-16
 
-241 queries analysed, 65 not yet covered by existing content.
+244 queries analysed, 67 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 72 | 70.4 | 115.2 |
+| facial cairns | search_console | 71 | 70.4 | 113.6 |
 | laser clinics cairns | search_console | 30 | 33.4 | 48.0 |
 | dermaplaning cairns | search_console | 29 | 57.7 | 46.4 |
-| bbl facial | search_console | 17 | 52.0 | 27.2 |
-| cairns facials | search_console | 15 | 67.7 | 24.0 |
+| bbl facial | search_console | 20 | 52.6 | 32.0 |
+| cairns facials | search_console | 16 | 69.3 | 25.6 |
 | laser clinics cairns central | search_console | 17 | 19.0 | 21.6 |
-| microneedling cairns | search_console | 16 | 12.6 | 17.2 |
+| microneedling cairns | search_console | 15 | 12.5 | 16.1 |
 | cairns facial | search_console | 10 | 59.4 | 16.0 |
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | 07 4015 2917 | search_console | 18 | 3.6 | 14.5 |
@@ -36,16 +36,16 @@
 | fractional rf laser device | fractional-rf |
 | skin needling benefits | skin-needling |
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
-| skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran injection | rejuran |
-| skin needling for acne | does-skin-needling-help-acne-scarring |
+| skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rejuran cairns | rejuran |
+| skin needling for acne | does-skin-needling-help-acne-scarring |
+| fractional rf lasers | fractional-rf |
 | rf fractional lasers | fractional-rf |
 | skin needling results | fractional-rf |
-| fractional rf lasers | fractional-rf |
 | skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rf fractional laser device | fractional-rf |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| rf fractional laser device | fractional-rf |
 | aquafacial | aquafacial-vs-microdermabrasion |
 | rf fractional machines | fractional-rf |
 | benefits of skin needling | skin-needling |
