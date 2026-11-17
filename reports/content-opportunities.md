@@ -1,15 +1,15 @@
-# Content opportunities: 2026-11-16
+# Content opportunities: 2026-11-17
 
-244 queries analysed, 67 not yet covered by existing content.
+247 queries analysed, 69 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 71 | 70.4 | 113.6 |
-| laser clinics cairns | search_console | 30 | 33.4 | 48.0 |
+| facial cairns | search_console | 70 | 70.3 | 112.0 |
 | dermaplaning cairns | search_console | 29 | 57.7 | 46.4 |
-| bbl facial | search_console | 20 | 52.6 | 32.0 |
+| laser clinics cairns | search_console | 29 | 33.5 | 46.4 |
+| bbl facial | search_console | 23 | 53.1 | 36.8 |
 | cairns facials | search_console | 16 | 69.3 | 25.6 |
 | laser clinics cairns central | search_console | 17 | 19.0 | 21.6 |
 | microneedling cairns | search_console | 15 | 12.5 | 16.1 |
@@ -17,7 +17,7 @@
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | 07 4015 2917 | search_console | 18 | 3.6 | 14.5 |
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
-| laser clinics australia cairns | search_console | 9 | 39.3 | 14.4 |
+| laser clinics australia cairns | search_console | 8 | 38.1 | 12.8 |
 | cairns laser | search_console | 7 | 51.6 | 11.2 |
 | facials in cairns | search_console | 7 | 69.9 | 11.2 |
 | bio stimulation cairns | search_console | 9 | 16.2 | 10.7 |
@@ -38,12 +38,12 @@
 | skin treatment cairns | what-to-avoid-on-skin-after-treatment-in-humidity |
 | rejuran injection | rejuran |
 | skin care cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
-| rejuran cairns | rejuran |
 | skin needling for acne | does-skin-needling-help-acne-scarring |
-| fractional rf lasers | fractional-rf |
+| rejuran cairns | rejuran |
+| skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rf fractional lasers | fractional-rf |
 | skin needling results | fractional-rf |
-| skin care centre cairns | dermatologist-vs-cosmetic-skin-clinic-cairns |
+| fractional rf lasers | fractional-rf |
 | what is skin needling | dermatologist-vs-cosmetic-skin-clinic-cairns |
 | rf fractional laser device | fractional-rf |
 | aquafacial | aquafacial-vs-microdermabrasion |
