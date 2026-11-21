@@ -1,13 +1,13 @@
-# Content opportunities: 2026-11-20
+# Content opportunities: 2026-11-21
 
-254 queries analysed, 74 not yet covered by existing content.
+255 queries analysed, 75 not yet covered by existing content.
 
 ## Top opportunities
 
 | Query | Source | Impressions | Position | Score |
 |---|---|---:|---:|---:|
-| facial cairns | search_console | 68 | 70.4 | 108.8 |
-| bbl facial | search_console | 31 | 49.9 | 49.6 |
+| facial cairns | search_console | 66 | 70.3 | 105.6 |
+| bbl facial | search_console | 35 | 45.5 | 56.0 |
 | laser clinics cairns | search_console | 29 | 33.5 | 46.4 |
 | dermaplaning cairns | search_console | 28 | 57.6 | 44.8 |
 | cairns facials | search_console | 15 | 69.1 | 24.0 |
@@ -17,10 +17,10 @@
 | cairns facial | search_console | 10 | 59.4 | 16.0 |
 | laser cairns central | search_console | 13 | 14.0 | 14.6 |
 | facials cairns | search_console | 9 | 68.1 | 14.4 |
+| bio stimulation cairns | search_console | 12 | 15.2 | 13.9 |
 | facials in cairns | search_console | 8 | 71.5 | 12.8 |
 | cairns laser | search_console | 7 | 51.6 | 11.2 |
 | laser clinics australia cairns | search_console | 7 | 39.9 | 11.2 |
-| bio stimulation cairns | search_console | 9 | 16.2 | 10.7 |
 | polynucleotide injection | search_console | 7 | 22.1 | 9.6 |
 | aqua facial benefits | search_console | 9 | 7.9 | 8.4 |
 | aqua facial | search_console | 7 | 16.1 | 8.3 |
